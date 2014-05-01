@@ -11,6 +11,11 @@ namespace Land.Classes
         public const int CapacityX = 50;
         public const int CapacityY = 16;
 
+        public static int MapsCount
+        {
+            get { return Directory.EnumerateFiles("Data").Count(file => file.Contains(".map")); }
+        }
+
         public static bool IsBiomass(SpriteTypeEnum source)
         {
             return source >= SpriteTypeEnum.Biomass1 && source <= SpriteTypeEnum.Biomass4;
@@ -63,20 +68,12 @@ namespace Land.Classes
         }
 
 
-        public static int MapsCount
-        {
-            get
-            {
-                return Directory.EnumerateFiles("Data").Count(file => file.Contains(".map"));
-            }
-        }
-
         public static List<string> LoadMap(int number)
         {
             var result = new List<string>();
             try
             {
-                var fileName = string.Format("Data\\{0}.map", number);
+                string fileName = string.Format("Data\\{0}.map", number);
                 using (var reader = new StreamReader(fileName))
                 {
                     string line = string.Empty;
@@ -103,7 +100,7 @@ namespace Land.Classes
 
         public static SpriteTypeEnum[,] Get(int stage)
         {
-            var map = LoadMap(stage);
+            List<string> map = LoadMap(stage);
 
             var result = new SpriteTypeEnum[CapacityX, CapacityY];
             for (int j = 0; j < CapacityY; j++)
@@ -147,7 +144,7 @@ namespace Land.Classes
                 result[15 + i, 0] = SpriteTypeEnum.Space;
                 result[30 + i, 0] = SpriteTypeEnum.Space;
             }
-            
+
             //exit door render
             result[1, 0] = SpriteTypeEnum.ExitDoorLeft;
             result[2, 0] = SpriteTypeEnum.ExitDoorRight;

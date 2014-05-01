@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Land.Classes;
 using Land.Common;
 using Land.Enums;
@@ -11,9 +8,9 @@ namespace Land.Components.Actors
 {
     public class Wall : BaseGameComponent
     {
-        private TimeSpan _moveInterval;
         private const int SpeedCoef = 70;
         private readonly Room _room;
+        private TimeSpan _moveInterval;
 
         public Wall(TheGame game, Room room)
             : base(game)
@@ -34,7 +31,6 @@ namespace Land.Components.Actors
         }
 
 
-
         public override void Update(GameTime gameTime)
         {
             _moveInterval = _moveInterval - gameTime.ElapsedGameTime;
@@ -44,13 +40,13 @@ namespace Land.Components.Actors
                 {
                     for (int y = 0; y < Maps.CapacityY; y++)
                     {
-                        if (_room[x,y] >= SpriteTypeEnum.WallLive1 && _room[x,y] <= SpriteTypeEnum.WallLive3)
+                        if (_room[x, y] >= SpriteTypeEnum.WallLive1 && _room[x, y] <= SpriteTypeEnum.WallLive3)
                         {
                             _room[x, y] = GetSprite(_room[x, y]);
                         }
                     }
                 }
-                _moveInterval = new TimeSpan(Game.GameSpeedScaleFactor * SpeedCoef);
+                _moveInterval = new TimeSpan(Game.GameSpeedScaleFactor*SpeedCoef);
             }
         }
     }

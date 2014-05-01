@@ -1,44 +1,23 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Runtime.ConstrainedExecution;
-using System.Runtime.Remoting.Messaging;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
-using System.Text;
-using System.Xml;
+using Land.Classes;
 using Land.Common;
 using Land.Enums;
 using Land.Utils;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using Land.Classes;
 
 namespace Land.Components.Actors
 {
     public class Hero : BaseActor
     {
-        private enum ShootStageEnum
-        {
-            None,
-            Preparation,
-            Fire
-        }
-
-        private DirectionEnum _shootDirection;
-        private KeyboardState _oldState;
+        private readonly Bullet _bullet;
+        private int _bioMassAttempts;
         private bool _heroIdleDivider;
         private DirectionEnum _heroIdleHeadDirection = DirectionEnum.Left;
         private bool _isInBiomass;
-        private ShootStageEnum _shootStage ;
-
-        public event EventHandler OnRoomFinished;
-        public event EventHandler OnLifeFired;
-        public event EventHandler OnChestHappened;
-
-        private int _bioMassAttempts;
-        private readonly Bullet _bullet;
+        private KeyboardState _oldState;
+        private DirectionEnum _shootDirection;
+        private ShootStageEnum _shootStage;
 
         public Hero(TheGame game, Room room, Bullet bullet)
             : base(game, room)
@@ -46,19 +25,11 @@ namespace Land.Components.Actors
             _bullet = bullet;
         }
 
-        public void Reset()
-        {
-            _isInBiomass = false;
-            _bioMassAttempts = 15;
-            _shootDirection = DirectionEnum.None;
-            base.Reset(1, 14);
-        }
-
         private int ChestCount
         {
             get
             {
-                var chestCount = 0;
+                int chestCount = 0;
                 for (int i = 0; i < Maps.CapacityX; i++)
                 {
                     for (int j = 0; j < Maps.CapacityY; j++)
@@ -69,16 +40,26 @@ namespace Land.Components.Actors
                 }
                 return chestCount;
             }
+        }
 
+        public event EventHandler OnRoomFinished;
+        public event EventHandler OnLifeFired;
+        public event EventHandler OnChestHappened;
+
+        public void Reset()
+        {
+            _isInBiomass = false;
+            _bioMassAttempts = 15;
+            _shootDirection = DirectionEnum.None;
+            base.Reset(1, 14);
         }
 
         protected override SpriteTypeEnum GetSprite(bool isFalling, SpriteTypeEnum oldSprite)
         {
-
             if (_shootStage == ShootStageEnum.Fire)
             {
                 _shootStage = ShootStageEnum.None;
-                var direction = _shootDirection;
+                DirectionEnum direction = _shootDirection;
                 if (direction == DirectionEnum.Left)
                     return SpriteTypeEnum.HeroShotLeft;
                 return SpriteTypeEnum.HeroShotRight;
@@ -155,17 +136,16 @@ namespace Land.Components.Actors
                     return SpriteTypeEnum.HeroMoveLeft4;
                 return SpriteTypeEnum.HeroMoveLeft1;
             }
-            else
-                if (Direction == DirectionEnum.Right)
-                {
-                    if (oldSprite == SpriteTypeEnum.HeroMoveRight1)
-                        return SpriteTypeEnum.HeroMoveRight2;
-                    if (oldSprite == SpriteTypeEnum.HeroMoveRight2)
-                        return SpriteTypeEnum.HeroMoveRight3;
-                    if (oldSprite == SpriteTypeEnum.HeroMoveRight3)
-                        return SpriteTypeEnum.HeroMoveRight4;
-                    return SpriteTypeEnum.HeroMoveRight1;
-                }
+            if (Direction == DirectionEnum.Right)
+            {
+                if (oldSprite == SpriteTypeEnum.HeroMoveRight1)
+                    return SpriteTypeEnum.HeroMoveRight2;
+                if (oldSprite == SpriteTypeEnum.HeroMoveRight2)
+                    return SpriteTypeEnum.HeroMoveRight3;
+                if (oldSprite == SpriteTypeEnum.HeroMoveRight3)
+                    return SpriteTypeEnum.HeroMoveRight4;
+                return SpriteTypeEnum.HeroMoveRight1;
+            }
             return SpriteTypeEnum.HeroIdle;
         }
 
@@ -225,7 +205,7 @@ namespace Land.Components.Actors
 
         protected override bool ProcessFalling()
         {
-            var isFalling = base.ProcessFalling();
+            bool isFalling = base.ProcessFalling();
             if (isFalling && _shootStage != ShootStageEnum.None)
             {
                 Y--;
@@ -267,6 +247,13 @@ namespace Land.Components.Actors
                     X++;
             }
             base.ActorUpdate(gameTime);
+        }
+
+        private enum ShootStageEnum
+        {
+            None,
+            Preparation,
+            Fire
         }
     }
 }

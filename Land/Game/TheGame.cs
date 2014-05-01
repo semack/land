@@ -15,24 +15,17 @@ namespace Land
     public class TheGame : Game
     {
         private readonly GraphicsDeviceManager _graphics;
-        private readonly Splash _splash;
         private readonly Room _room;
+        private readonly Splash _splash;
         private KeyboardState _oldKeyState;
-
-        public BackColorEnum BackColor
-        {
-            get; set;
-        }
-
-        public int GameSpeedScaleFactor { get; private set; }
 
         public TheGame()
         {
             _graphics = new GraphicsDeviceManager(this)
             {
                 IsFullScreen = false,
-                PreferredBackBufferHeight = (Maps.CapacityY+2) * 32,
-                PreferredBackBufferWidth = Maps.CapacityX * 16
+                PreferredBackBufferHeight = (Maps.CapacityY + 2)*32,
+                PreferredBackBufferWidth = Maps.CapacityX*16
             };
             Content.RootDirectory = "Content";
 
@@ -47,21 +40,9 @@ namespace Land
             GameSpeedScaleFactor = 1000000;
         }
 
-        void OnRoomPlayingFinished(object sender, EventArgs e)
-        {
-            _room.Show(false);
-            _splash.Show(true);
-        }
+        public BackColorEnum BackColor { get; set; }
 
-        void OnPlayingStarted (object sender, PlayingStartedEventArgs e)
-        {
-            _splash.Show(false);
-            _splash.Visible = false;
-
-            _room.Reset(e.Range);
-            _room.Show(true);
-
-        }
+        public int GameSpeedScaleFactor { get; private set; }
 
         public GameSpritesCollection Sprites { get; private set; }
 
@@ -69,6 +50,21 @@ namespace Land
 
         public SpriteFont InfoFont { get; private set; }
         public SpriteFont GameFont { get; private set; }
+
+        private void OnRoomPlayingFinished(object sender, EventArgs e)
+        {
+            _room.Show(false);
+            _splash.Show(true);
+        }
+
+        private void OnPlayingStarted(object sender, PlayingStartedEventArgs e)
+        {
+            _splash.Show(false);
+            _splash.Visible = false;
+
+            _room.Reset(e.Range);
+            _room.Show(true);
+        }
 
         /// <summary>
         ///     Allows the game to perform any initialization it needs to before starting to run.
@@ -108,7 +104,7 @@ namespace Land
             KeyboardState state = Keyboard.GetState();
             if (state.IsKeyPressed(_oldKeyState, Keys.F11, Keys.F12))
             {
-                _graphics.IsFullScreen = state.IsKeyDown(Keys.F11);    
+                _graphics.IsFullScreen = state.IsKeyDown(Keys.F11);
                 _graphics.ApplyChanges();
             }
             else if (state.IsKeyPressed(_oldKeyState, Keys.PageUp, Keys.PageDown))
@@ -125,7 +121,7 @@ namespace Land
                 }
             }
             base.Update(gameTime);
-            _oldKeyState = state;         
+            _oldKeyState = state;
         }
     }
 }

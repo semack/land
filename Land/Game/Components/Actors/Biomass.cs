@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Land.Classes;
 using Land.Common;
 using Land.Enums;
@@ -11,9 +8,9 @@ namespace Land.Components.Actors
 {
     public class Biomass : BaseGameComponent
     {
-        private TimeSpan _moveInterval;
         private const int SpeedCoef = 2;
         private readonly Room _room;
+        private TimeSpan _moveInterval;
 
         public Biomass(TheGame game, Room room)
             : base(game)
@@ -67,12 +64,10 @@ namespace Land.Components.Actors
                                 _room[x - 1, y] = _room[x, y];
                                 _room[x, y] = SpriteTypeEnum.Space;
                             }
-
                         }
                     }
-
                 }
-                _moveInterval = new TimeSpan(Game.GameSpeedScaleFactor * SpeedCoef);
+                _moveInterval = new TimeSpan(Game.GameSpeedScaleFactor*SpeedCoef);
             }
         }
     }

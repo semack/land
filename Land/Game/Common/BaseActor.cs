@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using Land.Classes;
 using Land.Components;
 using Land.Enums;
@@ -13,16 +8,11 @@ namespace Land.Common
 {
     public abstract class BaseActor : BaseDrawableGameComponent
     {
-        private TimeSpan _moveInterval;
-        private bool _isFalling;
-
-        private int SpeedCoef;
+        private readonly int _speedCoef;
 
         private SpriteTypeEnum _heroSprite = SpriteTypeEnum.Space;
-        protected DirectionEnum Direction { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
-        protected Room Room { get; private set; }
+        private bool _isFalling;
+        private TimeSpan _moveInterval;
 
         protected BaseActor(TheGame game, Room room, int speedCoef = 1)
             : base(game)
@@ -30,23 +20,29 @@ namespace Land.Common
             Room = room;
             Visible = false;
             Enabled = false;
-            SpeedCoef = speedCoef;
+            _speedCoef = speedCoef;
         }
+
+        protected DirectionEnum Direction { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        protected Room Room { get; private set; }
+
         protected virtual void Reset(int x, int y)
         {
             X = x;
             Y = y;
-            _isFalling = false;            
+            _isFalling = false;
             Direction = DirectionEnum.None;
             _moveInterval = new TimeSpan();
         }
 
         private bool HasNoStrongHold(SpriteTypeEnum sprite, bool isFalling = false)
         {
-            var result = Maps.IsBiomass(sprite)
-                   || Maps.IsLiveWall(sprite)
-                   || Maps.IsSpace(sprite)
-                   || Maps.IsChest(sprite);
+            bool result = Maps.IsBiomass(sprite)
+                          || Maps.IsLiveWall(sprite)
+                          || Maps.IsSpace(sprite)
+                          || Maps.IsChest(sprite);
             if (isFalling && !result)
                 result = Maps.IsFloor(sprite);
             return result;
@@ -54,20 +50,20 @@ namespace Land.Common
 
         protected virtual bool ProcessFalling()
         {
-            var cur1 = Room[X, Y];
-            var cur2 = Room[X + 1, Y];
-            var pos1 = Room[X, Y + 1];
-            var pos2 = Room[X + 1, Y + 1];
+            SpriteTypeEnum cur1 = Room[X, Y];
+            SpriteTypeEnum cur2 = Room[X + 1, Y];
+            SpriteTypeEnum pos1 = Room[X, Y + 1];
+            SpriteTypeEnum pos2 = Room[X + 1, Y + 1];
 
             if (_isFalling) // TODO допилить проверку! одна из смолы, падаем если смола под ногами.
             {
-                _isFalling = HasNoStrongHold(pos1, true) && HasNoStrongHold(pos2, true) 
-                    && !(Maps.IsBiomass(cur1) && Maps.IsBiomass(cur2));
+                _isFalling = HasNoStrongHold(pos1, true) && HasNoStrongHold(pos2, true)
+                             && !(Maps.IsBiomass(cur1) && Maps.IsBiomass(cur2));
             }
             else
-                _isFalling = HasNoStrongHold(pos1) && HasNoStrongHold(pos2) 
-                    && !(Maps.IsStairs(cur1) || Maps.IsStairs(cur2));
-                    
+                _isFalling = HasNoStrongHold(pos1) && HasNoStrongHold(pos2)
+                             && !(Maps.IsStairs(cur1) || Maps.IsStairs(cur2));
+
             if (_isFalling)
                 Y++;
             return _isFalling;
@@ -77,8 +73,8 @@ namespace Land.Common
         {
             if (Direction == DirectionEnum.Down || Direction == DirectionEnum.Up)
             {
-                var cur1 = Room[X, Y];
-                var cur2 = Room[X + 1, Y];
+                SpriteTypeEnum cur1 = Room[X, Y];
+                SpriteTypeEnum cur2 = Room[X + 1, Y];
                 if (cur1 == SpriteTypeEnum.StairsRight)
                     X--;
                 if (cur2 == SpriteTypeEnum.StairsLeft)
@@ -92,43 +88,41 @@ namespace Land.Common
             switch (direction)
             {
                 case DirectionEnum.Up:
-                    {
-                        if (Y == 0)
-                            break;
-                        var cur1 = Room[X, Y];
-                        var cur2 = Room[X + 1, Y];
-                        var pos1 = Room[X, Y - 1];
-                        var pos2 = Room[X + 1, Y - 1];
-                        result = ((Maps.IsStairs(cur1) || Maps.IsStairs(cur2)) && !(Maps.IsWall(pos1) || Maps.IsWall(pos2)));
+                {
+                    if (Y == 0)
                         break;
-                    }
+                    SpriteTypeEnum cur1 = Room[X, Y];
+                    SpriteTypeEnum cur2 = Room[X + 1, Y];
+                    SpriteTypeEnum pos1 = Room[X, Y - 1];
+                    SpriteTypeEnum pos2 = Room[X + 1, Y - 1];
+                    result = ((Maps.IsStairs(cur1) || Maps.IsStairs(cur2)) && !(Maps.IsWall(pos1) || Maps.IsWall(pos2)));
+                    break;
+                }
                 case DirectionEnum.Down:
-                    {
-                        if (Y == 16)
-                            break;
-                        var pos1 = Room[X, Y + 1];
-                        var pos2 = Room[X + 1, Y + 1];
-                        result = !(Maps.IsWall(pos1) || Maps.IsWall(pos2)) && !(Maps.IsFloor(pos1) || Maps.IsFloor(pos2));
-                        //if (result && !_isFalling)
-                            //return !(Maps.IsFloor(pos1) && Maps.IsFloor(pos2));
+                {
+                    if (Y == 16)
                         break;
-                    }
+                    SpriteTypeEnum pos1 = Room[X, Y + 1];
+                    SpriteTypeEnum pos2 = Room[X + 1, Y + 1];
+                    result = !(Maps.IsWall(pos1) || Maps.IsWall(pos2)) && !(Maps.IsFloor(pos1) || Maps.IsFloor(pos2));
+                    break;
+                }
                 case DirectionEnum.Left:
-                    {
-                        if (X == 0)
-                            break;
-                        var pos = Room[X - 1, Y];
-                        result = !Maps.IsWall(pos);
+                {
+                    if (X == 0)
                         break;
-                    }
+                    SpriteTypeEnum pos = Room[X - 1, Y];
+                    result = !Maps.IsWall(pos);
+                    break;
+                }
                 case DirectionEnum.Right:
-                    {
-                        if (X == 49)
-                            break;
-                        var pos = Room[X + 2, Y];
-                        result = !Maps.IsWall(pos);
+                {
+                    if (X == 49)
                         break;
-                    }
+                    SpriteTypeEnum pos = Room[X + 2, Y];
+                    result = !Maps.IsWall(pos);
+                    break;
+                }
             }
             if (result)
                 CorrectHeroStairPosition();
@@ -140,42 +134,41 @@ namespace Land.Common
             switch (direction)
             {
                 case DirectionEnum.Left:
-                    {
-                        if (CanMove(DirectionEnum.Left))
-                            X--;
-                        else
-                            Direction = DirectionEnum.None;
-                        break;
-                    }
+                {
+                    if (CanMove(DirectionEnum.Left))
+                        X--;
+                    else
+                        Direction = DirectionEnum.None;
+                    break;
+                }
                 case DirectionEnum.Right:
-                    {
-                        if (CanMove(DirectionEnum.Right))
-                            X++;
-                        else
-                            Direction = DirectionEnum.None;
-                        break;
-                    }
+                {
+                    if (CanMove(DirectionEnum.Right))
+                        X++;
+                    else
+                        Direction = DirectionEnum.None;
+                    break;
+                }
                 case DirectionEnum.Down:
-                    {
-                        if (CanMove(DirectionEnum.Down))
-                            Y++;
-                        else
-                            Direction = DirectionEnum.None;
-                        break;
-                    }
+                {
+                    if (CanMove(DirectionEnum.Down))
+                        Y++;
+                    else
+                        Direction = DirectionEnum.None;
+                    break;
+                }
                 case DirectionEnum.Up:
-                    {
-                        if (CanMove(DirectionEnum.Up))
-                            Y--;
-                        else
-                            Direction = DirectionEnum.None;
-                        break;
-                    }
+                {
+                    if (CanMove(DirectionEnum.Up))
+                        Y--;
+                    else
+                        Direction = DirectionEnum.None;
+                    break;
+                }
             }
         }
 
         protected abstract SpriteTypeEnum GetSprite(bool isFalling, SpriteTypeEnum oldSprite);
-
 
 
         public override void Update(GameTime gameTime)
@@ -184,7 +177,7 @@ namespace Land.Common
             if (_moveInterval.Ticks <= 0)
             {
                 ActorUpdate(gameTime);
-                _moveInterval = new TimeSpan(Game.GameSpeedScaleFactor * SpeedCoef);
+                _moveInterval = new TimeSpan(Game.GameSpeedScaleFactor*_speedCoef);
             }
             base.Update(gameTime);
         }
@@ -202,7 +195,8 @@ namespace Land.Common
         public override void Draw(GameTime gameTime)
         {
             Game.SpriteBatch.Begin();
-            Game.SpriteBatch.Draw(Game.Sprites[_heroSprite, Game.BackColor].Texture, new Vector2(X * 16, (Y + 2) * 32), Color.White);
+            Game.SpriteBatch.Draw(Game.Sprites[_heroSprite, Game.BackColor].Texture, new Vector2(X*16, (Y + 2)*32),
+                Color.White);
             Game.SpriteBatch.End();
             base.Draw(gameTime);
         }

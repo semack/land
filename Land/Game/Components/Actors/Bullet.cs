@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Resources;
-using System.Security;
-using System.Text;
 using Land.Classes;
 using Land.Common;
 using Land.Enums;
@@ -13,18 +8,19 @@ namespace Land.Components.Actors
 {
     public class Bullet : BaseDrawableGameComponent
     {
+        private const int SpeedCoef = 1;
+        private readonly Room _room;
         private DirectionEnum _direction = DirectionEnum.None;
         private TimeSpan _moveInterval;
-        private const int SpeedCoef = 1;
-        private int _x { get; set; }
-        private int _y { get; set; }
-        private Room _room;
 
         public Bullet(TheGame game, Room room)
             : base(game)
         {
             _room = room;
         }
+
+        private int _x { get; set; }
+        private int _y { get; set; }
 
         public bool IsActive
         {
@@ -40,10 +36,9 @@ namespace Land.Components.Actors
 
         public void Move()
         {
-
             if (_direction != DirectionEnum.None)
             {
-                var delta = 1;
+                int delta = 1;
                 if (_direction == DirectionEnum.Left)
                     delta = -1;
                 if (!Maps.IsWall(_room[_x + delta, _y]))
@@ -59,7 +54,6 @@ namespace Land.Components.Actors
                     _direction = DirectionEnum.None;
                 }
             }
-            
         }
 
         public override void Update(GameTime gameTime)
@@ -68,7 +62,7 @@ namespace Land.Components.Actors
             if (_moveInterval.Ticks <= 0)
             {
                 Move();
-                _moveInterval = new TimeSpan(Game.GameSpeedScaleFactor * SpeedCoef);
+                _moveInterval = new TimeSpan(Game.GameSpeedScaleFactor*SpeedCoef);
             }
             base.Update(gameTime);
         }

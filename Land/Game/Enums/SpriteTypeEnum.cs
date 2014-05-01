@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Land.Enums
+﻿namespace Land.Enums
 {
     public enum SpriteTypeEnum
     {
@@ -19,7 +14,7 @@ namespace Land.Enums
         Floor = 5,
         Chest = 6,
         ExitDoorLeft = 71,
-        ExitDoorRight =72,
+        ExitDoorRight = 72,
 
         Delimiter = 500,
         ScoreLabel = 510,

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using Land.Classes;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 
 namespace Land.Common
 {
@@ -18,13 +12,12 @@ namespace Land.Common
         public new TheGame Game
         {
             get { return base.Game as TheGame; }
-
         }
+
         public virtual void Show(bool value = true)
         {
             Enabled = value;
             Visible = value;
         }
-
     }
 }

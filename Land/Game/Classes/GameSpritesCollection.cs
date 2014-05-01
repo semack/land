@@ -19,28 +19,9 @@ namespace Land.Classes
             LoadAllSprites();
         }
 
-        private static IEnumerable<T> GetValues<T>()
+        public GameSprite this[SpriteTypeEnum itemType, BackColorEnum backColor]
         {
-            return Enum.GetValues(typeof(T)).Cast<T>();
-        }
-
-
-        private void LoadAllSprites()
-        {
-            _collection.Clear();
-            LoadSprites(BackColorEnum.White);
-            LoadSprites(BackColorEnum.Black);
-        }
-
-        private void LoadSprites(BackColorEnum backColor)
-        {
-            foreach (var itemType in GetValues<SpriteTypeEnum>())
-            {
-                var texturePath = string.Format(@"{0}\{1}", backColor, itemType);
-                var texture = _content.Load<Texture2D>(texturePath);
-                var item = new GameSprite(itemType, texture, backColor);
-                _collection.Add(item);
-            }
+            get { return _collection.FirstOrDefault(c => c.ItemType == itemType && c.BackColor == backColor); }
         }
 
         public void Add(GameSprite item)
@@ -68,14 +49,6 @@ namespace Land.Classes
             get { return _collection.Count; }
         }
 
-        public GameSprite this[SpriteTypeEnum itemType, BackColorEnum backColor] 
-        {
-            get
-            {
-                return _collection.FirstOrDefault(c => c.ItemType == itemType && c.BackColor == backColor);
-            }
-        }
-
         public bool IsReadOnly
         {
             get { return true; }
@@ -94,6 +67,30 @@ namespace Land.Classes
         IEnumerator IEnumerable.GetEnumerator()
         {
             return _collection.GetEnumerator();
+        }
+
+        private static IEnumerable<T> GetValues<T>()
+        {
+            return Enum.GetValues(typeof (T)).Cast<T>();
+        }
+
+
+        private void LoadAllSprites()
+        {
+            _collection.Clear();
+            LoadSprites(BackColorEnum.White);
+            LoadSprites(BackColorEnum.Black);
+        }
+
+        private void LoadSprites(BackColorEnum backColor)
+        {
+            foreach (SpriteTypeEnum itemType in GetValues<SpriteTypeEnum>())
+            {
+                string texturePath = string.Format(@"{0}\{1}", backColor, itemType);
+                var texture = _content.Load<Texture2D>(texturePath);
+                var item = new GameSprite(itemType, texture, backColor);
+                _collection.Add(item);
+            }
         }
     }
 }

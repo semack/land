@@ -18,8 +18,8 @@ namespace Land.Components
     public class Splash : BaseDrawableGameComponent
     {
         private readonly StringBuilder _infoText = new StringBuilder();
-        private readonly Vector2 _infoVector = new Vector2(2 * 16, 17 * 32);
-        private readonly Vector2 _logoVector = new Vector2(4 * 16, 1 * 32);
+        private readonly Vector2 _infoVector = new Vector2(2*16, 17*32);
+        private readonly Vector2 _logoVector = new Vector2(4*16, 1*32);
         private BackColorEnum _backColor = BackColorEnum.Black;
         private DisplayModeEnum _displayMode = DisplayModeEnum.Splash;
         private KeyboardState _oldKeyState;
@@ -48,14 +48,14 @@ namespace Land.Components
                 Keys.D4, Keys.D5, Keys.D6, Keys.D7, Keys.D8, Keys.D9))
             {
                 _displayMode = DisplayModeEnum.GameStart;
-                _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor * 20);
+                _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*20);
             }
 
             _splashInterval = _splashInterval - gameTime.ElapsedGameTime;
             if (_splashInterval.Ticks < 0)
             {
                 _backColor = (_backColor == BackColorEnum.White ? BackColorEnum.Black : BackColorEnum.White);
-                _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor * 10);
+                _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*10);
             }
         }
 
@@ -66,7 +66,7 @@ namespace Land.Components
             {
                 _displayMode = DisplayModeEnum.Splash;
                 int? range = null;
-                string value = Encoding.ASCII.GetString(new[] { (byte)state.GetPressedKeys()[0] });
+                string value = Encoding.ASCII.GetString(new[] {(byte) state.GetPressedKeys()[0]});
                 int newRange;
                 if (int.TryParse(value, out newRange))
                     range = newRange;
@@ -117,13 +117,13 @@ namespace Land.Components
                 {
                     if (i == 0 || i == Maps.CapacityX - 1)
                         spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.StoneWall, _backColor].Texture,
-                            new Vector2(i * 16, j * 32), Color.White);
+                            new Vector2(i*16, j*32), Color.White);
                     if (j == 0 || j == Maps.CapacityY + 2 - 1)
                         spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.StoneWall, _backColor].Texture,
-                            new Vector2(i * 16, j * 32), Color.White);
+                            new Vector2(i*16, j*32), Color.White);
                 }
             }
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.YourRangeLabel, _backColor].Texture, new Vector2(20 * 16, 8 * 32),
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.YourRangeLabel, _backColor].Texture, new Vector2(20*16, 8*32),
                 Color.White);
         }
 

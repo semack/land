@@ -7,7 +7,7 @@ namespace Land.Utils
         public static bool IsKeyPressed(this KeyboardState state, KeyboardState oldState, params Keys[] keys)
         {
             bool result = false;
-            foreach (var key in keys)
+            foreach (Keys key in keys)
             {
                 result = state.IsKeyDown(key) && oldState.IsKeyUp(key);
                 if (result)

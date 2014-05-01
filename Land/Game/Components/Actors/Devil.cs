@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Xml;
 using Land.Classes;
 using Land.Common;
 using Land.Enums;
@@ -11,7 +6,6 @@ using Microsoft.Xna.Framework;
 
 namespace Land.Components.Actors
 {
-
     public enum DevilNumberEnum
     {
         First,
@@ -23,8 +17,6 @@ namespace Land.Components.Actors
         private readonly Hero _hero;
         private bool _isHeroCaught;
         private int _isHeroCaughtAnimation;
-        public event EventHandler OnLifeFired;
-        public DevilNumberEnum Number { get; private set; }
 
         public Devil(TheGame game, Room room, Hero hero, DevilNumberEnum number)
             : base(game, room, 3)
@@ -32,6 +24,9 @@ namespace Land.Components.Actors
             Number = number;
             _hero = hero;
         }
+
+        public DevilNumberEnum Number { get; private set; }
+        public event EventHandler OnLifeFired;
 
         public void Reset()
         {
@@ -119,7 +114,7 @@ namespace Land.Components.Actors
             if (Maps.IsBiomass(Room[X, Y]) && Maps.IsBiomass(Room[X + 1, Y]))
                 Reset();
             else if ((_hero.X == X || _hero.X + 1 == X || _hero.X + 1 == X || _hero.X + 1 == X + 1)
-                && (_hero.Y == Y || _hero.Y + 1 == Y || _hero.Y + 1 == Y || _hero.Y + 1 == Y + 1))
+                     && (_hero.Y == Y || _hero.Y + 1 == Y || _hero.Y + 1 == Y || _hero.Y + 1 == Y + 1))
             {
                 _isHeroCaught = true;
             }

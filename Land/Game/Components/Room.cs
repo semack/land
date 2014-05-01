@@ -1,56 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
 using Land.Classes;
 using Land.Common;
 using Land.Components.Actors;
+using Land.Enums;
 using Land.Utils;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Land.Enums;
 
 namespace Land.Components
 {
     public class Room : BaseDrawableGameComponent
     {
-        private SpriteTypeEnum[,] _map;
-        private KeyboardState _oldKeyState;
-        private int _stage;
-        private int _attempts;
-        private int _range;
-        private int _score;
-        private readonly Hero _hero;
         private readonly Biomass _biomass;
         private readonly Bullet _bullet;
-        private readonly Wall _wall;
         private readonly Devil _devil1;
         private readonly Devil _devil2;
+        private readonly Hero _hero;
+        private readonly Wall _wall;
+        private int _attempts;
+        private SpriteTypeEnum[,] _map;
+        private KeyboardState _oldKeyState;
+        private int _range;
+        private int _score;
+        private int _stage;
 
-        public SpriteTypeEnum this[int x, int y]
-        {
-            get
-            {
-                return _map[x, y];
-            }
-            set
-            {
-                _map[x, y] = value;
-            }
-        }
-
-        private Color BackColor
-        {
-            get
-            {
-                return Game.BackColor == BackColorEnum.White ? Color.White : Color.Black;
-            }
-        }
-
-        public event EventHandler OnPlayingFinished;
         public Room(TheGame game)
             : base(game)
         {
@@ -68,12 +42,25 @@ namespace Land.Components
             Reset();
         }
 
-        void OnHeroRoomFinished(object sender, EventArgs e)
+        public SpriteTypeEnum this[int x, int y]
+        {
+            get { return _map[x, y]; }
+            set { _map[x, y] = value; }
+        }
+
+        private Color BackColor
+        {
+            get { return Game.BackColor == BackColorEnum.White ? Color.White : Color.Black; }
+        }
+
+        public event EventHandler OnPlayingFinished;
+
+        private void OnHeroRoomFinished(object sender, EventArgs e)
         {
             SetNextStage();
         }
 
-        void OnHeroLifeFired(object sender, EventArgs e)
+        private void OnHeroLifeFired(object sender, EventArgs e)
         {
             _attempts--;
             if (_attempts <= 0)
@@ -85,7 +72,7 @@ namespace Land.Components
                 SetStage(_stage);
         }
 
-        void OnHeroChestHappened(object sender, EventArgs e)
+        private void OnHeroChestHappened(object sender, EventArgs e)
         {
             _score += 13;
             if (_score > 99999)
@@ -98,7 +85,7 @@ namespace Land.Components
             _stage = 1;
             _attempts = 20;
             if (range != null)
-                _range = (int)range;
+                _range = (int) range;
             SetStage(_stage);
         }
 
@@ -164,19 +151,28 @@ namespace Land.Components
 
         private void DrawInfoPanel(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.ScoreLabel, Game.BackColor].Texture, new Vector2(1 * 16, 0), Color.White);
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.RangeLabel, Game.BackColor].Texture, new Vector2(16 * 16, 0), Color.White);
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.AttemptsLabel, Game.BackColor].Texture, new Vector2(27 * 16, 0), Color.White);
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.StageLabel, Game.BackColor].Texture, new Vector2(42 * 16, 0), Color.White);
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.ScoreLabel, Game.BackColor].Texture, new Vector2(1*16, 0),
+                Color.White);
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.RangeLabel, Game.BackColor].Texture, new Vector2(16*16, 0),
+                Color.White);
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.AttemptsLabel, Game.BackColor].Texture, new Vector2(27*16, 0),
+                Color.White);
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.StageLabel, Game.BackColor].Texture, new Vector2(42*16, 0),
+                Color.White);
             for (int i = 0; i < Maps.CapacityX; i++)
             {
-                spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.Delimiter, Game.BackColor].Texture, new Vector2(i * 16, 1 * 32), Color.White);
+                spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.Delimiter, Game.BackColor].Texture, new Vector2(i*16, 1*32),
+                    Color.White);
             }
 
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D5}", _score), new Vector2(7 * 16, 0), BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _range), new Vector2(22 * 16, 0), BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _attempts), new Vector2(36 * 16, 0), BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _stage), new Vector2(46 * 16, 0), BackColor == Color.White ? Color.Black : Color.White);
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D5}", _score), new Vector2(7*16, 0),
+                BackColor == Color.White ? Color.Black : Color.White);
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _range), new Vector2(22*16, 0),
+                BackColor == Color.White ? Color.Black : Color.White);
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _attempts), new Vector2(36*16, 0),
+                BackColor == Color.White ? Color.Black : Color.White);
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _stage), new Vector2(46*16, 0),
+                BackColor == Color.White ? Color.Black : Color.White);
         }
 
         public override void Draw(GameTime gameTime)
@@ -189,8 +185,9 @@ namespace Land.Components
             {
                 for (int y = 0; y < Maps.CapacityY; y++)
                 {
-                    var item = this[x, y];
-                    Game.SpriteBatch.Draw(Game.Sprites[item, Game.BackColor].Texture, new Vector2(x * 16, (y + 2) * 32), Color.White);
+                    SpriteTypeEnum item = this[x, y];
+                    Game.SpriteBatch.Draw(Game.Sprites[item, Game.BackColor].Texture, new Vector2(x*16, (y + 2)*32),
+                        Color.White);
                 }
             }
             Game.SpriteBatch.End();
