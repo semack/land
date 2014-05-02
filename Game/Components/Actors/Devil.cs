@@ -113,8 +113,8 @@ namespace Land.Components.Actors
         {
             if (Maps.IsBiomass(Room[X, Y]) && Maps.IsBiomass(Room[X + 1, Y]))
                 Reset();
-            else if ((_hero.X == X || _hero.X + 1 == X || _hero.X + 1 == X || _hero.X + 1 == X + 1)
-                     && (_hero.Y == Y || _hero.Y + 1 == Y || _hero.Y + 1 == Y || _hero.Y + 1 == Y + 1))
+            else if ((_hero.X == X || _hero.X + 1 == X || _hero.X == X + 1 || _hero.X + 1 == X + 1)
+                     && (_hero.Y == Y))
             {
                 _isHeroCaught = true;
             }
