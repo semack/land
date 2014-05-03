@@ -69,19 +69,6 @@ namespace Land.Common
             return _isFalling;
         }
 
-        private void CorrectHeroStairPosition()
-        {
-            if (Direction == DirectionEnum.Down || Direction == DirectionEnum.Up)
-            {
-                SpriteTypeEnum cur1 = Room[X, Y];
-                SpriteTypeEnum cur2 = Room[X + 1, Y];
-                if (cur1 == SpriteTypeEnum.StairsRight)
-                    X--;
-                if (cur2 == SpriteTypeEnum.StairsLeft)
-                    X++;
-            }
-        }
-
         protected virtual bool CanMove(DirectionEnum direction)
         {
             bool result = false;
@@ -124,8 +111,6 @@ namespace Land.Common
                     break;
                 }
             }
-            if (result)
-                CorrectHeroStairPosition();
             return result;
         }
 
@@ -137,7 +122,7 @@ namespace Land.Common
                 {
                     if (CanMove(DirectionEnum.Left))
                         X--;
-                    //else
+                    else
                         Direction = DirectionEnum.None;
                     break;
                 }

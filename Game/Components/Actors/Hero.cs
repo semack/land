@@ -149,6 +149,20 @@ namespace Land.Components.Actors
             return SpriteTypeEnum.HeroIdle;
         }
 
+
+        private void CorrectHeroStairPosition()
+        {
+            if (Direction == DirectionEnum.Down || Direction == DirectionEnum.Up)
+            {
+                SpriteTypeEnum cur1 = Room[X, Y];
+                SpriteTypeEnum cur2 = Room[X + 1, Y];
+                if (cur1 == SpriteTypeEnum.StairsRight)
+                    X--;
+                if (cur2 == SpriteTypeEnum.StairsLeft)
+                    X++;
+            }
+        }
+
         protected override bool CanMove(DirectionEnum direction)
         {
             if (Direction == DirectionEnum.Up) // Exiting via Door
@@ -159,11 +173,12 @@ namespace Land.Components.Actors
                     {
                         OnRoomFinished(this, new EventArgs());
                     }
-                    else
-                        return false;
                 }
             }
-            return base.CanMove(direction);
+            bool result = base.CanMove(direction);
+            if (result)
+                CorrectHeroStairPosition();
+            return result;
         }
 
         public override void Update(GameTime gameTime)
