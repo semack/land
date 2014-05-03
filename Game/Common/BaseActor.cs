@@ -137,7 +137,7 @@ namespace Land.Common
                 {
                     if (CanMove(DirectionEnum.Left))
                         X--;
-                    else
+                    //else
                         Direction = DirectionEnum.None;
                     break;
                 }

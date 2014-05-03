@@ -18,6 +18,9 @@ namespace Land.Components.Actors
         private bool _isHeroCaught;
         private int _isHeroCaughtAnimation;
 
+        private DirectionEnum _horizontalDirection = DirectionEnum.None;
+        private DirectionEnum _verticalDirection = DirectionEnum.None;
+
         public Devil(TheGame game, Room room, Hero hero, DevilNumberEnum number)
             : base(game, room, 3)
         {
@@ -93,18 +96,19 @@ namespace Land.Components.Actors
 
         public override void Update(GameTime gameTime)
         {
-            Direction = DirectionEnum.None;
+
+            _horizontalDirection = DirectionEnum.None;
+            _verticalDirection = DirectionEnum.None;
             if (!_isHeroCaught)
             {
                 if (X > _hero.X && CanMove(DirectionEnum.Left))
-                    Direction = DirectionEnum.Left;
+                    _horizontalDirection = DirectionEnum.Left;
                 else if (X < _hero.X && CanMove(DirectionEnum.Right))
-                    Direction = DirectionEnum.Right;
-
+                    _horizontalDirection = DirectionEnum.Right;
                 if (Y > _hero.Y && CanMove(DirectionEnum.Up))
-                    Direction = DirectionEnum.Up;
+                    _verticalDirection = DirectionEnum.Up;
                 else if (Y < _hero.Y && CanMove(DirectionEnum.Down))
-                    Direction = DirectionEnum.Down;
+                    _verticalDirection = DirectionEnum.Down;
             }
             base.Update(gameTime);
         }
@@ -119,6 +123,19 @@ namespace Land.Components.Actors
                 _isHeroCaught = true;
             }
             base.ActorUpdate(gameTime);
+        }
+
+        protected override void Move(DirectionEnum direction)
+        {
+            base.Move(_verticalDirection);
+            base.Move(_horizontalDirection);
+            if (_verticalDirection == DirectionEnum.None)
+                Direction = _horizontalDirection;
+            else
+                Direction = _verticalDirection;
+
+            //if (Direction == DirectionEnum.Left || Direction == DirectionEnum.Right)
+            //    Update();
         }
     }
 }
