@@ -39,6 +39,8 @@ namespace Land.Components.Actors
             if (Number == DevilNumberEnum.Second)
                 x = 30;
             base.Reset(x, 0);
+            _verticalDirection = DirectionEnum.None;
+            _horizontalDirection = DirectionEnum.None;
         }
 
         protected override SpriteTypeEnum GetSprite(bool isFalling, SpriteTypeEnum oldSprite)
@@ -129,10 +131,7 @@ namespace Land.Components.Actors
         {
             base.Move(_verticalDirection);
             base.Move(_horizontalDirection);
-            if (_verticalDirection == DirectionEnum.None)
-                Direction = _horizontalDirection;
-            else
-                Direction = _verticalDirection;
+            Direction = _verticalDirection == DirectionEnum.None ? _horizontalDirection : _verticalDirection;
 
             //if (Direction == DirectionEnum.Left || Direction == DirectionEnum.Right)
             //    Update();
