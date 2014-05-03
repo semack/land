@@ -5,6 +5,8 @@ The objective of the game is to collect all chests on the given level and get to
 
 Hint: you can get rid of the devil by immuring it in a brickwork.
 
+#BuiltWithMonoGame
+
 - *[MonoGame framework](http://www.monogame.net) is required to build the game.*
 
 Screenshots
