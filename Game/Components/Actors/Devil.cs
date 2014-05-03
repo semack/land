@@ -121,9 +121,7 @@ namespace Land.Components.Actors
                 Reset();
             else if ((_hero.X == X || _hero.X + 1 == X || _hero.X == X + 1 || _hero.X + 1 == X + 1)
                      && (_hero.Y == Y))
-            {
                 _isHeroCaught = true;
-            }
             base.ActorUpdate(gameTime);
         }
 
@@ -131,10 +129,7 @@ namespace Land.Components.Actors
         {
             base.Move(_verticalDirection);
             base.Move(_horizontalDirection);
-            Direction = _verticalDirection == DirectionEnum.None ? _horizontalDirection : _verticalDirection;
-
-            //if (Direction == DirectionEnum.Left || Direction == DirectionEnum.Right)
-            //    Update();
+            Direction = _verticalDirection != DirectionEnum.None ? _verticalDirection : _horizontalDirection;
         }
     }
 }
