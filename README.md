@@ -7,11 +7,11 @@ The objective of the game is to collect all chests on the given level and get to
 
 --
 #####Controls:
-Cursor keys     - moving direction </br>
-Z, X            - shooting left and right</br>
-Q               - restart game</br>
-;               - next stage</br>
-PgUp/PageDown  - game speed control
+Cursor keys     - moving direction
+Z, X            - shooting left and right
+Q               - restart game
+PgUp,PageDown  - game speed control
+;               - next stage
 --
 
 *[MonoGame framework](http://www.monogame.net) is required to compile the game.*
