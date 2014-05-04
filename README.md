@@ -12,7 +12,7 @@ Z, X            - shooting left and right
 Q               - restart game
 PgUp,PageDown  - game speed control
 ;               - next stage
---
+
 
 *[MonoGame framework](http://www.monogame.net) is required to compile the game.*
 
