@@ -52,6 +52,7 @@ namespace Land.Components.Actors
             IsInBiomass = false;
             _bioMassAttempts = 15;
             _shootDirection = DirectionEnum.None;
+            Visible = true;
             base.Reset(1, 14);
         }
 
@@ -147,20 +148,6 @@ namespace Land.Components.Actors
             return SpriteTypeEnum.HeroIdle;
         }
 
-
-        private void CorrectHeroStairPosition()
-        {
-            if (Direction == DirectionEnum.Down || Direction == DirectionEnum.Up)
-            {
-                SpriteTypeEnum cur1 = Room[X, Y];
-                SpriteTypeEnum cur2 = Room[X + 1, Y];
-                if (cur1 == SpriteTypeEnum.StairsRight)
-                    X--;
-                if (cur2 == SpriteTypeEnum.StairsLeft)
-                    X++;
-            }
-        }
-
         protected override bool CanMove(DirectionEnum direction)
         {
             if (Direction == DirectionEnum.Up) // Exiting via Door
@@ -173,9 +160,27 @@ namespace Land.Components.Actors
                     }
                 }
             }
-            bool result = base.CanMove(direction);
+            return base.CanMove(direction);
+        }
+
+        private void CorrectHeroStairPosition(DirectionEnum direction)
+        {
+            if (direction == DirectionEnum.Down || direction == DirectionEnum.Up)
+            {
+                SpriteTypeEnum cur1 = Room[X, Y];
+                SpriteTypeEnum cur2 = Room[X + 1, Y];
+                if (cur1 == SpriteTypeEnum.StairsRight)
+                    X--;
+                if (cur2 == SpriteTypeEnum.StairsLeft)
+                    X++;
+            }
+        }
+
+        protected override bool Move(DirectionEnum direction)
+        {
+            bool result = base.Move(direction);
             if (result)
-                CorrectHeroStairPosition();
+                CorrectHeroStairPosition(direction);
             return result;
         }
 

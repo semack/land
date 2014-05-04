@@ -96,7 +96,7 @@ namespace Land.Components.Actors
         }
 
 
-        public override void Update(GameTime gameTime)
+        protected override void ActorUpdate(GameTime gameTime)
         {
             _horizontalDirection = DirectionEnum.None;
             _verticalDirection = DirectionEnum.None;
@@ -111,11 +111,7 @@ namespace Land.Components.Actors
                 else if (Y < _hero.Y)
                     _verticalDirection = DirectionEnum.Down;
             }
-            base.Update(gameTime);
-        }
 
-        protected override void ActorUpdate(GameTime gameTime)
-        {
             if (Maps.IsBiomass(Room[X, Y]) && Maps.IsBiomass(Room[X + 1, Y]))
                 Reset();
             else if ((_hero.X == X || _hero.X + 1 == X || _hero.X == X + 1 || _hero.X + 1 == X + 1)
@@ -126,10 +122,16 @@ namespace Land.Components.Actors
 
         protected override bool Move(DirectionEnum direction)
         {
+            // devil movements related to original game
             if (!base.Move(_horizontalDirection))
                 _horizontalDirection = DirectionEnum.None;
-            if (!base.Move(_verticalDirection))
-                _verticalDirection = DirectionEnum.None;
+            if (
+                !(_horizontalDirection != DirectionEnum.None && Maps.IsStairs(Room[X, Y]) &&
+                  _verticalDirection == DirectionEnum.Up))
+            {
+                if (!base.Move(_verticalDirection))
+                    _verticalDirection = DirectionEnum.None;
+            }
             Direction = _verticalDirection != DirectionEnum.None ? _verticalDirection : _horizontalDirection;
             return true;
         }
