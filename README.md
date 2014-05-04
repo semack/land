@@ -5,8 +5,8 @@ The objective of the game is to collect all chests on the given level and get to
 
 Hint: you can get rid of the devil by immuring it in a brickwork.
 
-Controls
-'========='
+Controls:
+
 Cursor keys     - hero direction 
 Z, X            - shooting left and right
 Q               - restart game
