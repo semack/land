@@ -127,8 +127,10 @@ namespace Land.Components.Actors
 
         protected override bool Move(DirectionEnum direction)
         {
-            base.Move(_verticalDirection);
-            base.Move(_horizontalDirection);
+            if (!base.Move(_verticalDirection))
+                _verticalDirection = DirectionEnum.None;
+            if (!base.Move(_horizontalDirection))
+                _horizontalDirection = DirectionEnum.None;
             Direction = _verticalDirection != DirectionEnum.None ? _verticalDirection : _horizontalDirection;
             return true;
         }
