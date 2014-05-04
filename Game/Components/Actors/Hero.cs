@@ -14,7 +14,7 @@ namespace Land.Components.Actors
         private int _bioMassAttempts;
         private bool _heroIdleDivider;
         private DirectionEnum _heroIdleHeadDirection = DirectionEnum.Left;
-        private bool _isInBiomass;
+        public bool IsInBiomass { get; private set; }
         private KeyboardState _oldState;
         private DirectionEnum _shootDirection;
         private ShootStageEnum _shootStage;
@@ -48,7 +48,7 @@ namespace Land.Components.Actors
 
         public void Reset()
         {
-            _isInBiomass = false;
+            IsInBiomass = false;
             _bioMassAttempts = 15;
             _shootDirection = DirectionEnum.None;
             base.Reset(1, 14);
@@ -73,14 +73,11 @@ namespace Land.Components.Actors
                 return SpriteTypeEnum.HeroPrepareShotRight;
             }
 
-            if (_isInBiomass)
+            if (IsInBiomass)
             {
-                if (_isInBiomass)
-                {
-                    _bioMassAttempts--;
-                    if (_bioMassAttempts == 0 && OnLifeFired != null)
-                        OnLifeFired(this, new EventArgs());
-                }
+                _bioMassAttempts--;
+                if (_bioMassAttempts == 0 && OnLifeFired != null)
+                    OnLifeFired(this, new EventArgs());
 
                 if (oldSprite == SpriteTypeEnum.HeroInBiomass1)
                     return SpriteTypeEnum.HeroInBiomass2;
@@ -244,7 +241,7 @@ namespace Land.Components.Actors
             CheckChest(X + 1, Y);
             if (Maps.IsBiomass(Room[X, Y]) && Maps.IsBiomass(Room[X + 1, Y]))
             {
-                _isInBiomass = true;
+                IsInBiomass = true;
                 Direction = DirectionEnum.None;
             }
             if (_shootStage != ShootStageEnum.None)

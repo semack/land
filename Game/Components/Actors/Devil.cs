@@ -45,7 +45,7 @@ namespace Land.Components.Actors
 
         protected override SpriteTypeEnum GetSprite(bool isFalling, SpriteTypeEnum oldSprite)
         {
-            if (_isHeroCaught)
+            if (_isHeroCaught && !_hero.IsInBiomass)
             {
                 _hero.Visible = false;
                 _isHeroCaughtAnimation--;
