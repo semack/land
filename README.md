@@ -11,7 +11,7 @@ The objective of the game is to collect all chests on the given level and get to
 * Z, X            - shooting left and right
 * Q               - restart game
 * ;               - next stage
-* PgUp,PageDown  - game speed control
+* PgUp, PageDown  - game speed control
 
 > For developers: [MonoGame framework](http://www.monogame.net) is required to build the game.
 
