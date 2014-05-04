@@ -2,20 +2,20 @@
 Stage #N
                      
 01234567890123456789012345678901234567890123456780
-1][                                              1
-2```````````BBBBBBBBB```][``BBBBBBBBBBBBBBBBBBBBB2
-3                                                3
-4         ````````````````````````````           4
-5                                                5
-6                                                6
-7                                                7
-8                                                8
-9                                                9
-0                                                0
-1                                                1
-2                                                2 
-3                                                3
-4                                                4
+1][WW      CC      CC        C               BB  1
+2][WW  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB][2
+3][WW  BB C      C    C    B12341 C            ][3
+4][WW  BB][``][``BB``BB  ][``````][ C      CC  ][4
+5][WW  BB][BB][C BBC BBBB][  CC    WW C       C][5
+6][WW  BB][BB][CCBB  BB  ][````````  ][ C      ][6
+7][WW  BB][BB][ CBB  BB  ][            WW C    ][7
+8][WW  BB][BB][C BB CBBCC][12341234123412][  ][  8
+9][WWCCCC][BB][  BB  BBBB][``````````````  ][    9
+0][WWBBBBBBBBBBBBBB    B12341234123412341][  CC  0
+1][C                 ][BBBBBBCBBBBBBBBB][  ````  1
+2][      C B123412341][W            C][][C   CC  2 
+3  ``][BBBBBBBBBBBBCBBBW   CC   C    ][````````  3
+4    ][WW        B123   ```````````][1234123412344
 01234567890123456789012345678901234567890123456780
 
 Legend 
