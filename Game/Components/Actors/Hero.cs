@@ -14,7 +14,6 @@ namespace Land.Components.Actors
         private int _bioMassAttempts;
         private bool _heroIdleDivider;
         private DirectionEnum _heroIdleHeadDirection = DirectionEnum.Left;
-        public bool IsInBiomass { get; private set; }
         private KeyboardState _oldState;
         private DirectionEnum _shootDirection;
         private ShootStageEnum _shootStage;
@@ -24,6 +23,8 @@ namespace Land.Components.Actors
         {
             _bullet = bullet;
         }
+
+        public bool IsInBiomass { get; private set; }
 
         private int ChestCount
         {

@@ -15,10 +15,10 @@ namespace Land.Components.Actors
     public class Devil : BaseActor
     {
         private readonly Hero _hero;
+        private DirectionEnum _horizontalDirection = DirectionEnum.None;
         private bool _isHeroCaught;
         private int _isHeroCaughtAnimation;
 
-        private DirectionEnum _horizontalDirection = DirectionEnum.None;
         private DirectionEnum _verticalDirection = DirectionEnum.None;
 
         public Devil(TheGame game, Room room, Hero hero, DevilNumberEnum number)
@@ -98,18 +98,17 @@ namespace Land.Components.Actors
 
         public override void Update(GameTime gameTime)
         {
-
             _horizontalDirection = DirectionEnum.None;
             _verticalDirection = DirectionEnum.None;
             if (!_isHeroCaught)
             {
-                if (X > _hero.X && CanMove(DirectionEnum.Left))
+                if (X > _hero.X)
                     _horizontalDirection = DirectionEnum.Left;
-                else if (X < _hero.X && CanMove(DirectionEnum.Right))
+                else if (X < _hero.X)
                     _horizontalDirection = DirectionEnum.Right;
-                if (Y > _hero.Y && CanMove(DirectionEnum.Up))
+                if (Y > _hero.Y)
                     _verticalDirection = DirectionEnum.Up;
-                else if (Y < _hero.Y && CanMove(DirectionEnum.Down))
+                else if (Y < _hero.Y)
                     _verticalDirection = DirectionEnum.Down;
             }
             base.Update(gameTime);
