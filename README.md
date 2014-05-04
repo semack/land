@@ -8,6 +8,7 @@ Hint: you can get rid of the devil by immuring it in a brickwork.
 *[MonoGame framework](http://www.monogame.net) is required to build the game.*
 
 Watch video of gameplay
+
 [![ScreenShot](https://github.com/semack/land/blob/master/screen03.png?raw=true)](https://www.youtube.com/watch?v=jY17w-EBIBg)
 
 Screenshots
