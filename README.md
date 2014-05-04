@@ -13,7 +13,7 @@ The objective of the game is to collect all chests on the given level and get to
 * ;               - next stage
 * PgUp,PageDown  - game speed control
 
-> [MonoGame framework](http://www.monogame.net) is required to compile the game.
+> For developers: [MonoGame framework](http://www.monogame.net) is required to build the game.
 
 #####Gameplay video:
 [![ScreenShot](https://github.com/semack/land/blob/master/screen03.png?raw=true)](https://www.youtube.com/watch?v=jY17w-EBIBg)
