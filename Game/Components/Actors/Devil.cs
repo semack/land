@@ -33,7 +33,7 @@ namespace Land.Components.Actors
 
         public void Reset()
         {
-            _isHeroCaughtAnimation = 8;
+            _isHeroCaughtAnimation = 10;
             _isHeroCaught = false;
             int x = 15;
             if (Number == DevilNumberEnum.Second)
@@ -125,11 +125,12 @@ namespace Land.Components.Actors
             base.ActorUpdate(gameTime);
         }
 
-        protected override void Move(DirectionEnum direction)
+        protected override bool Move(DirectionEnum direction)
         {
             base.Move(_verticalDirection);
             base.Move(_horizontalDirection);
             Direction = _verticalDirection != DirectionEnum.None ? _verticalDirection : _horizontalDirection;
+            return true;
         }
     }
 }

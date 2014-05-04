@@ -114,8 +114,9 @@ namespace Land.Common
             return result;
         }
 
-        protected virtual void Move(DirectionEnum direction)
+        protected virtual bool Move(DirectionEnum direction)
         {
+            bool result = true;
             switch (direction)
             {
                 case DirectionEnum.Left:
@@ -123,7 +124,7 @@ namespace Land.Common
                     if (CanMove(DirectionEnum.Left))
                         X--;
                     else
-                        Direction = DirectionEnum.None;
+                        result = false;
                     break;
                 }
                 case DirectionEnum.Right:
@@ -131,7 +132,7 @@ namespace Land.Common
                     if (CanMove(DirectionEnum.Right))
                         X++;
                     else
-                        Direction = DirectionEnum.None;
+                        result = false;
                     break;
                 }
                 case DirectionEnum.Down:
@@ -139,7 +140,7 @@ namespace Land.Common
                     if (CanMove(DirectionEnum.Down))
                         Y++;
                     else
-                        Direction = DirectionEnum.None;
+                        result = false;
                     break;
                 }
                 case DirectionEnum.Up:
@@ -147,10 +148,11 @@ namespace Land.Common
                     if (CanMove(DirectionEnum.Up))
                         Y--;
                     else
-                        Direction = DirectionEnum.None;
+                        result = false;
                     break;
                 }
             }
+            return result;
         }
 
         protected abstract SpriteTypeEnum GetSprite(bool isFalling, SpriteTypeEnum oldSprite);
@@ -171,7 +173,10 @@ namespace Land.Common
         {
             ProcessFalling();
             if (!_isFalling)
-                Move(Direction);
+            {
+                if (!Move(Direction))
+                    Direction = DirectionEnum.None;
+            }
             else
                 Direction = DirectionEnum.None;
             _heroSprite = GetSprite(_isFalling, _heroSprite);
