@@ -416,6 +416,9 @@
     <None Include="Data\4.map">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Data\5.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Data\map.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
