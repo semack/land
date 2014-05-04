@@ -31,7 +31,7 @@ namespace Land.Components
             _infoText.Append(
                 "This is the port of the formely popular game LAND. It was originally developed by ASP corp. on 1986 and ran under PDP-11 compatible computers.\r\n");
             _infoText.Append(
-                "Ported to Windows using MonoGame framework in April 2014 by Andriy S'omak (semack@gmail.com). Sourcecode at https://github.com/semack/land");
+                "Ported using MonoGame framework by Andriy S'omak (semack@gmail.com), April 2014. Game sources at https://github.com/semack/land");
         }
 
         private Color BackColor

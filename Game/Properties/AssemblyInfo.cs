@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("LAND")]
 [assembly: AssemblyProduct("LAND game")]
 [assembly:
-    AssemblyDescription("Ported using MonoGame.NET framework in April 2014 by Andriy S'omak (semack@gmail.com)")]
+    AssemblyDescription("Ported using MonoGame framework by Andriy S'omak (semack@gmail.com), April 2014")]
 [assembly: AssemblyCompany("ASP corp.")]
 [assembly: AssemblyCopyright("© 1986 ASP corp.")]
 [assembly: AssemblyTrademark("")]
