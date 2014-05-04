@@ -5,8 +5,7 @@ The objective of the game is to collect all chests on the given level and get to
 
 Hint: you can get rid of the devil by immuring it in a brickwork.
 
-Controls:
-
+#####Controls:
 Cursor keys     - moving direction; 
 Z, X            - shooting left and right;
 Q               - restart game;
@@ -18,13 +17,11 @@ PgUp, PageDown  - game speed control
 
 *[MonoGame framework](http://www.monogame.net) is required to compile the game.*
 
-Gameplay video:
-
+#####Gameplay video:
 [![ScreenShot](https://github.com/semack/land/blob/master/screen03.png?raw=true)](https://www.youtube.com/watch?v=jY17w-EBIBg)
 
 
-Screenshots:
-
+#####Screenshots:
 ![ScreenShot](https://github.com/semack/land/blob/master/screen01.png?raw=true) 
 
 ![ScreenShot](https://github.com/semack/land/blob/master/screen02.png?raw=true)
