@@ -13,8 +13,10 @@ The objective of the game is to collect all chests on the given level and get to
 * ;               - next stage
 * PgUp, PageDown  - game speed control
 
-[Download](https://www.facebook.com/l.php?u=https%3A%2F%2Fdl.dropboxusercontent.com%2Fu%2F7169248%2FLand.zip&h=oAQHbQXBm) compiled binaries for Windows 
+--
+**[Download](https://www.facebook.com/l.php?u=https%3A%2F%2Fdl.dropboxusercontent.com%2Fu%2F7169248%2FLand.zip&h=oAQHbQXBm) compiled binaries for Windows**
 
+--
 #####Gameplay video:
 [![ScreenShot](https://github.com/semack/land/blob/master/screen03.png?raw=true)](https://www.youtube.com/watch?v=jY17w-EBIBg)
 
