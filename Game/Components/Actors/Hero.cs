@@ -185,8 +185,12 @@ namespace Land.Components.Actors
             return result;
         }
 
-        public override void Update(GameTime gameTime)
+        public  void UpdateControls(GameTime gameTime)
         {
+
+            if (Direction == DirectionEnum.Up || Direction == DirectionEnum.Down) // reset direction if going vertically
+                    Direction = DirectionEnum.None;
+
             GamePadState gState = GamePad.GetState(PlayerIndex.One);
             KeyboardState kState = Keyboard.GetState();
 
@@ -212,14 +216,6 @@ namespace Land.Components.Actors
                     _shootDirection = DirectionEnum.Right;
                 }
             }
-
-            if (Direction == DirectionEnum.Up || Direction == DirectionEnum.Down)
-            {
-                if (kState.GetPressedKeys().Length == 0)
-                    Direction = DirectionEnum.None;
-            }
-
-            base.Update(gameTime);
             _oldKeyboardStateState = kState;
             _oldGamePadState = gState;
         }
@@ -246,6 +242,7 @@ namespace Land.Components.Actors
 
         protected override void ActorUpdate(GameTime gameTime)
         {
+            UpdateControls(gameTime);
             CheckChest(X, Y);
             CheckChest(X + 1, Y);
             if (Maps.IsBiomass(Room[X, Y]) && Maps.IsBiomass(Room[X + 1, Y]))
