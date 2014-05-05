@@ -94,6 +94,7 @@ namespace Land.Classes
                     }
                 }
             }
+// ReSharper disable once UnusedVariable
             catch (Exception e)
             {
 #if XBOX360

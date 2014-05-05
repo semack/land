@@ -152,7 +152,6 @@ namespace Land.Components
             _oldButtonState = bState;
         }
 
-
         private void DrawInfoPanel(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.ScoreLabel, Game.BackColor].Texture, new Vector2(1 * 16, 0),
