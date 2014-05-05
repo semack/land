@@ -94,13 +94,14 @@ namespace Land.Classes
                     }
                 }
             }
-// ReSharper disable once UnusedVariable
+#if XBOX360
             catch (Exception e)
             {
-#if XBOX360
                 throw e;
                 
 #else
+            catch (Exception)
+            {
                 throw new FileLoadException("Map loading error.\r\n Wrong map format or map doesn't not exists.");
 #endif
             }

@@ -16,6 +16,19 @@ namespace Land.Utils
             return result;
         }
 
+
+        public static bool IsKeyDown(this KeyboardState state, params Keys[] keys)
+        {
+            bool result = false;
+            foreach (Keys key in keys)
+            {
+                result = state.IsKeyDown(key);
+                if (result)
+                    break;
+            }
+            return result;
+        }
+
         public static bool IsButtonPressed(this GamePadState state, GamePadState oldState, params Buttons[] buttons)
         {
             bool result = false;
