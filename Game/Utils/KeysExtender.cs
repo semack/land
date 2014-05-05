@@ -15,5 +15,17 @@ namespace Land.Utils
             }
             return result;
         }
+
+        public static bool IsButtonPressed(this GamePadState state, GamePadState oldState, params Buttons[] buttons)
+        {
+            bool result = false;
+            foreach (Buttons button in buttons)
+            {
+                result = state.IsButtonDown(button) && oldState.IsButtonUp(button);
+                if (result)
+                    break;
+            }
+            return result;
+        }
     }
 }

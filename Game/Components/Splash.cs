@@ -23,6 +23,7 @@ namespace Land.Components
         private BackColorEnum _backColor = BackColorEnum.Black;
         private DisplayModeEnum _displayMode = DisplayModeEnum.Splash;
         private KeyboardState _oldKeyState;
+        private GamePadState _oldGamePadState;
         private TimeSpan _splashInterval;
 
         public Splash(TheGame game)
@@ -42,10 +43,10 @@ namespace Land.Components
         public event EventHandler<PlayingStartedEventArgs> OnPlayingStarted;
 
 
-        private void UpdateSplash(KeyboardState state, GameTime gameTime)
+        private void UpdateSplash(KeyboardState kState, GamePadState gState, GameTime gameTime)
         {
-            if (state.IsKeyPressed(_oldKeyState, Keys.Enter, Keys.Space, Keys.Escape, Keys.D0, Keys.D1, Keys.D2, Keys.D3,
-                Keys.D4, Keys.D5, Keys.D6, Keys.D7, Keys.D8, Keys.D9))
+            if (kState.IsKeyPressed(_oldKeyState, Keys.Enter, Keys.Space, Keys.Escape, Keys.D0, Keys.D1, Keys.D2, Keys.D3,
+                Keys.D4, Keys.D5, Keys.D6, Keys.D7, Keys.D8, Keys.D9) || gState.IsButtonPressed(_oldGamePadState, Buttons.Start))
             {
                 _displayMode = DisplayModeEnum.GameStart;
                 _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*20);
@@ -59,15 +60,14 @@ namespace Land.Components
             }
         }
 
-        private void UpdateGameStart(KeyboardState state, GameTime gameTime)
+        private void UpdateGameStart(KeyboardState kState, GamePadState gState, GameTime gameTime)
         {
-            if (state.IsKeyPressed(_oldKeyState, Keys.Enter, Keys.Space, Keys.D0, Keys.D1, Keys.D2, Keys.D3, Keys.D4,
-                Keys.D5, Keys.D6, Keys.D7, Keys.D8, Keys.D9))
+            if (kState.IsKeyPressed(_oldKeyState, Keys.Enter, Keys.Space, Keys.D0, Keys.D1, Keys.D2, Keys.D3, Keys.D4,
+                Keys.D5, Keys.D6, Keys.D7, Keys.D8, Keys.D9) || gState.IsButtonPressed(_oldGamePadState, Buttons.Start))
             {
                 _displayMode = DisplayModeEnum.Splash;
                 int? range = null;
-                string value = Encoding.UTF8.GetString(new[] {(byte) state.GetPressedKeys()[0]}, 0 , 1);
-                //string value = chr((byte)state.GetPressedKeys()[0]);
+                string value = Encoding.UTF8.GetString(new[] {(byte) kState.GetPressedKeys()[0]}, 0 , 1);
                 int newRange;
                 if (int.TryParse(value, out newRange))
                     range = newRange;
@@ -90,17 +90,20 @@ namespace Land.Components
 
         public override void Update(GameTime gameTime)
         {
-            KeyboardState state = Keyboard.GetState();
+            KeyboardState kState = Keyboard.GetState();
+            GamePadState gState = GamePad.GetState(PlayerIndex.One);
+            
             if (_displayMode == DisplayModeEnum.Splash)
             {
-                UpdateSplash(state, gameTime);
+                UpdateSplash(kState, gState, gameTime);
             }
             else
             {
-                UpdateGameStart(state, gameTime);
+                UpdateGameStart(kState, gState, gameTime);
             }
             base.Update(gameTime);
-            _oldKeyState = state;
+            _oldKeyState = kState;
+            _oldGamePadState = gState;
         }
 
         public void DrawSplash(SpriteBatch spriteBatch)

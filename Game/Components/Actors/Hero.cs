@@ -14,7 +14,8 @@ namespace Land.Components.Actors
         private int _bioMassAttempts;
         private bool _heroIdleDivider;
         private DirectionEnum _heroIdleHeadDirection = DirectionEnum.Left;
-        private KeyboardState _oldState;
+        private KeyboardState _oldKeyboardStateState;
+        private GamePadState _oldGamePadState;
         private DirectionEnum _shootDirection;
         private ShootStageEnum _shootStage;
 
@@ -186,25 +187,26 @@ namespace Land.Components.Actors
 
         public override void Update(GameTime gameTime)
         {
-            KeyboardState state = Keyboard.GetState();
+            GamePadState gState = GamePad.GetState(PlayerIndex.One);
+            KeyboardState kState = Keyboard.GetState();
 
-            if (state.IsKeyPressed(_oldState, Keys.Left, Keys.NumPad4))
+            if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Left, Keys.NumPad4) || gState.IsButtonPressed(_oldGamePadState, Buttons.DPadLeft))
                 Direction = DirectionEnum.Left;
-            else if (state.IsKeyPressed(_oldState, Keys.Down, Keys.NumPad5))
+            else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Down, Keys.NumPad5) || gState.IsButtonPressed(_oldGamePadState, Buttons.DPadDown))
                 Direction = DirectionEnum.Down;
-            else if (state.IsKeyPressed(_oldState, Keys.Right, Keys.NumPad6))
+            else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Right, Keys.NumPad6) || gState.IsButtonPressed(_oldGamePadState, Buttons.DPadRight))
                 Direction = DirectionEnum.Right;
-            else if (state.IsKeyPressed(_oldState, Keys.Up, Keys.NumPad8))
+            else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Up, Keys.NumPad8) || gState.IsButtonPressed(_oldGamePadState, Buttons.DPadUp))
                 Direction = DirectionEnum.Up;
 
             if (!_bullet.IsActive)
             {
-                if (state.IsKeyPressed(_oldState, Keys.Z, Keys.NumPad7))
+                if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Z, Keys.NumPad7) || gState.IsButtonPressed(_oldGamePadState, Buttons.LeftTrigger))
                 {
                     _shootStage = ShootStageEnum.Preparation;
                     _shootDirection = DirectionEnum.Left;
                 }
-                else if (state.IsKeyPressed(_oldState, Keys.X, Keys.NumPad9))
+                else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.X, Keys.NumPad9) || gState.IsButtonPressed(_oldGamePadState, Buttons.RightTrigger))
                 {
                     _shootStage = ShootStageEnum.Preparation;
                     _shootDirection = DirectionEnum.Right;
@@ -213,12 +215,13 @@ namespace Land.Components.Actors
 
             if (Direction == DirectionEnum.Up || Direction == DirectionEnum.Down)
             {
-                if (state.GetPressedKeys().Length == 0)
+                if (kState.GetPressedKeys().Length == 0)
                     Direction = DirectionEnum.None;
             }
 
             base.Update(gameTime);
-            _oldState = state;
+            _oldKeyboardStateState = kState;
+            _oldGamePadState = gState;
         }
 
         protected override bool ProcessFalling()

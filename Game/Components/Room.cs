@@ -21,6 +21,7 @@ namespace Land.Components
         private int _attempts;
         private SpriteTypeEnum[,] _map;
         private KeyboardState _oldKeyState;
+        private GamePadState _oldButtonState;
         private int _range;
         private int _score;
         private int _stage;
@@ -137,15 +138,18 @@ namespace Land.Components
         {
             base.Update(gameTime);
 
-            KeyboardState state = Keyboard.GetState();
-            if (state.IsKeyPressed(_oldKeyState, Keys.Q))
+            KeyboardState kState = Keyboard.GetState();
+            GamePadState bState = GamePad.GetState(PlayerIndex.One);
+
+            if (kState.IsKeyPressed(_oldKeyState, Keys.Q) || bState.IsButtonPressed(_oldButtonState, Buttons.Back))
             {
                 if (OnPlayingFinished != null)
                     OnPlayingFinished(this, new EventArgs());
             }
-            if (state.IsKeyPressed(_oldKeyState, Keys.OemSemicolon))
+            if (kState.IsKeyPressed(_oldKeyState, Keys.OemSemicolon) || bState.IsButtonPressed(_oldButtonState, Buttons.Start))
                 SetNextStage();
-            _oldKeyState = state;
+            _oldKeyState = kState;
+            _oldButtonState = bState;
         }
 
 
