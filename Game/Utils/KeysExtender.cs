@@ -6,27 +6,10 @@ namespace Land.Utils
     {
         public static bool IsKeyPressed(this KeyboardState state, KeyboardState oldState, params Keys[] keys)
         {
-            return state.IsKeyDown(keys) && oldState.IsKeyUp(keys);
-        }
-
-        public static bool IsKeyDown(this KeyboardState state, params Keys[] keys)
-        {
             bool result = false;
             foreach (Keys key in keys)
             {
-                result = state.IsKeyDown(key);
-                if (result)
-                    break;
-            }
-            return result;
-        }
-
-        public static bool IsKeyUp(this KeyboardState state, params Keys[] keys)
-        {
-            bool result = false;
-            foreach (Keys key in keys)
-            {
-                result = state.IsKeyUp(key);
+                result = state.IsKeyDown(key) && oldState.IsKeyUp(key);
                 if (result)
                     break;
             }
