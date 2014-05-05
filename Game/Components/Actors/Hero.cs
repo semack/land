@@ -179,10 +179,8 @@ namespace Land.Components.Actors
 
         protected override bool Move(DirectionEnum direction)
         {
-            bool result = base.Move(direction);
-            if (result)
-                CorrectHeroStairPosition(direction);
-            return result;
+            CorrectHeroStairPosition(direction);
+            return base.Move(direction);
         }
 
         public override void Update(GameTime gameTime)
