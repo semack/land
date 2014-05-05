@@ -13,7 +13,10 @@ namespace Land.Classes
 
         public static int MapsCount
         {
-            get { return Directory.EnumerateFiles("Data").Count(file => file.Contains(".map")); }
+            get
+            {
+                return Directory.GetFiles("Data").Count(file => file.Contains(".map"));
+            }
         }
 
         public static bool IsBiomass(SpriteTypeEnum source)
@@ -91,9 +94,14 @@ namespace Land.Classes
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+#if XBOX360
+                throw e;
+                
+#else
                 throw new FileLoadException("Map loading error.\r\n Wrong map format or map doesn't not exists.");
+#endif
             }
             return result;
         }

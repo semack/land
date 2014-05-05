@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Land.Enums;
+using Land.Utils;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -71,9 +72,8 @@ namespace Land.Classes
 
         private static IEnumerable<T> GetValues<T>()
         {
-            return Enum.GetValues(typeof (T)).Cast<T>();
+            return EnumExtender.GetEnumValues<T>();
         }
-
 
         private void LoadAllSprites()
         {

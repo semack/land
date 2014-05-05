@@ -27,7 +27,7 @@ namespace Land.Components.Actors
             get { return _direction != DirectionEnum.None; }
         }
 
-        public void Reset(int x = 1, int y = 1, DirectionEnum direction = DirectionEnum.None)
+        public void Reset(int x, int y, DirectionEnum direction)
         {
             _x = x;
             _y = y;

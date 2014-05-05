@@ -39,7 +39,7 @@ namespace Land.Components
             _devil2 = new Devil(Game, this, _hero, DevilNumberEnum.Second);
             _devil1.OnLifeFired += OnHeroLifeFired;
             _devil2.OnLifeFired += OnHeroLifeFired;
-            Reset();
+            Reset(null);
         }
 
         public SpriteTypeEnum this[int x, int y]
@@ -79,13 +79,13 @@ namespace Land.Components
                 _score = 0;
         }
 
-        public void Reset(int? range = null)
+        public void Reset(int? range)
         {
             _score = 0;
             _stage = 1;
             _attempts = 20;
             if (range != null)
-                _range = (int) range;
+                _range = (int)range;
             SetStage(_stage);
         }
 
@@ -118,7 +118,7 @@ namespace Land.Components
             _stage = stage;
             _map = Maps.Get(_stage);
             _hero.Reset();
-            _bullet.Reset();
+            _bullet.Reset(1, 1, DirectionEnum.None);
             _devil1.Reset();
             _devil2.Reset();
             int i = Maps.MapsCount;
@@ -151,27 +151,27 @@ namespace Land.Components
 
         private void DrawInfoPanel(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.ScoreLabel, Game.BackColor].Texture, new Vector2(1*16, 0),
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.ScoreLabel, Game.BackColor].Texture, new Vector2(1 * 16, 0),
                 Color.White);
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.RangeLabel, Game.BackColor].Texture, new Vector2(16*16, 0),
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.RangeLabel, Game.BackColor].Texture, new Vector2(16 * 16, 0),
                 Color.White);
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.AttemptsLabel, Game.BackColor].Texture, new Vector2(27*16, 0),
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.AttemptsLabel, Game.BackColor].Texture, new Vector2(27 * 16, 0),
                 Color.White);
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.StageLabel, Game.BackColor].Texture, new Vector2(42*16, 0),
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.StageLabel, Game.BackColor].Texture, new Vector2(42 * 16, 0),
                 Color.White);
             for (int i = 0; i < Maps.CapacityX; i++)
             {
-                spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.Delimiter, Game.BackColor].Texture, new Vector2(i*16, 1*32),
+                spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.Delimiter, Game.BackColor].Texture, new Vector2(i * 16, 1 * 32),
                     Color.White);
             }
 
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D5}", _score), new Vector2(7*16, 0),
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D5}", _score), new Vector2(7 * 16, 0),
                 BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _range), new Vector2(22*16, 0),
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _range), new Vector2(22 * 16, 0),
                 BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _attempts), new Vector2(36*16, 0),
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _attempts), new Vector2(36 * 16, 0),
                 BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _stage), new Vector2(46*16, 0),
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _stage), new Vector2(46 * 16, 0),
                 BackColor == Color.White ? Color.Black : Color.White);
         }
 
@@ -186,7 +186,7 @@ namespace Land.Components
                 for (int y = 0; y < Maps.CapacityY; y++)
                 {
                     SpriteTypeEnum item = this[x, y];
-                    Game.SpriteBatch.Draw(Game.Sprites[item, Game.BackColor].Texture, new Vector2(x*16, (y + 2)*32),
+                    Game.SpriteBatch.Draw(Game.Sprites[item, Game.BackColor].Texture, new Vector2(x * 16, (y + 2) * 32),
                         Color.White);
                 }
             }

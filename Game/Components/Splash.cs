@@ -66,7 +66,8 @@ namespace Land.Components
             {
                 _displayMode = DisplayModeEnum.Splash;
                 int? range = null;
-                string value = Encoding.ASCII.GetString(new[] {(byte) state.GetPressedKeys()[0]});
+                string value = Encoding.UTF8.GetString(new[] {(byte) state.GetPressedKeys()[0]}, 0 , 1);
+                //string value = chr((byte)state.GetPressedKeys()[0]);
                 int newRange;
                 if (int.TryParse(value, out newRange))
                     range = newRange;

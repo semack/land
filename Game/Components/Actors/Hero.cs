@@ -19,7 +19,7 @@ namespace Land.Components.Actors
         private ShootStageEnum _shootStage;
 
         public Hero(TheGame game, Room room, Bullet bullet)
-            : base(game, room)
+            : base(game, room, 1)
         {
             _bullet = bullet;
         }

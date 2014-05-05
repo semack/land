@@ -14,7 +14,7 @@ namespace Land.Common
         private bool _isFalling;
         private TimeSpan _moveInterval;
 
-        protected BaseActor(TheGame game, Room room, int speedCoef = 1)
+        protected BaseActor(TheGame game, Room room, int speedCoef)
             : base(game)
         {
             Room = room;
@@ -37,7 +37,7 @@ namespace Land.Common
             _moveInterval = new TimeSpan();
         }
 
-        private bool HasNoStrongHold(SpriteTypeEnum sprite, bool isFalling = false)
+        private bool HasNoStrongHold(SpriteTypeEnum sprite, bool isFalling)
         {
             bool result = Maps.IsBiomass(sprite)
                           || Maps.IsLiveWall(sprite)
@@ -61,7 +61,7 @@ namespace Land.Common
                              && !(Maps.IsBiomass(cur1) && Maps.IsBiomass(cur2));
             }
             else
-                _isFalling = HasNoStrongHold(pos1) && HasNoStrongHold(pos2)
+                _isFalling = HasNoStrongHold(pos1, false) && HasNoStrongHold(pos2, false)
                              && !(Maps.IsStairs(cur1) || Maps.IsStairs(cur2));
 
             if (_isFalling)

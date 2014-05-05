@@ -14,7 +14,7 @@ namespace Land.Common
             get { return base.Game as TheGame; }
         }
 
-        public virtual void Show(bool value = true)
+        public virtual void Show(bool value)
         {
             Enabled = value;
             Visible = value;
