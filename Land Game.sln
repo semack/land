@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Land4Windows", "Game\Land4Windows.csproj", "{C2B00FDD-C37C-4D1F-A2B6-8216AB79BAF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Land4Mono", "Game\Land4Mono.csproj", "{C2B00FDD-C37C-4D1F-A2B6-8216AB79BAF4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Land4Xbox360", "Game\Land4Xbox360.csproj", "{A869AC68-C84E-4E89-8EB2-F11DDDBE3AD1}"
 EndProject
@@ -161,7 +161,6 @@ Global
 		{A869AC68-C84E-4E89-8EB2-F11DDDBE3AD1}.Release|Any CPU.ActiveCfg = Release|Xbox 360
 		{A869AC68-C84E-4E89-8EB2-F11DDDBE3AD1}.Release|Mixed Platforms.ActiveCfg = Release|Xbox 360
 		{A869AC68-C84E-4E89-8EB2-F11DDDBE3AD1}.Release|Mixed Platforms.Build.0 = Release|Xbox 360
-		{A869AC68-C84E-4E89-8EB2-F11DDDBE3AD1}.Release|Mixed Platforms.Deploy.0 = Release|Xbox 360
 		{A869AC68-C84E-4E89-8EB2-F11DDDBE3AD1}.Release|x86.ActiveCfg = Release|Xbox 360
 		{A869AC68-C84E-4E89-8EB2-F11DDDBE3AD1}.Release|x86.Build.0 = Release|Xbox 360
 		{A869AC68-C84E-4E89-8EB2-F11DDDBE3AD1}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
