@@ -125,13 +125,8 @@ namespace Land.Components.Actors
             // devil movements related to original game
             if (!base.Move(_horizontalDirection))
                 _horizontalDirection = DirectionEnum.None;
-            if (
-                !(_horizontalDirection != DirectionEnum.None && Maps.IsStairs(Room[X, Y]) &&
-                  _verticalDirection == DirectionEnum.Up))
-            {
-                if (!base.Move(_verticalDirection))
-                    _verticalDirection = DirectionEnum.None;
-            }
+            if (!base.Move(_verticalDirection))
+                _verticalDirection = DirectionEnum.None;
             Direction = _verticalDirection != DirectionEnum.None ? _verticalDirection : _horizontalDirection;
             return true;
         }
