@@ -13,7 +13,7 @@ The objective of the game is to collect all chests on the given level and get to
 * PgUp, PageDown  - game speed control
 
 #####Maps:
-All maps are located in "Data" folder with the game and can be edited by text editor with fixed width font. Also there is map template with empty map. To make map file visible for the game it shold be placed in "Data" folder and it should have number of stage in file name and have .map extension. Other files will be ignored. Example: "20.map".  
+All maps are located in "Data" folder with the game and can be edited by text editor with fixed width font. Also there is map template with empty map. To make map file visible for the game it shoгld be placed in "Data" folder and it should have number of stage in file name and have .map extension. Other files will be ignored. Example: "20.map".  
 
 --
 **[Download (Google Drive)](https://drive.google.com/folderview?id=0B-Q6m5TBZaSrb2hzeWFuTE9WcFE&usp=sharing) compiled binaries for Windows**
