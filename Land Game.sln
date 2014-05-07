@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Land", "Game\Land.csproj", "{C2B00FDD-C37C-4D1F-A2B6-8216AB79BAF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Land4Windows", "Game\Land4Windows.csproj", "{C2B00FDD-C37C-4D1F-A2B6-8216AB79BAF4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourcesContent", "Content\ResourcesContent\ResourcesContent.contentproj", "{CDA22BF2-CF15-460F-ADA4-ED25DB16E4B5}"
 EndProject
@@ -119,6 +119,7 @@ Global
 		{CDA22BF2-CF15-460F-ADA4-ED25DB16E4B5}.iOS|Xbox 360.ActiveCfg = iOS|Any CPU
 		{CDA22BF2-CF15-460F-ADA4-ED25DB16E4B5}.Linux|Any CPU.ActiveCfg = Linux|Any CPU
 		{CDA22BF2-CF15-460F-ADA4-ED25DB16E4B5}.Linux|Mixed Platforms.ActiveCfg = Linux|Any CPU
+		{CDA22BF2-CF15-460F-ADA4-ED25DB16E4B5}.Linux|Mixed Platforms.Build.0 = Linux|Any CPU
 		{CDA22BF2-CF15-460F-ADA4-ED25DB16E4B5}.Linux|x86.ActiveCfg = Linux|Any CPU
 		{CDA22BF2-CF15-460F-ADA4-ED25DB16E4B5}.Linux|Xbox 360.ActiveCfg = Linux|Any CPU
 		{CDA22BF2-CF15-460F-ADA4-ED25DB16E4B5}.OSX|Any CPU.ActiveCfg = OSX|Any CPU
