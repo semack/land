@@ -17,6 +17,7 @@ All maps are located in "Data" folder with the game and can be edited by text ed
 
 --
 **[Download (Google Drive)](https://drive.google.com/folderview?id=0B-Q6m5TBZaSrb2hzeWFuTE9WcFE&usp=sharing) compiled binaries for Windows**
+> [.NET framework 4.0] (http://www.microsoft.com/en-us/download/details.aspx?id=17851) is required.
 
 --
 #####Gameplay video:
