@@ -96,7 +96,7 @@ namespace Land.Components.Actors
         }
 
 
-        protected override void ActorUpdate(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             _horizontalDirection = DirectionEnum.None;
             _verticalDirection = DirectionEnum.None;
@@ -117,7 +117,14 @@ namespace Land.Components.Actors
             else if ((_hero.X == X || _hero.X + 1 == X || _hero.X == X + 1 || _hero.X + 1 == X + 1)
                      && (_hero.Y == Y))
                 _isHeroCaught = true;
-            base.ActorUpdate(gameTime);
+            base.Update(gameTime);
+        }
+
+        protected override bool ProcessFalling()
+        {
+            if (!_isHeroCaught)
+                return base.ProcessFalling();
+            return false;
         }
 
         protected override bool Move(DirectionEnum direction)
