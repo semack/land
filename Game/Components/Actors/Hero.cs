@@ -159,6 +159,8 @@ namespace Land.Components.Actors
                     {
                         OnRoomFinished(this, new EventArgs());
                     }
+                    else
+                        return false;
                 }
             }
             return base.CanMove(direction);
