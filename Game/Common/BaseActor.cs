@@ -91,7 +91,8 @@ namespace Land.Common
                         break;
                     SpriteTypeEnum pos1 = Room[X, Y + 1];
                     SpriteTypeEnum pos2 = Room[X + 1, Y + 1];
-                    result = (HasNoStrongHold(pos1, false) && HasNoStrongHold(pos2, false)) || (Maps.IsStairs(pos1) && Maps.IsStairs(pos2));
+                    result = (HasNoStrongHold(pos1, false) && HasNoStrongHold(pos2, false)) ||
+                             (Maps.IsStairs(pos1) && Maps.IsStairs(pos2));
                     break;
                 }
                 case DirectionEnum.Left:

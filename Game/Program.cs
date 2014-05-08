@@ -15,9 +15,9 @@ namespace Land
         /// <summary>
         ///     The main entry point for the application.
         /// </summary>
-        #if WINDOWS || LINUX
+#if WINDOWS || LINUX
         [STAThread]
-        #endif
+#endif
         private static void Main()
         {
             using (var game = new TheGame())

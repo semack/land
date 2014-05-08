@@ -13,10 +13,7 @@ namespace Land.Classes
 
         public static int MapsCount
         {
-            get
-            {
-                return Directory.GetFiles("Data").Count(file => file.Contains(".map"));
-            }
+            get { return Directory.GetFiles("Data").Count(file => file.Contains(".map")); }
         }
 
         public static bool IsBiomass(SpriteTypeEnum source)

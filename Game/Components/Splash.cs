@@ -22,8 +22,8 @@ namespace Land.Components
         private readonly Vector2 _logoVector = new Vector2(4*16, 1*32);
         private BackColorEnum _backColor = BackColorEnum.Black;
         private DisplayModeEnum _displayMode = DisplayModeEnum.Splash;
-        private KeyboardState _oldKeyState;
         private GamePadState _oldGamePadState;
+        private KeyboardState _oldKeyState;
         private TimeSpan _splashInterval;
 
         public Splash(TheGame game)
@@ -45,8 +45,10 @@ namespace Land.Components
 
         private void UpdateSplash(KeyboardState kState, GamePadState gState, GameTime gameTime)
         {
-            if (kState.IsKeyPressed(_oldKeyState, Keys.Enter, Keys.Space, Keys.Escape, Keys.D0, Keys.D1, Keys.D2, Keys.D3,
-                Keys.D4, Keys.D5, Keys.D6, Keys.D7, Keys.D8, Keys.D9) || gState.IsButtonPressed(_oldGamePadState, Buttons.Start))
+            if (kState.IsKeyPressed(_oldKeyState, Keys.Enter, Keys.Space, Keys.Escape, Keys.D0, Keys.D1, Keys.D2,
+                Keys.D3,
+                Keys.D4, Keys.D5, Keys.D6, Keys.D7, Keys.D8, Keys.D9) ||
+                gState.IsButtonPressed(_oldGamePadState, Buttons.Start))
             {
                 _displayMode = DisplayModeEnum.GameStart;
                 _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*20);
@@ -67,7 +69,7 @@ namespace Land.Components
             {
                 _displayMode = DisplayModeEnum.Splash;
                 int? range = null;
-                string value = Encoding.UTF8.GetString(new[] {(byte) kState.GetPressedKeys()[0]}, 0 , 1);
+                string value = Encoding.UTF8.GetString(new[] {(byte) kState.GetPressedKeys()[0]}, 0, 1);
                 int newRange;
                 if (int.TryParse(value, out newRange))
                     range = newRange;
@@ -92,7 +94,7 @@ namespace Land.Components
         {
             KeyboardState kState = Keyboard.GetState();
             GamePadState gState = GamePad.GetState(PlayerIndex.One);
-            
+
             if (_displayMode == DisplayModeEnum.Splash)
             {
                 UpdateSplash(kState, gState, gameTime);

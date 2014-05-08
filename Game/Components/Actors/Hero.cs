@@ -14,8 +14,8 @@ namespace Land.Components.Actors
         private int _bioMassAttempts;
         private bool _heroIdleDivider;
         private DirectionEnum _heroIdleHeadDirection = DirectionEnum.Left;
-        private KeyboardState _oldKeyboardStateState;
         private GamePadState _oldGamePadState;
+        private KeyboardState _oldKeyboardStateState;
         private DirectionEnum _shootDirection;
         private ShootStageEnum _shootStage;
 
@@ -166,7 +166,7 @@ namespace Land.Components.Actors
             return base.CanMove(direction);
         }
 
-        private void CorrectHeroStairPosition(DirectionEnum direction)
+        private void CorrectHeroStairsPosition(DirectionEnum direction)
         {
             if (direction == DirectionEnum.Down || direction == DirectionEnum.Up)
             {
@@ -174,8 +174,8 @@ namespace Land.Components.Actors
                 SpriteTypeEnum pos2 = Room[X + 1, Y];
                 if (direction == DirectionEnum.Down)
                 {
-                    pos1 = Room[X, Y+1];
-                    pos2 = Room[X + 1, Y+1];
+                    pos1 = Room[X, Y + 1];
+                    pos2 = Room[X + 1, Y + 1];
                 }
                 if (pos1 == SpriteTypeEnum.StairsRight)
                     X--;
@@ -186,15 +186,14 @@ namespace Land.Components.Actors
 
         protected override bool Move(DirectionEnum direction)
         {
-            CorrectHeroStairPosition(direction);
+            CorrectHeroStairsPosition(direction);
             return base.Move(direction);
         }
 
         public override void Update(GameTime gameTime)
         {
-           
             if (Direction == DirectionEnum.Up || Direction == DirectionEnum.Down) // reset direction if going vertically
-                    Direction = DirectionEnum.None;
+                Direction = DirectionEnum.None;
 
             if (Visible)
             {
@@ -231,7 +230,6 @@ namespace Land.Components.Actors
                 _oldGamePadState = gState;
             }
             base.Update(gameTime);
-
         }
 
         protected override bool ProcessFalling()
