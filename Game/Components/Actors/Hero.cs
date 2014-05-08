@@ -170,11 +170,16 @@ namespace Land.Components.Actors
         {
             if (direction == DirectionEnum.Down || direction == DirectionEnum.Up)
             {
-                SpriteTypeEnum cur1 = Room[X, Y];
-                SpriteTypeEnum cur2 = Room[X + 1, Y];
-                if (cur1 == SpriteTypeEnum.StairsRight)
+                SpriteTypeEnum pos1 = Room[X, Y];
+                SpriteTypeEnum pos2 = Room[X + 1, Y];
+                if (direction == DirectionEnum.Down)
+                {
+                    pos1 = Room[X, Y+1];
+                    pos2 = Room[X + 1, Y+1];
+                }
+                if (pos1 == SpriteTypeEnum.StairsRight)
                     X--;
-                if (cur2 == SpriteTypeEnum.StairsLeft)
+                if (pos2 == SpriteTypeEnum.StairsLeft)
                     X++;
             }
         }
