@@ -10,7 +10,7 @@ The objective of the game is to collect all chests on the given level and get to
 * Z, X            - shooting left and right
 * Q               - restart game
 * ;               - next stage
-* PgUp, PageDown  - game speed control
+* F10             - switch to next bank of maps
 
 #####Maps:
 All maps are located in "Maps\Bank.XXX" folder with the game and can be edited by text editor with fixed width font. Also there is map template with empty map. To make map file visible for the game it should be placed in "Maps\Bank.XXX" folder and it should have number of stage in file name and have .map extension. Other files will be ignored. Example: "020.map".  
