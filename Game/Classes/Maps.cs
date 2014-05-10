@@ -13,7 +13,7 @@ namespace Land.Classes
 
         public static int GetMapsCount(int bank)
         {
-            var dir = string.Format("Maps/Bank.{0:D3}", bank);
+            string dir = string.Format("Maps/Bank.{0:D3}", bank);
             return Directory.GetFiles(dir).Count(file => file.Contains(".map"));
         }
 

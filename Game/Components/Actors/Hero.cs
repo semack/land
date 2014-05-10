@@ -187,7 +187,7 @@ namespace Land.Components.Actors
         protected override bool Move(DirectionEnum direction)
         {
             CorrectHeroStairsPosition(direction);
-            var result = base.Move(direction);
+            bool result = base.Move(direction);
             if (Direction == DirectionEnum.Up || Direction == DirectionEnum.Down) // reset direction if going vertically
                 Direction = DirectionEnum.None;
             return result;
@@ -203,12 +203,14 @@ namespace Land.Components.Actors
                 if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Left, Keys.NumPad4) ||
                     gState.IsButtonPressed(_oldGamePadState, Buttons.DPadLeft))
                     Direction = DirectionEnum.Left;
-                else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Down, Keys.NumPad5) || gState.IsButtonDown(Buttons.DPadDown))
+                else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Down, Keys.NumPad5) ||
+                         gState.IsButtonDown(Buttons.DPadDown))
                     Direction = DirectionEnum.Down;
                 else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Right, Keys.NumPad6) ||
                          gState.IsButtonPressed(_oldGamePadState, Buttons.DPadRight))
                     Direction = DirectionEnum.Right;
-                else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Up, Keys.NumPad8) || gState.IsButtonDown(Buttons.DPadUp))
+                else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Up, Keys.NumPad8) ||
+                         gState.IsButtonDown(Buttons.DPadUp))
                     Direction = DirectionEnum.Up;
 
                 if (!_bullet.IsActive)

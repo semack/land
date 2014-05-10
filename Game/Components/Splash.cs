@@ -68,11 +68,10 @@ namespace Land.Components
                 Keys.D5, Keys.D6, Keys.D7, Keys.D8, Keys.D9) || gState.IsButtonPressed(_oldGamePadState, Buttons.Start))
             {
                 _displayMode = DisplayModeEnum.Splash;
-                int range = 0;
                 string value = Encoding.UTF8.GetString(new[] {(byte) kState.GetPressedKeys()[0]}, 0, 1);
                 int newRange;
-                if (int.TryParse(value, out newRange))
-                    range = newRange;
+                int range = int.TryParse(value, out newRange) ? newRange : Game.Range;
+
                 if (OnPlayingStarted != null)
                 {
                     Game.BackColor = _backColor;
@@ -113,7 +112,8 @@ namespace Land.Components
             spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.Splash, _backColor].Texture, _logoVector, Color.White);
             spriteBatch.DrawString(Game.InfoFont, _infoText, _infoVector,
                 BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.DrawString(Game.InfoFont, string.Format("Map bank #{0}", Game.MapBank), new Vector2(45 * 16, 16 * 32),
+            spriteBatch.DrawString(Game.InfoFont, string.Format("Map bank #{0}", Game.MapBank),
+                new Vector2(45*16, 16*32),
                 BackColor == Color.White ? Color.Black : Color.White);
         }
 
