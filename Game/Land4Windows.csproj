@@ -131,6 +131,12 @@
     <None Include="Maps\Bank.001\010.map">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Maps\Bank.002\001.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Maps\Bank.002\002.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Maps\map.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
