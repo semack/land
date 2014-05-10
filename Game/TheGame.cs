@@ -1,4 +1,7 @@
 using System;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using Land.Classes;
 using Land.Components;
 using Land.Enums;
@@ -18,6 +21,8 @@ namespace Land
         private readonly Room _room;
         private readonly Splash _splash;
         private KeyboardState _oldKeyState;
+        public int MapBank { get; private set; }
+        public int Range { get; private set; }
 
         public TheGame()
         {
@@ -28,6 +33,7 @@ namespace Land
                 PreferredBackBufferWidth = Maps.CapacityX*16
             };
             Content.RootDirectory = "Content";
+            MapBank = 1;
 
             BackColor = BackColorEnum.Black;
             _splash = new Splash(this);
@@ -36,13 +42,16 @@ namespace Land
             _room = new Room(this);
             _room.OnPlayingFinished += OnRoomPlayingFinished;
             OnRoomPlayingFinished(this, new EventArgs());
-
-            GameSpeedScaleFactor = 1000000;
         }
 
         public BackColorEnum BackColor { get; set; }
 
-        public int GameSpeedScaleFactor { get; private set; }
+        public int GameSpeedScaleFactor {
+            get
+            {
+                return 300000 + Range*250000;
+            }
+        }
 
         public GameSpritesCollection Sprites { get; private set; }
 
@@ -61,8 +70,8 @@ namespace Land
         {
             _splash.Show(false);
             _splash.Visible = false;
-
-            _room.Reset(e.Range);
+            Range = e.Range;
+            _room.Reset();
             _room.Show(true);
         }
 
@@ -107,18 +116,26 @@ namespace Land
                 _graphics.IsFullScreen = state.IsKeyDown(Keys.F11);
                 _graphics.ApplyChanges();
             }
-            else if (state.IsKeyPressed(_oldKeyState, Keys.PageUp, Keys.PageDown))
+            //else if (state.IsKeyPressed(_oldKeyState, Keys.PageUp, Keys.PageDown))
+            //{
+            //    if (state.IsKeyDown(Keys.PageUp))
+            //    {
+            //        GameSpeedScaleFactor = GameSpeedScaleFactor - 50000;
+            //        if (GameSpeedScaleFactor < 0)
+            //            GameSpeedScaleFactor = 0;
+            //    }
+            //    else
+            //    {
+            //        GameSpeedScaleFactor = GameSpeedScaleFactor + 50000;
+            //    }
+            //}
+            else if (state.IsKeyPressed(_oldKeyState, Keys.F10))
             {
-                if (state.IsKeyDown(Keys.PageUp))
-                {
-                    GameSpeedScaleFactor = GameSpeedScaleFactor - 50000;
-                    if (GameSpeedScaleFactor < 0)
-                        GameSpeedScaleFactor = 0;
-                }
-                else
-                {
-                    GameSpeedScaleFactor = GameSpeedScaleFactor + 50000;
-                }
+                var mapsCount = Directory.GetDirectories("Maps").Count(dir => dir.Contains("Bank.")); 
+                MapBank++;
+                if (MapBank > mapsCount)
+                    MapBank = 1;
+                OnRoomPlayingFinished(this, null);
             }
             base.Update(gameTime);
             _oldKeyState = state;

@@ -12,7 +12,7 @@ namespace Land.Components
 {
     public class PlayingStartedEventArgs : EventArgs
     {
-        public int? Range { get; set; }
+        public int Range { get; set; }
     }
 
     public class Splash : BaseDrawableGameComponent
@@ -47,18 +47,18 @@ namespace Land.Components
         {
             if (kState.IsKeyPressed(_oldKeyState, Keys.Enter, Keys.Space, Keys.Escape, Keys.D0, Keys.D1, Keys.D2,
                 Keys.D3,
-                Keys.D4, Keys.D5, Keys.D6, Keys.D7, Keys.D8, Keys.D9) ||
+                Keys.D4, Keys.D5, Keys.D6, Keys.D7) ||
                 gState.IsButtonPressed(_oldGamePadState, Buttons.Start))
             {
                 _displayMode = DisplayModeEnum.GameStart;
-                _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*20);
+                _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*80);
             }
 
             _splashInterval = _splashInterval - gameTime.ElapsedGameTime;
             if (_splashInterval.Ticks < 0)
             {
                 _backColor = (_backColor == BackColorEnum.White ? BackColorEnum.Black : BackColorEnum.White);
-                _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*10);
+                _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*40);
             }
         }
 
@@ -68,7 +68,7 @@ namespace Land.Components
                 Keys.D5, Keys.D6, Keys.D7, Keys.D8, Keys.D9) || gState.IsButtonPressed(_oldGamePadState, Buttons.Start))
             {
                 _displayMode = DisplayModeEnum.Splash;
-                int? range = null;
+                int range = 0;
                 string value = Encoding.UTF8.GetString(new[] {(byte) kState.GetPressedKeys()[0]}, 0, 1);
                 int newRange;
                 if (int.TryParse(value, out newRange))

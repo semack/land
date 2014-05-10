@@ -11,9 +11,10 @@ namespace Land.Classes
         public const int CapacityX = 50;
         public const int CapacityY = 16;
 
-        public static int MapsCount
+        public static int GetMapsCount(int bank)
         {
-            get { return Directory.GetFiles("Data").Count(file => file.Contains(".map")); }
+            var dir = string.Format("Maps/Bank.{0:D3}", bank);
+            return Directory.GetFiles(dir).Count(file => file.Contains(".map"));
         }
 
         public static bool IsBiomass(SpriteTypeEnum source)
@@ -68,12 +69,12 @@ namespace Land.Classes
         }
 
 
-        public static List<string> LoadMap(int number)
+        public static List<string> LoadMap(int bank, int number)
         {
             var result = new List<string>();
             try
             {
-                string fileName = string.Format("Data/{0}.map", number);
+                string fileName = string.Format("Maps/Bank.{0:D3}/{1:D3}.map", bank, number);
                 using (var reader = new StreamReader(fileName))
                 {
                     string line = string.Empty;
@@ -105,9 +106,9 @@ namespace Land.Classes
             return result;
         }
 
-        public static SpriteTypeEnum[,] Get(int stage)
+        public static SpriteTypeEnum[,] Get(int mapsBank, int stage)
         {
-            List<string> map = LoadMap(stage);
+            List<string> map = LoadMap(mapsBank, stage);
 
             var result = new SpriteTypeEnum[CapacityX, CapacityY];
             for (int j = 0; j < CapacityY; j++)
