@@ -113,6 +113,8 @@ namespace Land.Components
             spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.Splash, _backColor].Texture, _logoVector, Color.White);
             spriteBatch.DrawString(Game.InfoFont, _infoText, _infoVector,
                 BackColor == Color.White ? Color.Black : Color.White);
+            spriteBatch.DrawString(Game.InfoFont, string.Format("Map bank #{0}", Game.MapBank), new Vector2(45 * 16, 16 * 32),
+                BackColor == Color.White ? Color.Black : Color.White);
         }
 
         public void DrawGameStart(SpriteBatch spriteBatch)
