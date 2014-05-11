@@ -1,0 +1,30 @@
+﻿LAND game map 48 x 14
+Stagt #2
+                     
+01234567890123456789012345678901234567890123456780
+1][ CCCCCCC       CC           CC              WW1
+2C ][``````````````````````````````````````````WW2
+3BB][   CC    C         CC        C  C       CC  3
+4C ][B][BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB][BB    4
+5  ][WBBB  C         C         C         ][BB``  5
+6C ][W  W][W][BBBBBBBBBBBBBBBBBBBBBBBBBBB  BBCC  6
+7  ][WCCW][    CC          CC           CC BB    7
+8C ][W  W][          C         C         CCBB  CC8
+9  ][WC W  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB][BB    9
+0C ][W  WCC                    CC        ][BB12340
+1WWWWW CW    CC            C           C ][BBBBBB1
+2][ C C  ][``````````````````````````````    CC  2 
+3][````  ][            C   B1234123412341][``````3
+4][  C   ````````][`````BB```````````````][   C  4
+01234567890123456789012345678901234567890123456780
+
+Legend 
+=====================
+ W    - Stone Wall
+ B    - Brick wall
+ C    - Chest
+ 1-4  - Biomass
+ `    - Floor
+ ][   - Stairs
+
+
