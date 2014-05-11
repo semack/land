@@ -158,9 +158,11 @@ namespace Land.Components
                 if (OnPlayingFinished != null)
                     OnPlayingFinished(this, new EventArgs());
             }
-            if (kState.IsKeyPressed(_oldKeyState, Keys.OemSemicolon) ||
-                bState.IsButtonPressed(_oldButtonState, Buttons.Start))
+            else if (kState.IsKeyPressed(_oldKeyState, Keys.OemSemicolon) ||
+                     bState.IsButtonPressed(_oldButtonState, Buttons.Start))
                 SetNextStage();
+            else if (kState.IsKeyPressed(_oldKeyState, Keys.R))
+                OnHeroLifeFired(this, new EventArgs());
             _oldKeyState = kState;
             _oldButtonState = bState;
         }
