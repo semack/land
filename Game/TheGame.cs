@@ -31,6 +31,7 @@ namespace Land
             };
             Content.RootDirectory = "Content";
             MapBank = 1;
+            Range = 3;
 
             BackColor = BackColorEnum.Black;
             _splash = new Splash(this);
