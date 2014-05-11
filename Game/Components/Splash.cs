@@ -119,7 +119,7 @@ namespace Land.Components
             spriteBatch.DrawString(Game.InfoFont, _infoText, _infoVector,
                 BackColor == Color.White ? Color.Black : Color.White);
             spriteBatch.DrawString(Game.InfoFont, string.Format("bank of maps #{0}", Game.MapBank),
-                new Vector2(44*16, 16*32+10),
+                new Vector2(44*16, 16*32 + 10),
                 BackColor == Color.White ? Color.Black : Color.White);
         }
 

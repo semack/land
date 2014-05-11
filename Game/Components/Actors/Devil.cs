@@ -16,7 +16,6 @@ namespace Land.Components.Actors
     {
         private readonly Hero _hero;
         private DirectionEnum _horizontalDirection = DirectionEnum.None;
-        public bool HasCaught { get; set; }
 
         private int _isHeroCaughtAnimation;
 
@@ -28,6 +27,8 @@ namespace Land.Components.Actors
             Number = number;
             _hero = hero;
         }
+
+        public bool HasCaught { get; set; }
 
         public DevilNumberEnum Number { get; private set; }
         public event EventHandler OnLifeFired;
@@ -50,7 +51,7 @@ namespace Land.Components.Actors
             {
                 _isHeroCaughtAnimation--;
                 if (_isHeroCaughtAnimation == 0 && OnLifeFired != null)
-                        OnLifeFired(this, new EventArgs());
+                    OnLifeFired(this, new EventArgs());
 
                 if (oldSprite == SpriteTypeEnum.DevilStairsLeft)
                     return SpriteTypeEnum.DevilStairsRight;

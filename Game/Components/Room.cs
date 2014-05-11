@@ -44,19 +44,6 @@ namespace Land.Components
             Reset();
         }
 
-        void OnCheckCollision(object sender, ActorMovedEventArgs e)
-        {
-            if (!_devil1.HasCaught && !_devil2.HasCaught)
-            {
-                _devil1.HasCaught = ((e.X == _devil1.X || e.X + 1 == _devil1.X || e.X == _devil1.X + 1 ||
-                                      e.X + 1 == _devil1.X + 1) && (e.Y == _devil1.Y));
-                _devil2.HasCaught = ((e.X == _devil2.X || e.X + 1 == _devil2.X || e.X == _devil2.X + 1 ||
-                                      e.X + 1 == _devil2.X + 1) && (e.Y == _devil2.Y));
-                if (_devil1.HasCaught || _devil2.HasCaught)
-                    _hero.Visible = false;
-            }
-        }
-
 
         public SpriteTypeEnum this[int x, int y]
         {
@@ -67,6 +54,19 @@ namespace Land.Components
         private Color BackColor
         {
             get { return Game.BackColor == BackColorEnum.White ? Color.White : Color.Black; }
+        }
+
+        private void OnCheckCollision(object sender, ActorMovedEventArgs e)
+        {
+            if (!_devil1.HasCaught && !_devil2.HasCaught)
+            {
+                _devil1.HasCaught = ((e.X == _devil1.X || e.X + 1 == _devil1.X || e.X == _devil1.X + 1 ||
+                                      e.X + 1 == _devil1.X + 1) && (e.Y == _devil1.Y));
+                _devil2.HasCaught = ((e.X == _devil2.X || e.X + 1 == _devil2.X || e.X == _devil2.X + 1 ||
+                                      e.X + 1 == _devil2.X + 1) && (e.Y == _devil2.Y));
+                if (_devil1.HasCaught || _devil2.HasCaught)
+                    _hero.Visible = false;
+            }
         }
 
         public event EventHandler OnPlayingFinished;
@@ -167,27 +167,27 @@ namespace Land.Components
 
         private void DrawInfoPanel(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.ScoreLabel, Game.BackColor].Texture, new Vector2(1 * 16, 0),
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.ScoreLabel, Game.BackColor].Texture, new Vector2(1*16, 0),
                 Color.White);
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.RangeLabel, Game.BackColor].Texture, new Vector2(16 * 16, 0),
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.RangeLabel, Game.BackColor].Texture, new Vector2(16*16, 0),
                 Color.White);
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.AttemptsLabel, Game.BackColor].Texture, new Vector2(27 * 16, 0),
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.AttemptsLabel, Game.BackColor].Texture, new Vector2(27*16, 0),
                 Color.White);
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.StageLabel, Game.BackColor].Texture, new Vector2(42 * 16, 0),
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.StageLabel, Game.BackColor].Texture, new Vector2(42*16, 0),
                 Color.White);
             for (int i = 0; i < Maps.CapacityX; i++)
             {
-                spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.Delimiter, Game.BackColor].Texture, new Vector2(i * 16, 1 * 32),
+                spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.Delimiter, Game.BackColor].Texture, new Vector2(i*16, 1*32),
                     Color.White);
             }
 
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D5}", _score), new Vector2(7 * 16, 0),
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D5}", _score), new Vector2(7*16, 0),
                 BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", Game.Range), new Vector2(22 * 16, 0),
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", Game.Range), new Vector2(22*16, 0),
                 BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _attempts), new Vector2(36 * 16, 0),
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _attempts), new Vector2(36*16, 0),
                 BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _stage), new Vector2(46 * 16, 0),
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _stage), new Vector2(46*16, 0),
                 BackColor == Color.White ? Color.Black : Color.White);
         }
 
@@ -202,7 +202,7 @@ namespace Land.Components
                 for (int y = 0; y < Maps.CapacityY; y++)
                 {
                     SpriteTypeEnum item = this[x, y];
-                    Game.SpriteBatch.Draw(Game.Sprites[item, Game.BackColor].Texture, new Vector2(x * 16, (y + 2) * 32),
+                    Game.SpriteBatch.Draw(Game.Sprites[item, Game.BackColor].Texture, new Vector2(x*16, (y + 2)*32),
                         Color.White);
                 }
             }
