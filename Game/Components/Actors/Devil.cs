@@ -16,7 +16,8 @@ namespace Land.Components.Actors
     {
         private readonly Hero _hero;
         private DirectionEnum _horizontalDirection = DirectionEnum.None;
-        private bool _isHeroCaught;
+        public bool HasCaught { get; set; }
+
         private int _isHeroCaughtAnimation;
 
         private DirectionEnum _verticalDirection = DirectionEnum.None;
@@ -34,7 +35,7 @@ namespace Land.Components.Actors
         public void Reset()
         {
             _isHeroCaughtAnimation = 10;
-            _isHeroCaught = false;
+            HasCaught = false;
             int x = 15;
             if (Number == DevilNumberEnum.Second)
                 x = 30;
@@ -45,16 +46,12 @@ namespace Land.Components.Actors
 
         protected override SpriteTypeEnum GetSprite(bool isFalling, SpriteTypeEnum oldSprite)
         {
-            if (_isHeroCaught && !_hero.IsInBiomass)
+            if (HasCaught && !_hero.IsInBiomass)
             {
-                _hero.Visible = false;
                 _isHeroCaughtAnimation--;
-                if (_isHeroCaughtAnimation == 0)
-                {
-                    _hero.Visible = true;
-                    if (OnLifeFired != null)
+                if (_isHeroCaughtAnimation == 0 && OnLifeFired != null)
                         OnLifeFired(this, new EventArgs());
-                }
+
                 if (oldSprite == SpriteTypeEnum.DevilStairsLeft)
                     return SpriteTypeEnum.DevilStairsRight;
                 return SpriteTypeEnum.DevilStairsLeft;
@@ -100,7 +97,7 @@ namespace Land.Components.Actors
         {
             _horizontalDirection = DirectionEnum.None;
             _verticalDirection = DirectionEnum.None;
-            if (!_isHeroCaught)
+            if (!HasCaught)
             {
                 if (X > _hero.X)
                     _horizontalDirection = DirectionEnum.Left;
@@ -110,19 +107,18 @@ namespace Land.Components.Actors
                     _verticalDirection = DirectionEnum.Up;
                 else if (Y < _hero.Y)
                     _verticalDirection = DirectionEnum.Down;
+
+                if (Maps.IsBiomass(Room[X, Y]) && Maps.IsBiomass(Room[X + 1, Y]))
+                    Reset();
             }
 
-            if (Maps.IsBiomass(Room[X, Y]) && Maps.IsBiomass(Room[X + 1, Y]))
-                Reset();
-            else if ((_hero.X == X || _hero.X + 1 == X || _hero.X == X + 1 || _hero.X + 1 == X + 1)
-                     && (_hero.Y == Y))
-                _isHeroCaught = true;
+
             base.Update(gameTime);
         }
 
         protected override bool ProcessFalling()
         {
-            if (!_isHeroCaught)
+            if (!HasCaught)
                 return base.ProcessFalling();
             return false;
         }

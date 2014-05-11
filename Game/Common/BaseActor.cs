@@ -6,6 +6,17 @@ using Microsoft.Xna.Framework;
 
 namespace Land.Common
 {
+
+    public class ActorMovedEventArgs : EventArgs
+    {
+        public int X { get; private set; }
+        public int Y { get; private set; }
+        public ActorMovedEventArgs(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+    }
     public abstract class BaseActor : BaseDrawableGameComponent
     {
         private readonly int _speedCoef;
@@ -26,6 +37,8 @@ namespace Land.Common
         protected DirectionEnum Direction { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
+
+        public event EventHandler<ActorMovedEventArgs> OnActorMoved;
         protected Room Room { get; private set; }
 
         protected virtual void Reset(int x, int y)
@@ -75,42 +88,42 @@ namespace Land.Common
             switch (direction)
             {
                 case DirectionEnum.Up:
-                {
-                    if (Y == 0)
+                    {
+                        if (Y == 0)
+                            break;
+                        SpriteTypeEnum cur1 = Room[X, Y];
+                        SpriteTypeEnum cur2 = Room[X + 1, Y];
+                        SpriteTypeEnum pos1 = Room[X, Y - 1];
+                        SpriteTypeEnum pos2 = Room[X + 1, Y - 1];
+                        result = ((Maps.IsStairs(cur1) && Maps.IsStairs(cur2)) && !(Maps.IsWall(pos1) || Maps.IsWall(pos2)));
                         break;
-                    SpriteTypeEnum cur1 = Room[X, Y];
-                    SpriteTypeEnum cur2 = Room[X + 1, Y];
-                    SpriteTypeEnum pos1 = Room[X, Y - 1];
-                    SpriteTypeEnum pos2 = Room[X + 1, Y - 1];
-                    result = ((Maps.IsStairs(cur1) && Maps.IsStairs(cur2)) && !(Maps.IsWall(pos1) || Maps.IsWall(pos2)));
-                    break;
-                }
+                    }
                 case DirectionEnum.Down:
-                {
-                    if (Y == 16)
+                    {
+                        if (Y == 16)
+                            break;
+                        SpriteTypeEnum pos1 = Room[X, Y + 1];
+                        SpriteTypeEnum pos2 = Room[X + 1, Y + 1];
+                        result = (HasNoStrongHold(pos1, false) && HasNoStrongHold(pos2, false)) ||
+                                 (Maps.IsStairs(pos1) && Maps.IsStairs(pos2));
                         break;
-                    SpriteTypeEnum pos1 = Room[X, Y + 1];
-                    SpriteTypeEnum pos2 = Room[X + 1, Y + 1];
-                    result = (HasNoStrongHold(pos1, false) && HasNoStrongHold(pos2, false)) ||
-                             (Maps.IsStairs(pos1) && Maps.IsStairs(pos2));
-                    break;
-                }
+                    }
                 case DirectionEnum.Left:
-                {
-                    if (X == 0)
+                    {
+                        if (X == 0)
+                            break;
+                        SpriteTypeEnum pos = Room[X - 1, Y];
+                        result = !Maps.IsWall(pos);
                         break;
-                    SpriteTypeEnum pos = Room[X - 1, Y];
-                    result = !Maps.IsWall(pos);
-                    break;
-                }
+                    }
                 case DirectionEnum.Right:
-                {
-                    if (X == 49)
+                    {
+                        if (X == 49)
+                            break;
+                        SpriteTypeEnum pos = Room[X + 2, Y];
+                        result = !Maps.IsWall(pos);
                         break;
-                    SpriteTypeEnum pos = Room[X + 2, Y];
-                    result = !Maps.IsWall(pos);
-                    break;
-                }
+                    }
             }
             return result;
         }
@@ -121,38 +134,41 @@ namespace Land.Common
             switch (direction)
             {
                 case DirectionEnum.Left:
-                {
-                    if (CanMove(DirectionEnum.Left))
-                        X--;
-                    else
-                        result = false;
-                    break;
-                }
+                    {
+                        if (CanMove(DirectionEnum.Left))
+                            X--;
+                        else
+                            result = false;
+                        break;
+                    }
                 case DirectionEnum.Right:
-                {
-                    if (CanMove(DirectionEnum.Right))
-                        X++;
-                    else
-                        result = false;
-                    break;
-                }
+                    {
+                        if (CanMove(DirectionEnum.Right))
+                            X++;
+                        else
+                            result = false;
+                        break;
+                    }
                 case DirectionEnum.Down:
-                {
-                    if (CanMove(DirectionEnum.Down))
-                        Y++;
-                    else
-                        result = false;
-                    break;
-                }
+                    {
+                        if (CanMove(DirectionEnum.Down))
+                            Y++;
+                        else
+                            result = false;
+                        break;
+                    }
                 case DirectionEnum.Up:
-                {
-                    if (CanMove(DirectionEnum.Up))
-                        Y--;
-                    else
-                        result = false;
-                    break;
-                }
+                    {
+                        if (CanMove(DirectionEnum.Up))
+                            Y--;
+                        else
+                            result = false;
+                        break;
+                    }
             }
+            if (result && OnActorMoved != null)
+                OnActorMoved(this, new ActorMovedEventArgs(X, Y));
+
             return result;
         }
 
@@ -165,7 +181,7 @@ namespace Land.Common
             if (_moveInterval.Ticks <= 0)
             {
                 ActorUpdate(gameTime);
-                _moveInterval = new TimeSpan(Game.GameSpeedScaleFactor*_speedCoef);
+                _moveInterval = new TimeSpan(Game.GameSpeedScaleFactor * _speedCoef);
             }
             base.Update(gameTime);
         }
@@ -186,7 +202,7 @@ namespace Land.Common
         public override void Draw(GameTime gameTime)
         {
             Game.SpriteBatch.Begin();
-            Game.SpriteBatch.Draw(Game.Sprites[_heroSprite, Game.BackColor].Texture, new Vector2(X*16, (Y + 2)*32),
+            Game.SpriteBatch.Draw(Game.Sprites[_heroSprite, Game.BackColor].Texture, new Vector2(X * 16, (Y + 2) * 32),
                 Color.White);
             Game.SpriteBatch.End();
             base.Draw(gameTime);

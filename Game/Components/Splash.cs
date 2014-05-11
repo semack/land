@@ -42,6 +42,12 @@ namespace Land.Components
 
         public event EventHandler<PlayingStartedEventArgs> OnPlayingStarted;
 
+        protected override void OnVisibleChanged(object sender, EventArgs args)
+        {
+            _splashInterval = new TimeSpan();
+            base.OnVisibleChanged(sender, args);
+        }
+
 
         private void UpdateSplash(KeyboardState kState, GamePadState gState, GameTime gameTime)
         {
@@ -51,14 +57,14 @@ namespace Land.Components
                 gState.IsButtonPressed(_oldGamePadState, Buttons.Start))
             {
                 _displayMode = DisplayModeEnum.GameStart;
-                _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*80);
+                _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*40);
             }
 
             _splashInterval = _splashInterval - gameTime.ElapsedGameTime;
             if (_splashInterval.Ticks < 0)
             {
                 _backColor = (_backColor == BackColorEnum.White ? BackColorEnum.Black : BackColorEnum.White);
-                _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*40);
+                _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*20);
             }
         }
 

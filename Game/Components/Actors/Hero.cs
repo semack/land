@@ -231,6 +231,8 @@ namespace Land.Components.Actors
                 _oldKeyboardStateState = kState;
                 _oldGamePadState = gState;
             }
+            else
+                Direction = DirectionEnum.None;
             base.Update(gameTime);
         }
 
