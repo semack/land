@@ -10,6 +10,7 @@ The objective of the game is to collect all chests on the given level and get to
 * Z, X            - shooting left and right
 * Q               - restart game
 * ;               - next stage
+* R               - restart current stage 
 * F10             - switch to next bank of maps
 
 #####Maps:
