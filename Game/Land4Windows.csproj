@@ -143,12 +143,24 @@
     <None Include="Maps\Bank.002\004.map">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Maps\Bank.002\005.map" />
-    <None Include="Maps\Bank.002\006.map" />
-    <None Include="Maps\Bank.002\007.map" />
-    <None Include="Maps\Bank.002\008.map" />
-    <None Include="Maps\Bank.002\009.map" />
-    <None Include="Maps\Bank.002\010.map" />
+    <None Include="Maps\Bank.002\005.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Maps\Bank.002\006.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Maps\Bank.002\007.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Maps\Bank.002\008.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Maps\Bank.002\009.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Maps\Bank.002\010.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Maps\map.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
