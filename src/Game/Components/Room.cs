@@ -40,7 +40,6 @@ namespace Land.Components
             _devil1.OnLifeFired += OnHeroLifeFired;
             _devil2.OnLifeFired += OnHeroLifeFired;
             _hero.OnActorMoved += OnCheckCollision;
-            _hero.OnActorMoved += OnCheckCollision;
             Reset();
         }
 

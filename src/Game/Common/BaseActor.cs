@@ -80,6 +80,8 @@ namespace Land.Common
 
             if (_isFalling)
                 Y++;
+            if (_isFalling && OnActorMoved != null)
+                OnActorMoved(this, new ActorMovedEventArgs(X, Y));
             return _isFalling;
         }
 
