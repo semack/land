@@ -39,7 +39,7 @@ namespace Land.Components
             _devil2 = new Devil(Game, this, _hero, DevilNumberEnum.Second);
             _devil1.OnLifeFired += OnHeroLifeFired;
             _devil2.OnLifeFired += OnHeroLifeFired;
-            _hero.OnActorMoved += OnCheckCollision;
+            _hero.OnReportPostion += OnCheckCollision;
             Reset();
         }
 
@@ -55,7 +55,7 @@ namespace Land.Components
             get { return Game.BackColor == BackColorEnum.White ? Color.White : Color.Black; }
         }
 
-        private void OnCheckCollision(object sender, ActorMovedEventArgs e)
+        private void OnCheckCollision(object sender, ReportPostionEventArgs e)
         {
             if (!_devil1.HasCaught && !_devil2.HasCaught)
             {

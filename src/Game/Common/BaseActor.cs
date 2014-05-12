@@ -6,9 +6,9 @@ using Microsoft.Xna.Framework;
 
 namespace Land.Common
 {
-    public class ActorMovedEventArgs : EventArgs
+    public class ReportPostionEventArgs : EventArgs
     {
-        public ActorMovedEventArgs(int x, int y)
+        public ReportPostionEventArgs(int x, int y)
         {
             X = x;
             Y = y;
@@ -40,7 +40,7 @@ namespace Land.Common
         public int Y { get; set; }
 
         protected Room Room { get; private set; }
-        public event EventHandler<ActorMovedEventArgs> OnActorMoved;
+        public event EventHandler<ReportPostionEventArgs> OnReportPostion;
 
         protected virtual void Reset(int x, int y)
         {
@@ -62,27 +62,27 @@ namespace Land.Common
             return result;
         }
 
-        protected virtual bool ProcessFalling()
+        protected virtual bool ProcessFalling(bool isFailing)
         {
             SpriteTypeEnum cur1 = Room[X, Y];
             SpriteTypeEnum cur2 = Room[X + 1, Y];
             SpriteTypeEnum pos1 = Room[X, Y + 1];
             SpriteTypeEnum pos2 = Room[X + 1, Y + 1];
+            
+            var result = false;
 
-            if (_isFalling) // TODO допилить проверку! одна из смолы, падаем если смола под ногами.
+            if (isFailing) // TODO допилить проверку! одна из смолы, падаем если смола под ногами.
             {
-                _isFalling = HasNoStrongHold(pos1, true) && HasNoStrongHold(pos2, true)
+                result = HasNoStrongHold(pos1, true) && HasNoStrongHold(pos2, true)
                              && !(Maps.IsBiomass(cur1) && Maps.IsBiomass(cur2));
             }
             else
-                _isFalling = HasNoStrongHold(pos1, false) && HasNoStrongHold(pos2, false)
+                result = HasNoStrongHold(pos1, false) && HasNoStrongHold(pos2, false)
                              && !(Maps.IsStairs(cur1) || Maps.IsStairs(cur2));
 
-            if (_isFalling)
+            if (result)
                 Y++;
-            if (_isFalling && OnActorMoved != null)
-                OnActorMoved(this, new ActorMovedEventArgs(X, Y));
-            return _isFalling;
+            return result;
         }
 
         protected virtual bool CanMove(DirectionEnum direction)
@@ -169,9 +169,6 @@ namespace Land.Common
                     break;
                 }
             }
-            if (result && OnActorMoved != null)
-                OnActorMoved(this, new ActorMovedEventArgs(X, Y));
-
             return result;
         }
 
@@ -191,14 +188,20 @@ namespace Land.Common
 
         protected virtual void ActorUpdate(GameTime gameTime)
         {
-            ProcessFalling();
+            _isFalling = ProcessFalling(_isFalling);
+            var isMoving = false;
             if (!_isFalling)
             {
-                if (!Move(Direction))
+                isMoving = Move(Direction);
+                if (!isMoving)
                     Direction = DirectionEnum.None;
             }
             else
                 Direction = DirectionEnum.None;
+
+            if (OnReportPostion != null)
+                OnReportPostion(this, new ReportPostionEventArgs(X, Y));
+
             _heroSprite = GetSprite(_isFalling, _heroSprite);
         }
 

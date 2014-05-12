@@ -117,10 +117,10 @@ namespace Land.Components.Actors
             base.Update(gameTime);
         }
 
-        protected override bool ProcessFalling()
+        protected override bool ProcessFalling(bool isFalling)
         {
             if (!HasCaught)
-                return base.ProcessFalling();
+                return base.ProcessFalling(isFalling);
             return false;
         }
 

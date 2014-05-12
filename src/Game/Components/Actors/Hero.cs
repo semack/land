@@ -236,14 +236,14 @@ namespace Land.Components.Actors
             base.Update(gameTime);
         }
 
-        protected override bool ProcessFalling()
+        protected override bool ProcessFalling(bool isFalling)
         {
-            bool isFalling = base.ProcessFalling();
-            if (isFalling && _shootStage != ShootStageEnum.None)
+            bool result = base.ProcessFalling(isFalling);
+            if (result && _shootStage != ShootStageEnum.None)
             {
                 Y--;
             }
-            return isFalling;
+            return result;
         }
 
         private void CheckChest(int x, int y)
