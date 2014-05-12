@@ -2,20 +2,20 @@
 Stage #7
                      
 01234567890123456789012345678901234567890123456780
-1][  B123412341                 BB C    C  C C BB1
-2][` ``````````  B12341234123``````` ][```````W  2
-3][  C C       C BBBBBBBBBBBBB  C   ][BB C C C BB3
-4BBBBBBBBB][  ```````````````````` ][BBBBBBBBBW``4
-5CCW  BCBBB][    B12341234123B    ][ W C C C C   5
-6    CW][```][BBBBBBBBBBBBBBBBBBB][ BBBBBBBBBBW``6 
-7CCW  ][         B12341234123B    ][   C C C C   7
-8   C W][ C    ][BBBBBCCBBBBBB][    ````````BBB][8
-9CCW  ][     ][  C C C   C C C  ][      B123C B][9
-0          ][BBBBBBBBBB][`````````][    BBBBBBB][0
-1  W```  ][BBC C C C CB][BBC C C CBB][      C B][1
-2CCB   ][````````BBBBBB][BBBBB````````][    ```][2 
-3BB  ][                                 ][     ][3
-4  ][1234123412341234123412341234123412341][   ][4
+1][][BBBBC    C  C       C                       1
+2C ][BBBBB    W][W   B123][  BBBB  B12341234123  2
+3 CWWWWWWW][  W][W   WWWW][  W  W  ][WWWWWWWWWWC 3
+4C W C    ][  B][B       ][        ][BBBBBBBC W C4
+5 CWC WWWWWWWWW][BBBBWWWWWWBB][WWWWWWWWWWWWW CWC 5
+6C W CW  B123412341  C       ][BBBC  CBBB  WC W C6
+7 CWC W  WWWWWWWWWW  WWWWWWWW][WWWWWWWWWW  B CWC 7
+8BB                C         ][         W][````  8
+9C `````````][WWWWW``WWWWWWBB  WWWWWWW][W  W  W C9
+0 CW  B1234B][           BBBCCBB      ][ CC   WC 0
+1C W  WWWWWW][BBBWW``][WWBBBBBBB][WW  WWWWWWCCB C1
+2 CB12341234][ C ][BB][BB12341BB][C C ][BBBBBBWC 2 
+3C WWWWWWWWW][BBB][BCWWW `````BB][WWWWWWWWWWCCW C3
+4        BBB][123][BBBBB       BBBBBBBCBBBBCBBB  4
 01234567890123456789012345678901234567890123456780
 
 Legend 
