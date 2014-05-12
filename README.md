@@ -22,11 +22,11 @@ All maps are located in "Maps" folder with the game and can be edited by text ed
 
 --
 #####Gameplay video:
-[![ScreenShot](https://github.com/semack/land/blob/master/screen03.png?raw=true)](https://www.youtube.com/watch?v=jY17w-EBIBg)
+[![ScreenShot](https://github.com/semack/land/blob/master//screenshots/screen03.png?raw=true)](https://www.youtube.com/watch?v=jY17w-EBIBg)
 
 
 #####Screenshots:
-![ScreenShot](https://github.com/semack/land/blob/master/screen01.png?raw=true) 
+![ScreenShot](https://github.com/semack/land/blob/master/screenshots/screen01.png?raw=true) 
 
-![ScreenShot](https://github.com/semack/land/blob/master/screen02.png?raw=true)
+![ScreenShot](https://github.com/semack/land/blob/master/screenshots/screen02.png?raw=true)
 
