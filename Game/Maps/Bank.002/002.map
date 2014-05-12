@@ -1,21 +1,21 @@
 ﻿LAND game map 48 x 14
-Stage #2
-                     
+Stage #2 
+                      
 01234567890123456789012345678901234567890123456780
-1][      C    C                   C BB   C   CC  1
-2][WWWWWWWWWWWW          CBBBBW```````][WW   ``][2
-3][  B123412         C            B123][       ][3
-4][  BBBBBBB][BB][``````BBBBBBBB][``````       ][4
-5][  BBC   CBB  ][              ][     C       ][5
-6][  BBBBBBB][  ][   C          ][    ```W     ][6
-7][  BBC   CBB  ][``````W       ][     C       ][7
-8][  BBBBBBB][  ][              ][  W``````    ][8
-9][  BBC   CBB  ][              ][     C       ][9
-0][  BBBBBBB][  ][   C          ][   ``````W   ][0
-1][```````````  ][``````W       ][      C      ][1
-2               ][      C       ][  W``````````][2 
-3][`````````````][      W```````][BB           ][3
-4][1234123412 C ][12341234123412341234123412341234
+1][BBCCCCBBBBB   CCB][           BBCCBCCBBCCBBB][1
+2][WWB][BWWWWW   ```][        WWWWWWWWWWWWWWWWW][2
+3][  C  C     C     ][BBCC          BBB12341234][3
+4][           C     ][`````````][   ```````````][4
+5BBBBBBBBBBB][BBCC  ][CC      C  C      BCC    ][5
+6CBCBCBC   W][WWWWWWWWWWWWWWW  ````   ][WWW    ][6
+7BBBCCCCC  W][ BBCCBBCBBCCCBB       CC][CC    W][7
+8][```````WWWWWWWWWWWWWWWWWWW   WWWWWWWWWWWWWW ][8
+9BBB123412341234  CC CC CCBBB123412341234     ][C9
+0  `````````````][`````````````````````````` ][CC0
+1               ][BBCCBBCC    BBC C C       ][```1
+2  ``][`````````][`````WWWWWWWWWWWWWW      ][ CCC2 
+3  CC][         ][                 BBBB   ][`````3
+4  BB][123412341][      BBB12341234123412][1234124
 01234567890123456789012345678901234567890123456780
 
 Legend 

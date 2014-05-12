@@ -1,0 +1,30 @@
+﻿LAND game map 48 x 14
+Stage #13
+                     
+01234567890123456789012345678901234567890123456780
+1][12341234  C C B][123412341W CB][ CC ][C ][C ][1
+2][BBBBBBBB][BBBBB][BBBBCBCBCWC B][    ][ C][ C][2
+3][ BC C C   C C C  B123C C CW CW][````][C ][C ][3
+4][ C`````````````][`````````WC W][    ][ C][ C][4
+5][12341234  B1234][B C C C CB C ][ CC ][  ][  ][5
+6][BBBBBBBB][BB````````````````````      ``  ``][6
+7][B CC  CC  CC  CC  CC  CC   CC   CC  CC  CC  ][7
+8][BBBB  BB  BB  BB  BB  BB  B  BBB  BB  BB  BB][8
+9][1234123B  B123412341234123B  B12341B  B12341][9
+0  BBCCBBCCBBCCBBCCBBCCBBCCBBCC  CCBBCCBBCCBBCC][0
+1  ][``][``][``][``][``][``][``][``][``][``][``][1
+2  ][C ][C ][C ][C ][C ][C ][C ][C ][C ][C ][C ][2 
+3  ][``][``][``][``][``][``][``][``][``][``][``][3
+4  ][ C][ C][ C][ C][ C][ C][ C][ C][ C][ C][ C][4
+01234567890123456789012345678901234567890123456780
+
+Legend 
+=====================
+ W    - Stone Wall
+ B    - Brick wall
+ C    - Chest
+ 1-4  - Biomass
+ `    - Floor
+ ][   - Stairs
+
+
