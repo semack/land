@@ -85,7 +85,7 @@ namespace Land.Classes
         {
             foreach (SpriteTypeEnum itemType in GetValues<SpriteTypeEnum>())
             {
-                string texturePath = string.Format(@"{0}\{1}", backColor, itemType);
+                string texturePath = string.Format("Graphics/{0}/{1}", backColor, itemType);
                 var texture = _content.Load<Texture2D>(texturePath);
                 var item = new GameSprite(itemType, texture, backColor);
                 _collection.Add(item);

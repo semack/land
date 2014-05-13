@@ -44,574 +44,574 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Black\AttemptsLabel.png">
+    <Compile Include="Graphics\Black\AttemptsLabel.png">
       <Name>AttemptsLabel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\Biomass1.png">
+    <Compile Include="Graphics\Black\Biomass1.png">
       <Name>Biomass1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\Biomass2.png">
+    <Compile Include="Graphics\Black\Biomass2.png">
       <Name>Biomass2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\Biomass3.png">
+    <Compile Include="Graphics\Black\Biomass3.png">
       <Name>Biomass3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\Biomass4.png">
+    <Compile Include="Graphics\Black\Biomass4.png">
       <Name>Biomass4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\BrickWall.png">
+    <Compile Include="Graphics\Black\BrickWall.png">
       <Name>BrickWall</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\Bullet.png">
+    <Compile Include="Graphics\Black\Bullet.png">
       <Name>Bullet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\Chest.png">
+    <Compile Include="Graphics\Black\Chest.png">
       <Name>Chest</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\Delimiter.png">
+    <Compile Include="Graphics\Black\Delimiter.png">
       <Name>Delimiter</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\DevilMoveLeft1.png">
+    <Compile Include="Graphics\Black\DevilMoveLeft1.png">
       <Name>DevilMoveLeft1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\DevilMoveLeft2.png">
+    <Compile Include="Graphics\Black\DevilMoveLeft2.png">
       <Name>DevilMoveLeft2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\DevilMoveLeft3.png">
+    <Compile Include="Graphics\Black\DevilMoveLeft3.png">
       <Name>DevilMoveLeft3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\DevilMoveLeft4.png">
+    <Compile Include="Graphics\Black\DevilMoveLeft4.png">
       <Name>DevilMoveLeft4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\DevilMoveLeft5.png">
+    <Compile Include="Graphics\Black\DevilMoveLeft5.png">
       <Name>DevilMoveLeft5</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\DevilMoveRight1.png">
+    <Compile Include="Graphics\Black\DevilMoveRight1.png">
       <Name>DevilMoveRight1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\DevilMoveRight2.png">
+    <Compile Include="Graphics\Black\DevilMoveRight2.png">
       <Name>DevilMoveRight2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\DevilMoveRight3.png">
+    <Compile Include="Graphics\Black\DevilMoveRight3.png">
       <Name>DevilMoveRight3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\DevilMoveRight4.png">
+    <Compile Include="Graphics\Black\DevilMoveRight4.png">
       <Name>DevilMoveRight4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\DevilMoveRight5.png">
+    <Compile Include="Graphics\Black\DevilMoveRight5.png">
       <Name>DevilMoveRight5</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\DevilStairsLeft.png">
+    <Compile Include="Graphics\Black\DevilStairsLeft.png">
       <Name>DevilStairsLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\DevilStairsRight.png">
+    <Compile Include="Graphics\Black\DevilStairsRight.png">
       <Name>DevilStairsRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\ExitDoorLeft.png">
+    <Compile Include="Graphics\Black\ExitDoorLeft.png">
       <Name>ExitDoorLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\ExitDoorRight.png">
+    <Compile Include="Graphics\Black\ExitDoorRight.png">
       <Name>ExitDoorRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\Floor.png">
+    <Compile Include="Graphics\Black\Floor.png">
       <Name>Floor</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroIdle.png">
+    <Compile Include="Graphics\Black\HeroIdle.png">
       <Name>HeroIdle</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroIdleLeft.png">
+    <Compile Include="Graphics\Black\HeroIdleLeft.png">
       <Name>HeroIdleLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroIdleRight.png">
+    <Compile Include="Graphics\Black\HeroIdleRight.png">
       <Name>HeroIdleRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroInBiomass1.png">
+    <Compile Include="Graphics\Black\HeroInBiomass1.png">
       <Name>HeroInBiomass1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroInBiomass2.png">
+    <Compile Include="Graphics\Black\HeroInBiomass2.png">
       <Name>HeroInBiomass2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroInBiomass3.png">
+    <Compile Include="Graphics\Black\HeroInBiomass3.png">
       <Name>HeroInBiomass3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroMoveLeft1.png">
+    <Compile Include="Graphics\Black\HeroMoveLeft1.png">
       <Name>HeroMoveLeft1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroMoveLeft2.png">
+    <Compile Include="Graphics\Black\HeroMoveLeft2.png">
       <Name>HeroMoveLeft2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroMoveLeft3.png">
+    <Compile Include="Graphics\Black\HeroMoveLeft3.png">
       <Name>HeroMoveLeft3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroMoveLeft4.png">
+    <Compile Include="Graphics\Black\HeroMoveLeft4.png">
       <Name>HeroMoveLeft4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroMoveRight1.png">
+    <Compile Include="Graphics\Black\HeroMoveRight1.png">
       <Name>HeroMoveRight1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroMoveRight2.png">
+    <Compile Include="Graphics\Black\HeroMoveRight2.png">
       <Name>HeroMoveRight2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroMoveRight3.png">
+    <Compile Include="Graphics\Black\HeroMoveRight3.png">
       <Name>HeroMoveRight3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroMoveRight4.png">
+    <Compile Include="Graphics\Black\HeroMoveRight4.png">
       <Name>HeroMoveRight4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroPrepareShotLeft.png">
+    <Compile Include="Graphics\Black\HeroPrepareShotLeft.png">
       <Name>HeroPrepareShotLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroPrepareShotRight.png">
+    <Compile Include="Graphics\Black\HeroPrepareShotRight.png">
       <Name>HeroPrepareShotRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroShotLeft.png">
+    <Compile Include="Graphics\Black\HeroShotLeft.png">
       <Name>HeroShotLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroShotRight.png">
+    <Compile Include="Graphics\Black\HeroShotRight.png">
       <Name>HeroShotRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroStairsLeft.png">
+    <Compile Include="Graphics\Black\HeroStairsLeft.png">
       <Name>HeroStairsLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\HeroStairsRight.png">
+    <Compile Include="Graphics\Black\HeroStairsRight.png">
       <Name>HeroStairsRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\RangeLabel.png">
+    <Compile Include="Graphics\Black\RangeLabel.png">
       <Name>RangeLabel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\ScoreLabel.png">
+    <Compile Include="Graphics\Black\ScoreLabel.png">
       <Name>ScoreLabel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\Space.png">
+    <Compile Include="Graphics\Black\Space.png">
       <Name>Space</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\Splash.png">
+    <Compile Include="Graphics\Black\Splash.png">
       <Name>Splash</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\StageLabel.png">
+    <Compile Include="Graphics\Black\StageLabel.png">
       <Name>StageLabel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\StairsLeft.png">
+    <Compile Include="Graphics\Black\StairsLeft.png">
       <Name>StairsLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\StairsRight.png">
+    <Compile Include="Graphics\Black\StairsRight.png">
       <Name>StairsRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\StoneWall.png">
+    <Compile Include="Graphics\Black\StoneWall.png">
       <Name>StoneWall</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\WallLive1.png">
+    <Compile Include="Graphics\Black\WallLive1.png">
       <Name>WallLive1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\WallLive2.png">
+    <Compile Include="Graphics\Black\WallLive2.png">
       <Name>WallLive2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\WallLive3.png">
+    <Compile Include="Graphics\Black\WallLive3.png">
       <Name>WallLive3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Black\YourRangeLabel.png">
+    <Compile Include="Graphics\Black\YourRangeLabel.png">
       <Name>YourRangeLabel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="Fonts\InfoFont.png">
+    <Compile Include="Graphics\Fonts\InfoFont.png">
       <Name>InfoFont</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGSpriteFontTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\AttemptsLabel.png">
+    <Compile Include="Graphics\White\AttemptsLabel.png">
       <Name>AttemptsLabel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\Biomass1.png">
+    <Compile Include="Graphics\White\Biomass1.png">
       <Name>Biomass1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\Biomass2.png">
+    <Compile Include="Graphics\White\Biomass2.png">
       <Name>Biomass2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\Biomass3.png">
+    <Compile Include="Graphics\White\Biomass3.png">
       <Name>Biomass3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\Biomass4.png">
+    <Compile Include="Graphics\White\Biomass4.png">
       <Name>Biomass4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\BrickWall.png">
+    <Compile Include="Graphics\White\BrickWall.png">
       <Name>BrickWall</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\Bullet.png">
+    <Compile Include="Graphics\White\Bullet.png">
       <Name>Bullet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\Chest.png">
+    <Compile Include="Graphics\White\Chest.png">
       <Name>Chest</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\Delimiter.png">
+    <Compile Include="Graphics\White\Delimiter.png">
       <Name>Delimiter</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\DevilMoveLeft1.png">
+    <Compile Include="Graphics\White\DevilMoveLeft1.png">
       <Name>DevilMoveLeft1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\DevilMoveLeft2.png">
+    <Compile Include="Graphics\White\DevilMoveLeft2.png">
       <Name>DevilMoveLeft2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\DevilMoveLeft3.png">
+    <Compile Include="Graphics\White\DevilMoveLeft3.png">
       <Name>DevilMoveLeft3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\DevilMoveLeft4.png">
+    <Compile Include="Graphics\White\DevilMoveLeft4.png">
       <Name>DevilMoveLeft4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\DevilMoveLeft5.png">
+    <Compile Include="Graphics\White\DevilMoveLeft5.png">
       <Name>DevilMoveLeft5</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\DevilMoveRight1.png">
+    <Compile Include="Graphics\White\DevilMoveRight1.png">
       <Name>DevilMoveRight1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\DevilMoveRight2.png">
+    <Compile Include="Graphics\White\DevilMoveRight2.png">
       <Name>DevilMoveRight2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\DevilMoveRight3.png">
+    <Compile Include="Graphics\White\DevilMoveRight3.png">
       <Name>DevilMoveRight3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\DevilMoveRight4.png">
+    <Compile Include="Graphics\White\DevilMoveRight4.png">
       <Name>DevilMoveRight4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\DevilMoveRight5.png">
+    <Compile Include="Graphics\White\DevilMoveRight5.png">
       <Name>DevilMoveRight5</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\DevilStairsLeft.png">
+    <Compile Include="Graphics\White\DevilStairsLeft.png">
       <Name>DevilStairsLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\DevilStairsRight.png">
+    <Compile Include="Graphics\White\DevilStairsRight.png">
       <Name>DevilStairsRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\ExitDoorLeft.png">
+    <Compile Include="Graphics\White\ExitDoorLeft.png">
       <Name>ExitDoorLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\ExitDoorRight.png">
+    <Compile Include="Graphics\White\ExitDoorRight.png">
       <Name>ExitDoorRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\Floor.png">
+    <Compile Include="Graphics\White\Floor.png">
       <Name>Floor</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroIdle.png">
+    <Compile Include="Graphics\White\HeroIdle.png">
       <Name>HeroIdle</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroIdleLeft.png">
+    <Compile Include="Graphics\White\HeroIdleLeft.png">
       <Name>HeroIdleLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroIdleRight.png">
+    <Compile Include="Graphics\White\HeroIdleRight.png">
       <Name>HeroIdleRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroInBiomass1.png">
+    <Compile Include="Graphics\White\HeroInBiomass1.png">
       <Name>HeroInBiomass1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroInBiomass2.png">
+    <Compile Include="Graphics\White\HeroInBiomass2.png">
       <Name>HeroInBiomass2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroInBiomass3.png">
+    <Compile Include="Graphics\White\HeroInBiomass3.png">
       <Name>HeroInBiomass3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroMoveLeft1.png">
+    <Compile Include="Graphics\White\HeroMoveLeft1.png">
       <Name>HeroMoveLeft1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroMoveLeft2.png">
+    <Compile Include="Graphics\White\HeroMoveLeft2.png">
       <Name>HeroMoveLeft2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroMoveLeft3.png">
+    <Compile Include="Graphics\White\HeroMoveLeft3.png">
       <Name>HeroMoveLeft3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroMoveLeft4.png">
+    <Compile Include="Graphics\White\HeroMoveLeft4.png">
       <Name>HeroMoveLeft4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroMoveRight1.png">
+    <Compile Include="Graphics\White\HeroMoveRight1.png">
       <Name>HeroMoveRight1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroMoveRight2.png">
+    <Compile Include="Graphics\White\HeroMoveRight2.png">
       <Name>HeroMoveRight2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroMoveRight3.png">
+    <Compile Include="Graphics\White\HeroMoveRight3.png">
       <Name>HeroMoveRight3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroMoveRight4.png">
+    <Compile Include="Graphics\White\HeroMoveRight4.png">
       <Name>HeroMoveRight4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroPrepareShotLeft.png">
+    <Compile Include="Graphics\White\HeroPrepareShotLeft.png">
       <Name>HeroPrepareShotLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroPrepareShotRight.png">
+    <Compile Include="Graphics\White\HeroPrepareShotRight.png">
       <Name>HeroPrepareShotRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroShotLeft.png">
+    <Compile Include="Graphics\White\HeroShotLeft.png">
       <Name>HeroShotLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroShotRight.png">
+    <Compile Include="Graphics\White\HeroShotRight.png">
       <Name>HeroShotRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroStairsLeft.png">
+    <Compile Include="Graphics\White\HeroStairsLeft.png">
       <Name>HeroStairsLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\HeroStairsRight.png">
+    <Compile Include="Graphics\White\HeroStairsRight.png">
       <Name>HeroStairsRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\RangeLabel.png">
+    <Compile Include="Graphics\White\RangeLabel.png">
       <Name>RangeLabel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\ScoreLabel.png">
+    <Compile Include="Graphics\White\ScoreLabel.png">
       <Name>ScoreLabel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\Space.png">
+    <Compile Include="Graphics\White\Space.png">
       <Name>Space</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\Splash.png">
+    <Compile Include="Graphics\White\Splash.png">
       <Name>Splash</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\StageLabel.png">
+    <Compile Include="Graphics\White\StageLabel.png">
       <Name>StageLabel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\StairsLeft.png">
+    <Compile Include="Graphics\White\StairsLeft.png">
       <Name>StairsLeft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\StairsRight.png">
+    <Compile Include="Graphics\White\StairsRight.png">
       <Name>StairsRight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\StoneWall.png">
+    <Compile Include="Graphics\White\StoneWall.png">
       <Name>StoneWall</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\WallLive1.png">
+    <Compile Include="Graphics\White\WallLive1.png">
       <Name>WallLive1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\WallLive2.png">
+    <Compile Include="Graphics\White\WallLive2.png">
       <Name>WallLive2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\WallLive3.png">
+    <Compile Include="Graphics\White\WallLive3.png">
       <Name>WallLive3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
-    <Compile Include="White\YourRangeLabel.png">
+    <Compile Include="Graphics\White\YourRangeLabel.png">
       <Name>YourRangeLabel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGTextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fonts\GameFont.png">
+    <Compile Include="Graphics\Fonts\GameFont.png">
       <Name>GameFont</Name>
       <Importer>TextureImporter</Importer>
       <Processor>MGSpriteFontTextureProcessor</Processor>

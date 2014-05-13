@@ -98,8 +98,8 @@ namespace Land
             // Create a new SpriteBatch, which can be used to draw textures.
             Sprites = new GameSpritesCollection(Content);
             SpriteBatch = new SpriteBatch(GraphicsDevice);
-            InfoFont = Content.Load<SpriteFont>("Fonts/InfoFont");
-            GameFont = Content.Load<SpriteFont>("Fonts/GameFont");
+            InfoFont = Content.Load<SpriteFont>("Graphics/Fonts/InfoFont");
+            GameFont = Content.Load<SpriteFont>("Graphics/Fonts/GameFont");
         }
 
         /// <summary>
