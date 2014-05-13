@@ -117,7 +117,7 @@ namespace Land
             }
             else if (state.IsKeyPressed(_oldKeyState, Keys.F10))
             {
-                int mapsCount = Directory.GetDirectories("Maps").Count(dir => dir.Contains("Bank."));
+                int mapsCount = Directory.GetDirectories("Content/Maps").Count(dir => dir.Contains("Bank."));
                 MapBank++;
                 if (MapBank > mapsCount)
                     MapBank = 1;
