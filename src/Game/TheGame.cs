@@ -26,8 +26,8 @@ namespace Land
             _graphics = new GraphicsDeviceManager(this)
             {
                 IsFullScreen = false,
-                PreferredBackBufferHeight = (Maps.CapacityY + 2) * 32,
-                PreferredBackBufferWidth = Maps.CapacityX * 16,
+                PreferredBackBufferHeight = (Maps.CapacityY + 2)*32,
+                PreferredBackBufferWidth = Maps.CapacityX*16,
             };
             Content.RootDirectory = "Content";
             MapBank = 1;
@@ -49,7 +49,7 @@ namespace Land
 
         public int GameSpeedScaleFactor
         {
-            get { return 300000 + Range * 250000; }
+            get { return 300000 + Range*250000; }
         }
 
         public GameSpritesCollection Sprites { get; private set; }
