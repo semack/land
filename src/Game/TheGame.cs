@@ -26,8 +26,8 @@ namespace Land
             _graphics = new GraphicsDeviceManager(this)
             {
                 IsFullScreen = false,
-                PreferredBackBufferHeight = (Maps.CapacityY + 2)*32,
-                PreferredBackBufferWidth = Maps.CapacityX*16
+                PreferredBackBufferHeight = (Maps.CapacityY + 2) * 32,
+                PreferredBackBufferWidth = Maps.CapacityX * 16,
             };
             Content.RootDirectory = "Content";
             MapBank = 1;
@@ -49,7 +49,7 @@ namespace Land
 
         public int GameSpeedScaleFactor
         {
-            get { return 300000 + Range*250000; }
+            get { return 300000 + Range * 250000; }
         }
 
         public GameSpritesCollection Sprites { get; private set; }
@@ -110,24 +110,11 @@ namespace Land
         protected override void Update(GameTime gameTime)
         {
             KeyboardState state = Keyboard.GetState();
-            if (state.IsKeyPressed(_oldKeyState, Keys.F11, Keys.F12))
+            if (state.IsKeyPressed(_oldKeyState, Keys.F12))
             {
-                _graphics.IsFullScreen = state.IsKeyDown(Keys.F11);
+                _graphics.ToggleFullScreen();
                 _graphics.ApplyChanges();
             }
-                //else if (state.IsKeyPressed(_oldKeyState, Keys.PageUp, Keys.PageDown))
-                //{
-                //    if (state.IsKeyDown(Keys.PageUp))
-                //    {
-                //        GameSpeedScaleFactor = GameSpeedScaleFactor - 50000;
-                //        if (GameSpeedScaleFactor < 0)
-                //            GameSpeedScaleFactor = 0;
-                //    }
-                //    else
-                //    {
-                //        GameSpeedScaleFactor = GameSpeedScaleFactor + 50000;
-                //    }
-                //}
             else if (state.IsKeyPressed(_oldKeyState, Keys.F10))
             {
                 int mapsCount = Directory.GetDirectories("Maps").Count(dir => dir.Contains("Bank."));

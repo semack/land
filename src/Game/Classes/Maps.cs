@@ -11,9 +11,15 @@ namespace Land.Classes
         public const int CapacityX = 50;
         public const int CapacityY = 16;
 
+        private static string GetMapBankPath(int bank)
+        {
+            return string.Format("Content/Maps/Bank.{0:D3}/", bank);
+        }
+
+
         public static int GetMapsCount(int bank)
         {
-            string dir = string.Format("Maps/Bank.{0:D3}", bank);
+            string dir = GetMapBankPath(bank);
             return Directory.GetFiles(dir).Count(file => file.Contains(".map"));
         }
 
@@ -74,7 +80,7 @@ namespace Land.Classes
             var result = new List<string>();
             try
             {
-                string fileName = string.Format("Maps/Bank.{0:D3}/{1:D3}.map", bank, number);
+                string fileName = string.Format("{0}{1:D3}.map", GetMapBankPath(bank), number);
                 using (var reader = new StreamReader(fileName))
                 {
                     string line = string.Empty;
