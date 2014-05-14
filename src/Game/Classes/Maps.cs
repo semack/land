@@ -11,16 +11,23 @@ namespace Land.Classes
         public const int CapacityX = 50;
         public const int CapacityY = 16;
 
+        private const string MapsRoot = "Content/Maps";
+        private const string MapExtension = ".map";
+        private const string BankPrefix = "Bank"; 
+
         private static string GetMapBankPath(int bank)
         {
-            return string.Format("Content/Maps/Bank.{0:D3}/", bank);
+            return string.Format("{0}/{1}.{2:D3}/", MapsRoot, BankPrefix, bank);
         }
 
-
+        public static int GetBanksCount()
+        {
+            return Directory.GetDirectories(MapsRoot).Count(dir => dir.Contains(string.Format("{0}.", BankPrefix)));
+        }
         public static int GetMapsCount(int bank)
         {
             string dir = GetMapBankPath(bank);
-            return Directory.GetFiles(dir).Count(file => file.Contains(".map"));
+            return Directory.GetFiles(dir).Count(file => file.Contains(MapExtension));
         }
 
         public static bool IsBiomass(SpriteTypeEnum source)
@@ -80,7 +87,7 @@ namespace Land.Classes
             var result = new List<string>();
             try
             {
-                string fileName = string.Format("{0}{1:D3}.map", GetMapBankPath(bank), number);
+                string fileName = string.Format("{0}{1:D3}{2}", GetMapBankPath(bank), number, MapExtension);
                 using (var reader = new StreamReader(fileName))
                 {
                     string line = string.Empty;

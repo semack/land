@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using Land.Classes;
+using Land.Common;
 using Land.Components;
 using Land.Enums;
 using Land.Utils;
@@ -20,6 +21,9 @@ namespace Land
         private readonly Room _room;
         private readonly Splash _splash;
         private KeyboardState _oldKeyState;
+
+        public int DeltaX { get; private set; }
+        public int DelatY { get; private set; }
 
         public TheGame()
         {
@@ -117,9 +121,8 @@ namespace Land
             }
             else if (state.IsKeyPressed(_oldKeyState, Keys.F10))
             {
-                int mapsCount = Directory.GetDirectories("Content/Maps").Count(dir => dir.Contains("Bank."));
                 MapBank++;
-                if (MapBank > mapsCount)
+                if (MapBank > Maps.GetBanksCount())
                     MapBank = 1;
                 OnRoomPlayingFinished(this, null);
             }
