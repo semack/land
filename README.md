@@ -18,8 +18,7 @@ The objective of the game is to collect all chests on the given level and get to
 There is two map-sets of two known versions of original game. To switch between sets press f10 key. All maps are located in "Content\Maps" folder with the game and can be edited by text editor with fixed width font. Also there is map template with empty map. To make map file visible for the game it should be placed in "Content\Maps\Bank.XXX" folder and it should have number of stage in file name and have .map extension. Other files will be ignored. Example: "020.map".  
 
 --
-**[Download (Google Drive)](https://drive.google.com/folderview?id=0B-Q6m5TBZaSrb2hzeWFuTE9WcFE&usp=sharing) compiled binaries for Windows**
-> [.NET framework 4.0] (http://www.microsoft.com/en-us/download/details.aspx?id=17851) is required.
+**[Download (Google Drive)](https://drive.google.com/file/d/0B-Q6m5TBZaSrSzAzeDk5WjNFLWM/edit?usp=sharing) installer for Windows**
 
 --
 #####Gameplay video:
