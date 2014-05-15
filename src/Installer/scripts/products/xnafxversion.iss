@@ -12,5 +12,5 @@ begin
         key := 'SOFTWARE\Microsoft\XNA\Framework\v4.0';
     end;
     success := RegQueryDWordValue(HKLM, key, 'Installed', install);
-    result := not (success and (install = 1));
+    result := (success and (install = 1));
 end;
