@@ -30,9 +30,9 @@ namespace Land.Components
             : base(game)
         {
             _infoText.Append(
-                "This is the port of the formely popular game LAND. It was originally developed by ASP corp. on 1986 and ran under PDP-11 compatible computers.\r\n");
+                "This is the port of the formerly popular game LAND. It was originally developed by ASP corp. on 1986 and ran under PDP-11 compatible computers.\r\n");
             _infoText.Append(
-                "Ported using MonoGame framework by Andriy S'omak (semack@gmail.com), April 2014. Game sources at https://github.com/semack/land");
+                "Ported using MonoGame and XNA framework by Andriy S'omak (semack@gmail.com), April 2014. Game sources at https://github.com/semack/land");
         }
 
         private Color BackColor
