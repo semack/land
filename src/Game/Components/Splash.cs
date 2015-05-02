@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Text;
 using Land.Classes;
 using Land.Common;
@@ -29,10 +30,11 @@ namespace Land.Components
         public Splash(TheGame game)
             : base(game)
         {
+            Version version = Assembly.GetEntryAssembly().GetName().Version;            
             _infoText.Append(
                 "This is retrospective of the formerly popular game \"LAND\". It was originally developed by ASP corp. in 1986 and ran under PDP-11 compatible computers.\r\n");
             _infoText.Append(
-                "The game was ported using MonoGame and XNA framework by Andriy S'omak (semack@gmail.com), April 2014.");
+                string.Format("The game was ported using MonoGame and XNA framework by Andriy S'omak (semack@gmail.com), April 2014. Version {0}", version));
         }
 
         private Color BackColor
