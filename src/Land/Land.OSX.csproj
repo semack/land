@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{948B3504-5B70-4649-8FE4-BDE1FB46EC69};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{98898D3E-A350-49D2-BCE9-640D74A487C1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Land</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>Land</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\OSX\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseRefCounting>false</UseRefCounting>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\OSX\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseRefCounting>false</UseRefCounting>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <CreatePackage>false</CreatePackage>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="MonoMac" />
+    <Reference Include="MonoGame.Framework">
+      <HintPath>packages\MonoGame.Framework.MacOS.3.3.0.0\lib\net45\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.Sdl">
+      <HintPath>packages\MonoGame.Framework.MacOS.3.3.0.0\lib\net45\Tao.Sdl.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK">
+      <HintPath>packages\MonoGame.Framework.MacOS.3.3.0.0\lib\net45\OpenTK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\GameSprite.cs" />
+    <Compile Include="Classes\GameSpritesCollection.cs" />
+    <Compile Include="Classes\Maps.cs" />
+    <Compile Include="Common\BaseActor.cs" />
+    <Compile Include="Common\BaseDrawableGameComponent.cs" />
+    <Compile Include="Common\BaseGameComponent .cs" />
+    <Compile Include="Components\Room.cs" />
+    <Compile Include="Components\Splash.cs" />
+    <Compile Include="Components\Actors\Biomass.cs" />
+    <Compile Include="Components\Actors\Bullet.cs" />
+    <Compile Include="Components\Actors\Devil.cs" />
+    <Compile Include="Components\Actors\Hero.cs" />
+    <Compile Include="Components\Actors\Wall.cs" />
+    <Compile Include="Enums\BackColorEnum.cs" />
+    <Compile Include="Enums\DirectionEnum.cs" />
+    <Compile Include="Enums\SpriteTypeEnum.cs" />
+    <Compile Include="Utils\EnumExtender.cs" />
+    <Compile Include="Utils\KeysExtender.cs" />
+    <Compile Include="TheGame.cs" />
+    <Compile Include="Main.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="packages.config" />
+    <None Include="Content\Source\Content.mgcb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="Content\Graphics\" />
+    <Folder Include="Content\Graphics\Black\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Common\" />
+    <Folder Include="Components\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Graphics\Fonts\GameFont.xnb" />
+    <Content Include="Content\Graphics\Fonts\InfoFont.xnb" />
+    <Content Include="Content\Graphics\White\AttemptsLabel.xnb" />
+    <Content Include="Content\Graphics\White\Biomass1.xnb" />
+    <Content Include="Content\Graphics\White\Biomass2.xnb" />
+    <Content Include="Content\Graphics\White\Biomass3.xnb" />
+    <Content Include="Content\Graphics\White\Biomass4.xnb" />
+    <Content Include="Content\Graphics\White\BrickWall.xnb" />
+    <Content Include="Content\Graphics\White\Bullet.xnb" />
+    <Content Include="Content\Graphics\White\Chest.xnb" />
+    <Content Include="Content\Graphics\White\Delimiter.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveLeft1.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveLeft2.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveLeft3.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveLeft4.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveLeft5.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveRight1.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveRight2.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveRight3.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveRight4.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveRight5.xnb" />
+    <Content Include="Content\Graphics\White\DevilStairsLeft.xnb" />
+    <Content Include="Content\Graphics\White\DevilStairsRight.xnb" />
+    <Content Include="Content\Graphics\White\ExitDoorLeft.xnb" />
+    <Content Include="Content\Graphics\White\ExitDoorRight.xnb" />
+    <Content Include="Content\Graphics\White\Floor.xnb" />
+    <Content Include="Content\Graphics\White\HeroIdle.xnb" />
+    <Content Include="Content\Graphics\White\HeroIdleLeft.xnb" />
+    <Content Include="Content\Graphics\White\HeroIdleRight.xnb" />
+    <Content Include="Content\Graphics\White\HeroInBiomass1.xnb" />
+    <Content Include="Content\Graphics\White\HeroInBiomass2.xnb" />
+    <Content Include="Content\Graphics\White\HeroInBiomass3.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveLeft1.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveLeft2.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveLeft3.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveLeft4.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveRight1.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveRight2.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveRight3.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveRight4.xnb" />
+    <Content Include="Content\Graphics\White\HeroPrepareShotLeft.xnb" />
+    <Content Include="Content\Graphics\White\HeroPrepareShotRight.xnb" />
+    <Content Include="Content\Graphics\White\HeroShotLeft.xnb" />
+    <Content Include="Content\Graphics\White\HeroShotRight.xnb" />
+    <Content Include="Content\Graphics\White\HeroStairsLeft.xnb" />
+    <Content Include="Content\Graphics\White\HeroStairsRight.xnb" />
+    <Content Include="Content\Graphics\White\RangeLabel.xnb" />
+    <Content Include="Content\Graphics\White\ScoreLabel.xnb" />
+    <Content Include="Content\Graphics\White\Space.xnb" />
+    <Content Include="Content\Graphics\White\Splash.xnb" />
+    <Content Include="Content\Graphics\White\StageLabel.xnb" />
+    <Content Include="Content\Graphics\White\StairsLeft.xnb" />
+    <Content Include="Content\Graphics\White\StairsRight.xnb" />
+    <Content Include="Content\Graphics\White\StoneWall.xnb" />
+    <Content Include="Content\Graphics\White\WallLive1.xnb" />
+    <Content Include="Content\Graphics\White\WallLive2.xnb" />
+    <Content Include="Content\Graphics\White\WallLive3.xnb" />
+    <Content Include="Content\Graphics\White\YourRangeLabel.xnb" />
+    <Content Include="Content\Graphics\Black\AttemptsLabel.xnb" />
+    <Content Include="Content\Graphics\Black\Biomass1.xnb" />
+    <Content Include="Content\Graphics\Black\Biomass2.xnb" />
+    <Content Include="Content\Graphics\Black\Biomass3.xnb" />
+    <Content Include="Content\Graphics\Black\Biomass4.xnb" />
+    <Content Include="Content\Graphics\Black\BrickWall.xnb" />
+    <Content Include="Content\Graphics\Black\Bullet.xnb" />
+    <Content Include="Content\Graphics\Black\Chest.xnb" />
+    <Content Include="Content\Graphics\Black\Delimiter.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveLeft1.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveLeft2.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveLeft3.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveLeft4.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveLeft5.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveRight1.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveRight2.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveRight3.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveRight4.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveRight5.xnb" />
+    <Content Include="Content\Graphics\Black\DevilStairsLeft.xnb" />
+    <Content Include="Content\Graphics\Black\DevilStairsRight.xnb" />
+    <Content Include="Content\Graphics\Black\ExitDoorLeft.xnb" />
+    <Content Include="Content\Graphics\Black\ExitDoorRight.xnb" />
+    <Content Include="Content\Graphics\Black\Floor.xnb" />
+    <Content Include="Content\Graphics\Black\HeroIdle.xnb" />
+    <Content Include="Content\Graphics\Black\HeroIdleLeft.xnb" />
+    <Content Include="Content\Graphics\Black\HeroIdleRight.xnb" />
+    <Content Include="Content\Graphics\Black\HeroInBiomass1.xnb" />
+    <Content Include="Content\Graphics\Black\HeroInBiomass2.xnb" />
+    <Content Include="Content\Graphics\Black\HeroInBiomass3.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveLeft1.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveLeft2.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveLeft3.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveLeft4.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveRight1.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveRight2.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveRight3.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveRight4.xnb" />
+    <Content Include="Content\Graphics\Black\HeroPrepareShotLeft.xnb" />
+    <Content Include="Content\Graphics\Black\HeroPrepareShotRight.xnb" />
+    <Content Include="Content\Graphics\Black\HeroShotLeft.xnb" />
+    <Content Include="Content\Graphics\Black\HeroShotRight.xnb" />
+    <Content Include="Content\Graphics\Black\HeroStairsLeft.xnb" />
+    <Content Include="Content\Graphics\Black\HeroStairsRight.xnb" />
+    <Content Include="Content\Graphics\Black\RangeLabel.xnb" />
+    <Content Include="Content\Graphics\Black\ScoreLabel.xnb" />
+    <Content Include="Content\Graphics\Black\Space.xnb" />
+    <Content Include="Content\Graphics\Black\Splash.xnb" />
+    <Content Include="Content\Graphics\Black\StageLabel.xnb" />
+    <Content Include="Content\Graphics\Black\StairsLeft.xnb" />
+    <Content Include="Content\Graphics\Black\StairsRight.xnb" />
+    <Content Include="Content\Graphics\Black\StoneWall.xnb" />
+    <Content Include="Content\Graphics\Black\WallLive1.xnb" />
+    <Content Include="Content\Graphics\Black\WallLive2.xnb" />
+    <Content Include="Content\Graphics\Black\WallLive3.xnb" />
+    <Content Include="Content\Graphics\Black\YourRangeLabel.xnb" />
+    <Content Include="Content\Maps\Bank.001\001.map" />
+    <Content Include="Content\Maps\Bank.001\002.map" />
+    <Content Include="Content\Maps\Bank.001\003.map" />
+    <Content Include="Content\Maps\Bank.001\004.map" />
+    <Content Include="Content\Maps\Bank.001\005.map" />
+    <Content Include="Content\Maps\Bank.001\006.map" />
+    <Content Include="Content\Maps\Bank.001\007.map" />
+    <Content Include="Content\Maps\Bank.001\008.map" />
+    <Content Include="Content\Maps\Bank.001\009.map" />
+    <Content Include="Content\Maps\Bank.001\010.map" />
+    <Content Include="Content\Maps\Bank.001\011.map" />
+    <Content Include="Content\Maps\Bank.002\001.map" />
+    <Content Include="Content\Maps\Bank.002\002.map" />
+    <Content Include="Content\Maps\Bank.002\003.map" />
+    <Content Include="Content\Maps\Bank.002\004.map" />
+    <Content Include="Content\Maps\Bank.002\005.map" />
+    <Content Include="Content\Maps\Bank.002\006.map" />
+    <Content Include="Content\Maps\Bank.002\007.map" />
+    <Content Include="Content\Maps\Bank.002\008.map" />
+    <Content Include="Content\Maps\Bank.002\009.map" />
+    <Content Include="Content\Maps\Bank.002\010.map" />
+    <Content Include="Content\Maps\Bank.002\011.map" />
+    <Content Include="Content\Maps\Bank.002\012.map" />
+    <Content Include="Content\Maps\Bank.002\013.map" />
+    <Content Include="Content\Maps\Bank.002\014.map" />
+    <Content Include="Content\Maps\Bank.002\015.map" />
+    <Content Include="Content\Maps\map.template" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Game.icns" />
+    <BundleResource Include="Content\Source\Graphics\Black\AttemptsLabel.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\Biomass1.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\Biomass2.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\Biomass3.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\Biomass4.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\BrickWall.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\Bullet.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\Chest.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\Delimiter.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\DevilMoveLeft1.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\DevilMoveLeft2.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\DevilMoveLeft3.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\DevilMoveLeft4.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\DevilMoveLeft5.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\DevilMoveRight1.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\DevilMoveRight2.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\DevilMoveRight3.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\DevilMoveRight4.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\DevilMoveRight5.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\DevilStairsLeft.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\DevilStairsRight.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\ExitDoorLeft.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\ExitDoorRight.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\Floor.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroIdle.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroIdleLeft.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroIdleRight.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroInBiomass1.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroInBiomass2.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroInBiomass3.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroMoveLeft1.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroMoveLeft2.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroMoveLeft3.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroMoveLeft4.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroMoveRight1.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroMoveRight2.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroMoveRight3.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroMoveRight4.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroPrepareShotLeft.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroPrepareShotRight.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroShotLeft.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroShotRight.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroStairsLeft.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\HeroStairsRight.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\RangeLabel.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\ScoreLabel.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\Space.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\Splash.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\StageLabel.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\StairsLeft.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\StairsRight.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\StoneWall.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\WallLive1.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\WallLive2.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\WallLive3.png" />
+    <BundleResource Include="Content\Source\Graphics\Black\YourRangeLabel.png" />
+    <BundleResource Include="Content\Source\Graphics\Fonts\GameFont.png" />
+    <BundleResource Include="Content\Source\Graphics\Fonts\InfoFont.png" />
+    <BundleResource Include="Content\Source\Graphics\White\AttemptsLabel.png" />
+    <BundleResource Include="Content\Source\Graphics\White\Biomass1.png" />
+    <BundleResource Include="Content\Source\Graphics\White\Biomass2.png" />
+    <BundleResource Include="Content\Source\Graphics\White\Biomass3.png" />
+    <BundleResource Include="Content\Source\Graphics\White\Biomass4.png" />
+    <BundleResource Include="Content\Source\Graphics\White\BrickWall.png" />
+    <BundleResource Include="Content\Source\Graphics\White\Bullet.png" />
+    <BundleResource Include="Content\Source\Graphics\White\Chest.png" />
+    <BundleResource Include="Content\Source\Graphics\White\Delimiter.png" />
+    <BundleResource Include="Content\Source\Graphics\White\DevilMoveLeft1.png" />
+    <BundleResource Include="Content\Source\Graphics\White\DevilMoveLeft2.png" />
+    <BundleResource Include="Content\Source\Graphics\White\DevilMoveLeft3.png" />
+    <BundleResource Include="Content\Source\Graphics\White\DevilMoveLeft4.png" />
+    <BundleResource Include="Content\Source\Graphics\White\DevilMoveLeft5.png" />
+    <BundleResource Include="Content\Source\Graphics\White\DevilMoveRight1.png" />
+    <BundleResource Include="Content\Source\Graphics\White\DevilMoveRight2.png" />
+    <BundleResource Include="Content\Source\Graphics\White\DevilMoveRight3.png" />
+    <BundleResource Include="Content\Source\Graphics\White\DevilMoveRight4.png" />
+    <BundleResource Include="Content\Source\Graphics\White\DevilMoveRight5.png" />
+    <BundleResource Include="Content\Source\Graphics\White\DevilStairsLeft.png" />
+    <BundleResource Include="Content\Source\Graphics\White\DevilStairsRight.png" />
+    <BundleResource Include="Content\Source\Graphics\White\ExitDoorLeft.png" />
+    <BundleResource Include="Content\Source\Graphics\White\ExitDoorRight.png" />
+    <BundleResource Include="Content\Source\Graphics\White\Floor.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroIdle.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroIdleLeft.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroIdleRight.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroInBiomass1.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroInBiomass2.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroInBiomass3.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroMoveLeft1.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroMoveLeft2.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroMoveLeft3.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroMoveLeft4.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroMoveRight1.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroMoveRight2.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroMoveRight3.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroMoveRight4.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroPrepareShotLeft.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroPrepareShotRight.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroShotLeft.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroShotRight.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroStairsLeft.png" />
+    <BundleResource Include="Content\Source\Graphics\White\HeroStairsRight.png" />
+    <BundleResource Include="Content\Source\Graphics\White\RangeLabel.png" />
+    <BundleResource Include="Content\Source\Graphics\White\ScoreLabel.png" />
+    <BundleResource Include="Content\Source\Graphics\White\Space.png" />
+    <BundleResource Include="Content\Source\Graphics\White\Splash.png" />
+  </ItemGroup>
+</Project>
