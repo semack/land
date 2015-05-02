@@ -1,30 +1,37 @@
-﻿LAND game map 48 x 14
+LAND game Map 50 x 16
 Stage #1
-                     
-01234567890123456789012345678901234567890123456780
-1][][][    C          C          ][BBBBCBBBBBBB  1
-2  BB][WWWWWW][BBBBBBBBBBBBBBBBBB][WWWWWWW][WWW][2
-3BBBB    C   ][`````  `````````  ][            ][3
-4C     ][````][     C         C                ][4
-5                 C      ][``````````````````WW][5
-6][``````````WWWWW][WWW``][BBBCBBBBB    B C BBW][6
-7][              C  C      ][BBCB][B][  ```````][7
-8][`````       WWWWWWWWBB][`````````][         ][8
-9][        ][            ][  C          W][````][9
-0][  B1234B][``````````````  ```````][  W][    ][0
-1][  BBBBBB    B12341234123412341234][  W][  C ][1
-2][          ][ ````````````````````][  W][````][2 
-3][BBB```````][                     ][ CW][      3
-4][     C    ][123412341234123412341WWWWW][  C   4
-01234567890123456789012345678901234567890123456780
+CRC-32 4708B429
 
-Legend 
+{
+W<>WWWWWWWWWWWW  WWWWWWWWWWWWW  WWWWWWWWWWWWWWWWWW
+W][][][    C          C          ][BBBBCBBBBBBB  W
+W  BB][WWWWWW][BBBBBBBBBBBBBBBBBB][WWWWWWW][WWW][W
+WBBBB    C   ][`````  `````````  ][            ][W
+WC     ][````][     C         C                ][W
+W                 C      ][``````````````````WW][W
+W][``````````WWWWW][WWW``][BBBCBBBBB    B C BBW][W
+W][              C  C      ][BBCB][B][  ```````][W
+W][`````       WWWWWWWWBB][`````````][         ][W
+W][        ][    C  C    ][  C          W][````][W
+W][  B1234B][``````````````  ```````][  W][    ][W
+W][  BBBBBB    B12341234123412341234][  W][  C ][W
+W][          ][`````````````````````][  W][````][W
+W][BBB```````][                     ][ CW][      W
+W][ C C C    ][123412341234123412341WWWWW][  C   W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+}
+
+Legend
 =====================
- W    - Stone Wall
- B    - Brick wall
- C    - Chest
- 1-4  - Biomass
- `    - Floor
- ][   - Stairs
-
-
+ W = Stone Wall
+ B = Brick wall
+ C = Chest
+ 1 = Biomass 1
+ 2 = Biomass 2
+ 3 = Biomass 3
+ 4 = Biomass 4
+ ` = Floor
+ ] = Stair Left
+ [ = Stair Right
+ < = Exit Door Left
+ > = Exit Door Right

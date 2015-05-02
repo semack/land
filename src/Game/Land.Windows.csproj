@@ -11,9 +11,10 @@
     <RootNamespace>Land</RootNamespace>
     <AssemblyName>Land</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MonoGamePlatform>WindowsGL</MonoGamePlatform> 
+    <MonoGamePlatform>WindowsGL</MonoGamePlatform>
     <MonoGameContentBuilderExe>
     </MonoGameContentBuilderExe>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -89,460 +89,452 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Source\Graphics\Black\AttemptsLabel.png" />
-    <Content Include="Content\Source\Graphics\Black\Biomass1.png" />
-    <Content Include="Content\Source\Graphics\Black\Biomass2.png" />
-    <Content Include="Content\Source\Graphics\Black\Biomass3.png" />
-    <Content Include="Content\Source\Graphics\Black\Biomass4.png" />
-    <Content Include="Content\Source\Graphics\Black\BrickWall.png" />
-    <Content Include="Content\Source\Graphics\Black\Bullet.png" />
-    <Content Include="Content\Source\Graphics\Black\Chest.png" />
-    <Content Include="Content\Source\Graphics\Black\Delimiter.png" />
-    <Content Include="Content\Source\Graphics\Black\DevilMoveLeft1.png" />
-    <Content Include="Content\Source\Graphics\Black\DevilMoveLeft2.png" />
-    <Content Include="Content\Source\Graphics\Black\DevilMoveLeft3.png" />
-    <Content Include="Content\Source\Graphics\Black\DevilMoveLeft4.png" />
-    <Content Include="Content\Source\Graphics\Black\DevilMoveLeft5.png" />
-    <Content Include="Content\Source\Graphics\Black\DevilMoveRight1.png" />
-    <Content Include="Content\Source\Graphics\Black\DevilMoveRight2.png" />
-    <Content Include="Content\Source\Graphics\Black\DevilMoveRight3.png" />
-    <Content Include="Content\Source\Graphics\Black\DevilMoveRight4.png" />
-    <Content Include="Content\Source\Graphics\Black\DevilMoveRight5.png" />
-    <Content Include="Content\Source\Graphics\Black\DevilStairsLeft.png" />
-    <Content Include="Content\Source\Graphics\Black\DevilStairsRight.png" />
-    <Content Include="Content\Source\Graphics\Black\ExitDoorLeft.png" />
-    <Content Include="Content\Source\Graphics\Black\ExitDoorRight.png" />
-    <Content Include="Content\Source\Graphics\Black\Floor.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroIdle.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroIdleLeft.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroIdleRight.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroInBiomass1.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroInBiomass2.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroInBiomass3.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroMoveLeft1.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroMoveLeft2.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroMoveLeft3.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroMoveLeft4.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroMoveRight1.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroMoveRight2.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroMoveRight3.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroMoveRight4.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroPrepareShotLeft.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroPrepareShotRight.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroShotLeft.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroShotRight.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroStairsLeft.png" />
-    <Content Include="Content\Source\Graphics\Black\HeroStairsRight.png" />
-    <Content Include="Content\Source\Graphics\Black\RangeLabel.png" />
-    <Content Include="Content\Source\Graphics\Black\ScoreLabel.png" />
-    <Content Include="Content\Source\Graphics\Black\Space.png" />
-    <Content Include="Content\Source\Graphics\Black\Splash.png" />
-    <Content Include="Content\Source\Graphics\Black\StageLabel.png" />
-    <Content Include="Content\Source\Graphics\Black\StairsLeft.png" />
-    <Content Include="Content\Source\Graphics\Black\StairsRight.png" />
-    <Content Include="Content\Source\Graphics\Black\StoneWall.png" />
-    <Content Include="Content\Source\Graphics\Black\WallLive1.png" />
-    <Content Include="Content\Source\Graphics\Black\WallLive2.png" />
-    <Content Include="Content\Source\Graphics\Black\WallLive3.png" />
-    <Content Include="Content\Source\Graphics\Black\YourRangeLabel.png" />
-    <Content Include="Content\Source\Graphics\Fonts\GameFont.png" />
-    <Content Include="Content\Source\Graphics\Fonts\InfoFont.png" />
-    <Content Include="Content\Source\Graphics\White\AttemptsLabel.png" />
-    <Content Include="Content\Source\Graphics\White\Biomass1.png" />
-    <Content Include="Content\Source\Graphics\White\Biomass2.png" />
-    <Content Include="Content\Source\Graphics\White\Biomass3.png" />
-    <Content Include="Content\Source\Graphics\White\Biomass4.png" />
-    <Content Include="Content\Source\Graphics\White\BrickWall.png" />
-    <Content Include="Content\Source\Graphics\White\Bullet.png" />
-    <Content Include="Content\Source\Graphics\White\Chest.png" />
-    <Content Include="Content\Source\Graphics\White\Delimiter.png" />
-    <Content Include="Content\Source\Graphics\White\DevilMoveLeft1.png" />
-    <Content Include="Content\Source\Graphics\White\DevilMoveLeft2.png" />
-    <Content Include="Content\Source\Graphics\White\DevilMoveLeft3.png" />
-    <Content Include="Content\Source\Graphics\White\DevilMoveLeft4.png" />
-    <Content Include="Content\Source\Graphics\White\DevilMoveLeft5.png" />
-    <Content Include="Content\Source\Graphics\White\DevilMoveRight1.png" />
-    <Content Include="Content\Source\Graphics\White\DevilMoveRight2.png" />
-    <Content Include="Content\Source\Graphics\White\DevilMoveRight3.png" />
-    <Content Include="Content\Source\Graphics\White\DevilMoveRight4.png" />
-    <Content Include="Content\Source\Graphics\White\DevilMoveRight5.png" />
-    <Content Include="Content\Source\Graphics\White\DevilStairsLeft.png" />
-    <Content Include="Content\Source\Graphics\White\DevilStairsRight.png" />
-    <Content Include="Content\Source\Graphics\White\ExitDoorLeft.png" />
-    <Content Include="Content\Source\Graphics\White\ExitDoorRight.png" />
-    <Content Include="Content\Source\Graphics\White\Floor.png" />
-    <Content Include="Content\Source\Graphics\White\HeroIdle.png" />
-    <Content Include="Content\Source\Graphics\White\HeroIdleLeft.png" />
-    <Content Include="Content\Source\Graphics\White\HeroIdleRight.png" />
-    <Content Include="Content\Source\Graphics\White\HeroInBiomass1.png" />
-    <Content Include="Content\Source\Graphics\White\HeroInBiomass2.png" />
-    <Content Include="Content\Source\Graphics\White\HeroInBiomass3.png" />
-    <Content Include="Content\Source\Graphics\White\HeroMoveLeft1.png" />
-    <Content Include="Content\Source\Graphics\White\HeroMoveLeft2.png" />
-    <Content Include="Content\Source\Graphics\White\HeroMoveLeft3.png" />
-    <Content Include="Content\Source\Graphics\White\HeroMoveLeft4.png" />
-    <Content Include="Content\Source\Graphics\White\HeroMoveRight1.png" />
-    <Content Include="Content\Source\Graphics\White\HeroMoveRight2.png" />
-    <Content Include="Content\Source\Graphics\White\HeroMoveRight3.png" />
-    <Content Include="Content\Source\Graphics\White\HeroMoveRight4.png" />
-    <Content Include="Content\Source\Graphics\White\HeroPrepareShotLeft.png" />
-    <Content Include="Content\Source\Graphics\White\HeroPrepareShotRight.png" />
-    <Content Include="Content\Source\Graphics\White\HeroShotLeft.png" />
-    <Content Include="Content\Source\Graphics\White\HeroShotRight.png" />
-    <Content Include="Content\Source\Graphics\White\HeroStairsLeft.png" />
-    <Content Include="Content\Source\Graphics\White\HeroStairsRight.png" />
-    <Content Include="Content\Source\Graphics\White\RangeLabel.png" />
-    <Content Include="Content\Source\Graphics\White\ScoreLabel.png" />
-    <Content Include="Content\Source\Graphics\White\Space.png" />
-    <Content Include="Content\Source\Graphics\White\Splash.png" />
-    <Content Include="Resources\Game.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\Graphics\Black\AttemptsLabel.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\Biomass1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\Biomass2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\Biomass3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\Biomass4.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\BrickWall.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\Bullet.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\Chest.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\Delimiter.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\DevilMoveLeft1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\DevilMoveLeft2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\DevilMoveLeft3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\DevilMoveLeft4.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\DevilMoveLeft5.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\DevilMoveRight1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\DevilMoveRight2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\DevilMoveRight3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\DevilMoveRight4.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\DevilMoveRight5.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\DevilStairsLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\DevilStairsRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\ExitDoorLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\ExitDoorRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\Floor.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroIdle.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroIdleLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroIdleRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroInBiomass1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroInBiomass2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroInBiomass3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroMoveLeft1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroMoveLeft2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroMoveLeft3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroMoveLeft4.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroMoveRight1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroMoveRight2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroMoveRight3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroMoveRight4.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroPrepareShotLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroPrepareShotRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroShotLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroShotRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroStairsLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\HeroStairsRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\RangeLabel.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\ScoreLabel.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\Space.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\Splash.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\StageLabel.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\StairsLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\StairsRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\StoneWall.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\WallLive1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\WallLive2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\WallLive3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Black\YourRangeLabel.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Fonts\GameFont.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\Fonts\InfoFont.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\AttemptsLabel.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\Biomass1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\Biomass2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\Biomass3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\Biomass4.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\BrickWall.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\Bullet.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\Chest.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\Delimiter.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\DevilMoveLeft1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\DevilMoveLeft2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\DevilMoveLeft3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\DevilMoveLeft4.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\DevilMoveLeft5.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\DevilMoveRight1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\DevilMoveRight2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\DevilMoveRight3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\DevilMoveRight4.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\DevilMoveRight5.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\DevilStairsLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\DevilStairsRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\ExitDoorLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\ExitDoorRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\Floor.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroIdle.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroIdleLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroIdleRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroInBiomass1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroInBiomass2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroInBiomass3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroMoveLeft1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroMoveLeft2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroMoveLeft3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroMoveLeft4.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroMoveRight1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroMoveRight2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroMoveRight3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroMoveRight4.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroPrepareShotLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroPrepareShotRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroShotLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroShotRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroStairsLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\HeroStairsRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\RangeLabel.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\ScoreLabel.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\Space.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\Splash.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\StageLabel.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\StairsLeft.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\StairsRight.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\StoneWall.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\WallLive1.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\WallLive2.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\WallLive3.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Graphics\White\YourRangeLabel.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Content\Graphics\Black\AttemptsLabel.xnb" />
+    <Content Include="Content\Graphics\Black\Biomass1.xnb" />
+    <Content Include="Content\Graphics\Black\Biomass2.xnb" />
+    <Content Include="Content\Graphics\Black\Biomass3.xnb" />
+    <Content Include="Content\Graphics\Black\Biomass4.xnb" />
+    <Content Include="Content\Graphics\Black\BrickWall.xnb" />
+    <Content Include="Content\Graphics\Black\Bullet.xnb" />
+    <Content Include="Content\Graphics\Black\Chest.xnb" />
+    <Content Include="Content\Graphics\Black\Delimiter.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveLeft1.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveLeft2.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveLeft3.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveLeft4.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveLeft5.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveRight1.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveRight2.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveRight3.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveRight4.xnb" />
+    <Content Include="Content\Graphics\Black\DevilMoveRight5.xnb" />
+    <Content Include="Content\Graphics\Black\DevilStairsLeft.xnb" />
+    <Content Include="Content\Graphics\Black\DevilStairsRight.xnb" />
+    <Content Include="Content\Graphics\Black\ExitDoorLeft.xnb" />
+    <Content Include="Content\Graphics\Black\ExitDoorRight.xnb" />
+    <Content Include="Content\Graphics\Black\Floor.xnb" />
+    <Content Include="Content\Graphics\Black\HeroIdle.xnb" />
+    <Content Include="Content\Graphics\Black\HeroIdleLeft.xnb" />
+    <Content Include="Content\Graphics\Black\HeroIdleRight.xnb" />
+    <Content Include="Content\Graphics\Black\HeroInBiomass1.xnb" />
+    <Content Include="Content\Graphics\Black\HeroInBiomass2.xnb" />
+    <Content Include="Content\Graphics\Black\HeroInBiomass3.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveLeft1.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveLeft2.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveLeft3.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveLeft4.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveRight1.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveRight2.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveRight3.xnb" />
+    <Content Include="Content\Graphics\Black\HeroMoveRight4.xnb" />
+    <Content Include="Content\Graphics\Black\HeroPrepareShotLeft.xnb" />
+    <Content Include="Content\Graphics\Black\HeroPrepareShotRight.xnb" />
+    <Content Include="Content\Graphics\Black\HeroShotLeft.xnb" />
+    <Content Include="Content\Graphics\Black\HeroShotRight.xnb" />
+    <Content Include="Content\Graphics\Black\HeroStairsLeft.xnb" />
+    <Content Include="Content\Graphics\Black\HeroStairsRight.xnb" />
+    <Content Include="Content\Graphics\Black\RangeLabel.xnb" />
+    <Content Include="Content\Graphics\Black\ScoreLabel.xnb" />
+    <Content Include="Content\Graphics\Black\Space.xnb" />
+    <Content Include="Content\Graphics\Black\Splash.xnb" />
+    <Content Include="Content\Graphics\Black\StageLabel.xnb" />
+    <Content Include="Content\Graphics\Black\StairsLeft.xnb" />
+    <Content Include="Content\Graphics\Black\StairsRight.xnb" />
+    <Content Include="Content\Graphics\Black\StoneWall.xnb" />
+    <Content Include="Content\Graphics\Black\WallLive1.xnb" />
+    <Content Include="Content\Graphics\Black\WallLive2.xnb" />
+    <Content Include="Content\Graphics\Black\WallLive3.xnb" />
+    <Content Include="Content\Graphics\Black\YourRangeLabel.xnb" />
+    <Content Include="Content\Graphics\Fonts\GameFont.xnb" />
+    <Content Include="Content\Graphics\Fonts\InfoFont.xnb" />
+    <Content Include="Content\Graphics\White\AttemptsLabel.xnb" />
+    <Content Include="Content\Graphics\White\Biomass1.xnb" />
+    <Content Include="Content\Graphics\White\Biomass2.xnb" />
+    <Content Include="Content\Graphics\White\Biomass3.xnb" />
+    <Content Include="Content\Graphics\White\Biomass4.xnb" />
+    <Content Include="Content\Graphics\White\BrickWall.xnb" />
+    <Content Include="Content\Graphics\White\Bullet.xnb" />
+    <Content Include="Content\Graphics\White\Chest.xnb" />
+    <Content Include="Content\Graphics\White\Delimiter.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveLeft1.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveLeft2.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveLeft3.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveLeft4.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveLeft5.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveRight1.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveRight2.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveRight3.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveRight4.xnb" />
+    <Content Include="Content\Graphics\White\DevilMoveRight5.xnb" />
+    <Content Include="Content\Graphics\White\DevilStairsLeft.xnb" />
+    <Content Include="Content\Graphics\White\DevilStairsRight.xnb" />
+    <Content Include="Content\Graphics\White\ExitDoorLeft.xnb" />
+    <Content Include="Content\Graphics\White\ExitDoorRight.xnb" />
+    <Content Include="Content\Graphics\White\Floor.xnb" />
+    <Content Include="Content\Graphics\White\HeroIdle.xnb" />
+    <Content Include="Content\Graphics\White\HeroIdleLeft.xnb" />
+    <Content Include="Content\Graphics\White\HeroIdleRight.xnb" />
+    <Content Include="Content\Graphics\White\HeroInBiomass1.xnb" />
+    <Content Include="Content\Graphics\White\HeroInBiomass2.xnb" />
+    <Content Include="Content\Graphics\White\HeroInBiomass3.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveLeft1.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveLeft2.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveLeft3.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveLeft4.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveRight1.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveRight2.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveRight3.xnb" />
+    <Content Include="Content\Graphics\White\HeroMoveRight4.xnb" />
+    <Content Include="Content\Graphics\White\HeroPrepareShotLeft.xnb" />
+    <Content Include="Content\Graphics\White\HeroPrepareShotRight.xnb" />
+    <Content Include="Content\Graphics\White\HeroShotLeft.xnb" />
+    <Content Include="Content\Graphics\White\HeroShotRight.xnb" />
+    <Content Include="Content\Graphics\White\HeroStairsLeft.xnb" />
+    <Content Include="Content\Graphics\White\HeroStairsRight.xnb" />
+    <Content Include="Content\Graphics\White\RangeLabel.xnb" />
+    <Content Include="Content\Graphics\White\ScoreLabel.xnb" />
+    <Content Include="Content\Graphics\White\Space.xnb" />
+    <Content Include="Content\Graphics\White\Splash.xnb" />
+    <Content Include="Content\Graphics\White\StageLabel.xnb" />
+    <Content Include="Content\Graphics\White\StairsLeft.xnb" />
+    <Content Include="Content\Graphics\White\StairsRight.xnb" />
+    <Content Include="Content\Graphics\White\StoneWall.xnb" />
+    <Content Include="Content\Graphics\White\WallLive1.xnb" />
+    <Content Include="Content\Graphics\White\WallLive2.xnb" />
+    <Content Include="Content\Graphics\White\WallLive3.xnb" />
+    <Content Include="Content\Graphics\White\YourRangeLabel.xnb" />
     <Content Include="Content\Maps\Bank.001\001.map">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Source\Graphics\Black\AttemptsLabel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\Biomass1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\Biomass2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\Biomass3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\Biomass4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\BrickWall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\Bullet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\Chest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\Delimiter.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\DevilMoveLeft1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\DevilMoveLeft2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\DevilMoveLeft3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\DevilMoveLeft4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\DevilMoveLeft5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\DevilMoveRight1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\DevilMoveRight2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\DevilMoveRight3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\DevilMoveRight4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\DevilMoveRight5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\DevilStairsLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\DevilStairsRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\ExitDoorLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\ExitDoorRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\Floor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroIdle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroIdleLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroIdleRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroInBiomass1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroInBiomass2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroInBiomass3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroMoveLeft1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroMoveLeft2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroMoveLeft3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroMoveLeft4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroMoveRight1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroMoveRight2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroMoveRight3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroMoveRight4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroPrepareShotLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroPrepareShotRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroShotLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroShotRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroStairsLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\HeroStairsRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\RangeLabel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\ScoreLabel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\Space.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\Splash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\StageLabel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\StairsLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\StairsRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\StoneWall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\WallLive1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\WallLive2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\WallLive3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Black\YourRangeLabel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Fonts\GameFont.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\Fonts\InfoFont.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\AttemptsLabel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\Biomass1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\Biomass2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\Biomass3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\Biomass4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\BrickWall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\Bullet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\Chest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\Delimiter.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\DevilMoveLeft1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\DevilMoveLeft2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\DevilMoveLeft3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\DevilMoveLeft4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\DevilMoveLeft5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\DevilMoveRight1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\DevilMoveRight2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\DevilMoveRight3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\DevilMoveRight4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\DevilMoveRight5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\DevilStairsLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\DevilStairsRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\ExitDoorLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\ExitDoorRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\Floor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroIdle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroIdleLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroIdleRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroInBiomass1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroInBiomass2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroInBiomass3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroMoveLeft1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroMoveLeft2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroMoveLeft3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroMoveLeft4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroMoveRight1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroMoveRight2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroMoveRight3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroMoveRight4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroPrepareShotLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroPrepareShotRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroShotLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroShotRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroStairsLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\HeroStairsRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\RangeLabel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\ScoreLabel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\Space.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\Splash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Source\Graphics\White\StageLabel.png" />
+    <Content Include="Content\Source\Graphics\White\StairsLeft.png" />
+    <Content Include="Content\Source\Graphics\White\StairsRight.png" />
+    <Content Include="Content\Source\Graphics\White\StoneWall.png" />
+    <Content Include="Content\Source\Graphics\White\WallLive1.png" />
+    <Content Include="Content\Source\Graphics\White\WallLive2.png" />
+    <Content Include="Content\Source\Graphics\White\WallLive3.png" />
+    <Content Include="Content\Source\Graphics\White\YourRangeLabel.png" />
+    <Content Include="Resources\Game.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Content\Maps\Bank.001\002.map">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -618,10 +610,6 @@
     <Content Include="Content\Maps\Bank.002\015.map">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Maps\map.template">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <MonoGameContentReference Include="Content\Source\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -644,6 +632,9 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Source\Content.mgcb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

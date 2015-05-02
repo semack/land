@@ -91,15 +91,14 @@ namespace Land.Classes
                 using (var reader = new StreamReader(fileName))
                 {
                     string line = string.Empty;
-                    while (!line.StartsWith("01234567890"))
+                    while (!line.Contains("{"))
                     {
                         line = reader.ReadLine();
                     }
-                    for (int i = 0; i < 14; i++)
+                    for (int i = 0; i < 16; i++)
                     {
                         line = reader.ReadLine();
-                        line = line.Substring(1, line.Length - 2);
-                        if (line.Length < 48)
+                        if (line.Length < 50)
                             throw new Exception();
                         result.Add(line);
                     }
@@ -128,13 +127,8 @@ namespace Land.Classes
             {
                 for (int i = 0; i < CapacityX; i++)
                 {
-                    // render borders
-                    if ((i == 0 || (i == CapacityX - 1) || (j == 0 || (j == CapacityY - 1))))
-                        result[i, j] = SpriteTypeEnum.StoneWall;
-                    else
-                    {
                         // render map
-                        char value = map[j - 1][i - 1];
+                        char value = map[j][i];
                         if (value == 'W')
                             result[i, j] = SpriteTypeEnum.StoneWall;
                         else if (value == 'B')
@@ -147,6 +141,10 @@ namespace Land.Classes
                             result[i, j] = SpriteTypeEnum.StairsLeft;
                         else if (value == '[')
                             result[i, j] = SpriteTypeEnum.StairsRight;
+                        else if (value == '<')
+                            result[i, j] = SpriteTypeEnum.ExitDoorLeft;
+                        else if (value == '>')
+                            result[i, j] = SpriteTypeEnum.ExitDoorRight;                            
                         else if (value == '1')
                             result[i, j] = SpriteTypeEnum.Biomass1;
                         else if (value == '2')
@@ -155,20 +153,15 @@ namespace Land.Classes
                             result[i, j] = SpriteTypeEnum.Biomass3;
                         else if (value == '4')
                             result[i, j] = SpriteTypeEnum.Biomass4;
-                    }
+
                 }
             }
-
 
             for (int i = 0; i < 2; i++) // devil entrance render
             {
                 result[15 + i, 0] = SpriteTypeEnum.Space;
                 result[30 + i, 0] = SpriteTypeEnum.Space;
             }
-
-            //exit door render
-            result[1, 0] = SpriteTypeEnum.ExitDoorLeft;
-            result[2, 0] = SpriteTypeEnum.ExitDoorRight;
 
             return result;
         }

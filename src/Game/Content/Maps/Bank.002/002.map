@@ -1,30 +1,37 @@
-﻿LAND game map 48 x 14
-Stage #2 
-                      
-01234567890123456789012345678901234567890123456780
-1][BBCCCCBBBBB   CCB][           BBCCBCCBBCCBBB][1
-2][WWB][BWWWWW   ```][        WWWWWWWWWWWWWWWWW][2
-3][  C  C     C     ][BBCC          BBB12341234][3
-4][           C     ][`````````][   ```````````][4
-5BBBBBBBBBBB][BBCC  ][CC      C  C      BCC    ][5
-6CBCBCBC   W][WWWWWWWWWWWWWWW  ````   ][WWW    ][6
-7BBBCCCCC  W][ BBCCBBCBBCCCBB       CC][CC    W][7
-8][```````WWWWWWWWWWWWWWWWWWW   WWWWWWWWWWWWWW ][8
-9BBB123412341234  CC CC CCBBB123412341234     ][C9
-0  `````````````][`````````````````````````` ][CC0
-1               ][BBCCBBCC    BBC C C       ][```1
-2  ``][`````````][`````WWWWWWWWWWWWWW      ][ CCC2 
-3  CC][         ][                 BBBB   ][`````3
-4  BB][123412341][      BBB12341234123412][1234124
-01234567890123456789012345678901234567890123456780
+LAND game Map 50 x 16
+Stage #2
+CRC-32 12E0819C
 
-Legend 
+{
+W<>WWWWWWWWWWWW  WWWWWWWWWWWWW  WWWWWWWWWWWWWWWWWW
+W][BBCCCCBBBBB   CCB][          BBCCBBCCBBCCBBB][W
+W][WWB][BWWWWW   ```][       WWWWWWWWWWWWWWWWWW][W
+W][  C  C     C     ][BBCC         BBB123412341][W
+W][           C     ][`````````][  ````````````][W
+WBBBBBBBBBBB][BBCC  ][CC      C  C       BCC   ][W
+WCBCBCBC   W][WWWWWWWWWWWWWWW  ````    ][WWW   ][W
+WBBBCBBBB  W][ BBCCBBCBBCCCBB        CC][CC   W][W
+W][```````WWWWWWWWWWWWWWWWWWW   WWWWWWWWWWWWWW ][W
+WBBB123412341234  CC CC CCBBB123412341234     ][CW
+W  `````````````][`````````````````````````` ][CCW
+W               ][BBCCBBCC    BBC C C       ][```W
+W  ``][`````````][`````WWWWWWWWWWWWWW      ][ CCCW
+W  CC][         ][                 BBBB   ][`````W
+W  BB][123412341][      BBB12341234123412][123412W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+}
+
+Legend
 =====================
- W    - Stone Wall
- B    - Brick wall
- C    - Chest
- 1-4  - Biomass
- `    - Floor
- ][   - Stairs
-
-
+ W = Stone Wall
+ B = Brick wall
+ C = Chest
+ 1 = Biomass 1
+ 2 = Biomass 2
+ 3 = Biomass 3
+ 4 = Biomass 4
+ ` = Floor
+ ] = Stair Left
+ [ = Stair Right
+ < = Exit Door Left
+ > = Exit Door Right
