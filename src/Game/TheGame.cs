@@ -98,6 +98,16 @@ namespace Land
             GameFont = Content.Load<SpriteFont>("Graphics/Fonts/GameFont");
         }
 
+
+        public void DrawScores(SpriteBatch spriteBatch, Color color)
+        {
+            spriteBatch.Draw(Sprites[SpriteTypeEnum.ScoreLabel, BackColor].Texture, new Vector2(1 * 16, 0),
+                color);
+            spriteBatch.DrawString(GameFont, string.Format("{0:D5}", _room.Score), new Vector2(7 * 16, 0),
+                color);
+        }
+
+
         /// <summary>
         ///     Allows the game to run logic such as updating the world,
         ///     checking for collisions, gathering input, and playing audio.

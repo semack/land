@@ -22,7 +22,7 @@ namespace Land.Components
         private SpriteTypeEnum[,] _map;
         private GamePadState _oldButtonState;
         private KeyboardState _oldKeyState;
-        private int _score;
+        public int Score;
         private int _stage;
 
         public Room(TheGame game)
@@ -50,7 +50,7 @@ namespace Land.Components
             set { _map[x, y] = value; }
         }
 
-        private Color BackColor
+        public Color BackColor
         {
             get { return Game.BackColor == BackColorEnum.White ? Color.White : Color.Black; }
         }
@@ -89,14 +89,14 @@ namespace Land.Components
 
         private void OnHeroChestHappened(object sender, EventArgs e)
         {
-            _score += 13;
-            if (_score > 99999)
-                _score = 0;
+            Score += 13;
+            if (Score > 99999)
+                Score = 0;
         }
 
         public void Reset()
         {
-            _score = 0;
+            Score = 0;
             _stage = 1;
             _attempts = 20;
             SetStage(_stage);
@@ -166,10 +166,11 @@ namespace Land.Components
             _oldButtonState = bState;
         }
 
+
+
         private void DrawInfoPanel(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.ScoreLabel, Game.BackColor].Texture, new Vector2(1*16, 0),
-                Color.White);
+            Game.DrawScores(spriteBatch, BackColor == Color.White ? Color.Black : Color.White);
             spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.RangeLabel, Game.BackColor].Texture, new Vector2(16*16, 0),
                 Color.White);
             spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.AttemptsLabel, Game.BackColor].Texture, new Vector2(27*16, 0),
@@ -182,8 +183,6 @@ namespace Land.Components
                     Color.White);
             }
 
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D5}", _score), new Vector2(7*16, 0),
-                BackColor == Color.White ? Color.Black : Color.White);
             spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", Game.Range), new Vector2(22*16, 0),
                 BackColor == Color.White ? Color.Black : Color.White);
             spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _attempts), new Vector2(36*16, 0),

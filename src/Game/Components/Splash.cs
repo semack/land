@@ -118,6 +118,7 @@ namespace Land.Components
 
         public void DrawSplash(SpriteBatch spriteBatch)
         {
+            Game.DrawScores(spriteBatch, BackColor == Color.White ? Color.Black : Color.White);
             spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.Splash, _backColor].Texture, _logoVector, Color.White);
             spriteBatch.DrawString(Game.InfoFont, _infoText, _infoVector,
                 BackColor == Color.White ? Color.Black : Color.White);
