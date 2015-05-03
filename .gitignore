@@ -156,6 +156,7 @@ $RECYCLE.BIN/
 .DS_Store
 /packages
 /src/packages
+*.userprefs
 *.dll
 *.nuspec
 *.nupkg
