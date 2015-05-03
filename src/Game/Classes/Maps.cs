@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Land.Enums;
+using OpenTK.Graphics.OpenGL;
 
 namespace Land.Classes
 {
@@ -13,17 +14,25 @@ namespace Land.Classes
 
         private const string MapsRoot = "Content/Maps";
         private const string MapExtension = ".map";
-        private const string BankPrefix = "Bank"; 
 
+        public static IList<string> Banks
+        {
+            get
+            {
+                var banks = new List<string>(Directory.EnumerateDirectories(MapsRoot));
+                for (int i = 0; i < banks.Count; i++)
+                {
+                    banks[i] = banks[i].Replace(MapsRoot, String.Empty).Replace("/", String.Empty).Replace("\\", String.Empty);
+                }
+                return banks;
+            }
+        }
+    
         private static string GetMapBankPath(int bank)
         {
-            return string.Format("{0}/{1}.{2:D3}/", MapsRoot, BankPrefix, bank);
+            return string.Format("{0}/{1}/", MapsRoot, Banks[bank]);
         }
 
-        public static int GetBanksCount()
-        {
-            return Directory.GetDirectories(MapsRoot).Count(dir => dir.Contains(string.Format("{0}.", BankPrefix)));
-        }
         public static int GetMapsCount(int bank)
         {
             string dir = GetMapBankPath(bank);
@@ -110,7 +119,7 @@ namespace Land.Classes
                 throw e;
                 
 #else
-            catch (Exception)
+            catch (Exception e)
             {
                 throw new FileLoadException("Map loading error.\r\n Wrong map format or map doesn't not exist.");
 #endif

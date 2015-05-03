@@ -30,7 +30,6 @@ namespace Land
             Content.RootDirectory = "Content";
             MapBank = 1;
             Range = 3;
-
             BackColor = BackColorEnum.Black;
             _splash = new Splash(this);
             _splash.OnPlayingStarted += OnPlayingStarted;
@@ -80,7 +79,6 @@ namespace Land
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
             Components.Add(_splash);
             Components.Add(_room);
             base.Initialize();
@@ -116,7 +114,7 @@ namespace Land
             else if (state.IsKeyPressed(_oldKeyState, Keys.F10))
             {
                 MapBank++;
-                if (MapBank > Maps.GetBanksCount())
+                if (MapBank > Maps.Banks.Count)
                     MapBank = 1;
                 OnRoomPlayingFinished(this, null);
             }
