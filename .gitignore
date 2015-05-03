@@ -160,3 +160,4 @@ $RECYCLE.BIN/
 *.dll
 *.nuspec
 *.nupkg
+src/Game/packages/MonoGame.Framework.MacOS.3.3.0.0/readme.txt
