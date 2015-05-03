@@ -1,0 +1,37 @@
+LAND game Map 50 x 16
+Stage #5
+CRC-32 DA81330F
+
+{
+W<>WWWWWWWWWWWW  WWWWWWWWWWWWW  WWWWWWWWWWWWWWWWWW
+W][              ][  C ][            CC          W
+W][       ```][  ][````][  BBBBB][WWWWWWW][  C   W
+W][WWWW   WWW][  ][    WWWW  W``WWBBCB][W][```   W
+W][  CCCC   W][BBB         ``   BBBBBB][W][      W
+WWW][WWWWWWWW][    ][```W       BBBBBB][WW``][ BBW
+W  C B12341234    ][W   W  W][`````````` W  ][   W
+WC ][WWWWWWWWWWWWWWWW C W CW][    BCBCBB W  ][ C W
+W  ][B C C C C  BBBBB C BBBB][  ][```````  ][    W
+WC ][WBBBBBBBB][BBBBB```BBBB][``][ C C W  ][     W
+W  ][W12341234][C C B1234B      ][`````    ][  C W
+W  ][WWWWWWWWWWWWWWWWWWWWWW][W``WWWWWWWW  ][```` W
+W           C       C     BC B            ][     W
+W][``][WWWWWWWWWWWWWWWWWWWW```WWWWWWWWWWWW][W    W
+W][  ][W   C C C  B       B      B  C B   ][B    W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+}
+
+Legend
+=====================
+ W = Stone Wall
+ B = Brick wall
+ C = Chest
+ 1 = Biomass 1
+ 2 = Biomass 2
+ 3 = Biomass 3
+ 4 = Biomass 4
+ ` = Floor
+ ] = Stair Left
+ [ = Stair Right
+ < = Exit Door Left
+ > = Exit Door Right

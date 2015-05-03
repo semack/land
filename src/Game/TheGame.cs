@@ -28,7 +28,7 @@ namespace Land
                 PreferredBackBufferWidth = Maps.CapacityX*16,
             };
             Content.RootDirectory = "Content";
-            MapBank = 1;
+            MapBank = 0;
             Range = 3;
             BackColor = BackColorEnum.Black;
             _splash = new Splash(this);
