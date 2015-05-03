@@ -19,8 +19,8 @@ namespace Land.Components.Actors
             _room = room;
         }
 
-        private int _x { get; set; }
-        private int _y { get; set; }
+        private int X { get; set; }
+        private int Y { get; set; }
 
         public bool IsActive
         {
@@ -29,8 +29,8 @@ namespace Land.Components.Actors
 
         public void Reset(int x, int y, DirectionEnum direction)
         {
-            _x = x;
-            _y = y;
+            X = x;
+            Y = y;
             _direction = direction;
         }
 
@@ -41,15 +41,15 @@ namespace Land.Components.Actors
                 int delta = 1;
                 if (_direction == DirectionEnum.Left)
                     delta = -1;
-                if (!Maps.IsWall(_room[_x + delta, _y]))
+                if (!Maps.IsWall(_room[X + delta, Y]))
                 {
-                    _x = _x + delta;
+                    X = X + delta;
                 }
                 else
                 {
-                    if (Maps.IsBrickWall(_room[_x + delta, _y]))
+                    if (Maps.IsBrickWall(_room[X + delta, Y]))
                     {
-                        _room[_x + delta, _y] = SpriteTypeEnum.WallLive1;
+                        _room[X + delta, Y] = SpriteTypeEnum.WallLive1;
                     }
                     _direction = DirectionEnum.None;
                 }
@@ -73,7 +73,7 @@ namespace Land.Components.Actors
             {
                 Game.SpriteBatch.Begin();
                 Game.SpriteBatch.Draw(Game.Sprites[SpriteTypeEnum.Bullet, Game.BackColor].Texture,
-                    new Vector2(_x*16, (_y + 2)*32), Color.White);
+                    new Vector2(X*16, (Y + 2)*32), Color.White);
                 Game.SpriteBatch.End();
                 base.Draw(gameTime);
             }

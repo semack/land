@@ -41,8 +41,16 @@ namespace Land
 
         public int MapBank { get; private set; }
         public int Range { get; private set; }
-
         public BackColorEnum BackColor { get; set; }
+        public Color BackgroundColor
+        {
+            get { return BackColor == BackColorEnum.White ? Color.White : Color.Black; }
+        }
+
+        public Color ForegroudColor
+        {
+            get { return BackColor == BackColorEnum.White ? Color.Black : Color.White; }
+        }
 
         public int GameSpeedScaleFactor
         {
@@ -98,15 +106,11 @@ namespace Land
             GameFont = Content.Load<SpriteFont>("Graphics/Fonts/GameFont");
         }
 
-
-        public void DrawScores(SpriteBatch spriteBatch, Color color)
+        public void DrawScores(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Sprites[SpriteTypeEnum.ScoreLabel, BackColor].Texture, new Vector2(1 * 16, 0),
-                color);
-            spriteBatch.DrawString(GameFont, string.Format("{0:D5}", _room.Score), new Vector2(7 * 16, 0),
-                color);
+            spriteBatch.Draw(Sprites[SpriteTypeEnum.ScoreLabel, BackColor].Texture, new Vector2(1 * 16, 0), BackgroundColor == Color.White ? Color.Black : Color.White);
+            spriteBatch.DrawString(GameFont, string.Format("{0:D5}", _room.Score), new Vector2(7 * 16, 0), BackgroundColor == Color.White ? Color.Black : Color.White);
         }
-
 
         /// <summary>
         ///     Allows the game to run logic such as updating the world,
@@ -123,10 +127,12 @@ namespace Land
             }
             else if (state.IsKeyPressed(_oldKeyState, Keys.F10))
             {
+                
                 MapBank++;
-                if (MapBank > Maps.Banks.Count)
-                    MapBank = 1;
+                if (MapBank > Maps.Banks.Count-1)
+                    MapBank = 0;
                 OnRoomPlayingFinished(this, null);
+                _room.Score = 0;
             }
             base.Update(gameTime);
             _oldKeyState = state;

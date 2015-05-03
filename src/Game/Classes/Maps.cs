@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Land.Enums;
-using OpenTK.Graphics.OpenGL;
 
 namespace Land.Classes
 {
@@ -15,8 +14,8 @@ namespace Land.Classes
         private const string MapsRoot = "Content/Maps";
         private const string MapExtension = ".map";
 
-        public static readonly List<string> Banks = new List<string>(Directory.EnumerateDirectories(MapsRoot).Select(s=>s.Replace(MapsRoot, String.Empty).Replace("/", String.Empty).Replace("\\", String.Empty)));
-    
+        public static readonly List<string> Banks = new List<string>(Directory.EnumerateDirectories(MapsRoot).Select(s => s.Replace(MapsRoot, String.Empty).Replace("/", String.Empty).Replace("\\", String.Empty)));
+
         private static string GetMapBankPath(int bank)
         {
             return string.Format("{0}/{1}/", MapsRoot, Banks[bank]);
@@ -83,35 +82,38 @@ namespace Land.Classes
         public static List<string> LoadMap(int bank, int number)
         {
             var result = new List<string>();
-            try
+            string fileName = string.Format("{0}{1:D3}{2}", GetMapBankPath(bank), number, MapExtension);
+            using (var reader = new StreamReader(fileName))
             {
-                string fileName = string.Format("{0}{1:D3}{2}", GetMapBankPath(bank), number, MapExtension);
-                using (var reader = new StreamReader(fileName))
+
+                try
                 {
+
                     string line = string.Empty;
-                    while (!line.Contains("{"))
+                    while (line != null && !line.Contains("{"))
                     {
                         line = reader.ReadLine();
                     }
                     for (int i = 0; i < 16; i++)
                     {
                         line = reader.ReadLine();
-                        if (line.Length < 50)
+                        if (line != null && line.Length < 50)
                             throw new Exception();
                         result.Add(line);
                     }
+                    reader.Close();
                 }
-            }
 #if XBOX360
             catch (Exception e)
             {
                 throw e;
                 
 #else
-            catch (Exception e)
-            {
-                throw new FileLoadException("Map loading error.\r\n Wrong map format or map doesn't not exist.");
+                catch (Exception)
+                {
+                    throw new FileLoadException("Map loading error.\r\n Wrong map format or map doesn't not exist.");
 #endif
+                }
             }
             return result;
         }
@@ -125,32 +127,32 @@ namespace Land.Classes
             {
                 for (int i = 0; i < CapacityX; i++)
                 {
-                        // render map
-                        char value = map[j][i];
-                        if (value == 'W')
-                            result[i, j] = SpriteTypeEnum.StoneWall;
-                        else if (value == 'B')
-                            result[i, j] = SpriteTypeEnum.BrickWall;
-                        else if (value == 'C')
-                            result[i, j] = SpriteTypeEnum.Chest;
-                        else if (value == '`')
-                            result[i, j] = SpriteTypeEnum.Floor;
-                        else if (value == ']')
-                            result[i, j] = SpriteTypeEnum.StairsLeft;
-                        else if (value == '[')
-                            result[i, j] = SpriteTypeEnum.StairsRight;
-                        else if (value == '<')
-                            result[i, j] = SpriteTypeEnum.ExitDoorLeft;
-                        else if (value == '>')
-                            result[i, j] = SpriteTypeEnum.ExitDoorRight;                            
-                        else if (value == '1')
-                            result[i, j] = SpriteTypeEnum.Biomass1;
-                        else if (value == '2')
-                            result[i, j] = SpriteTypeEnum.Biomass2;
-                        else if (value == '3')
-                            result[i, j] = SpriteTypeEnum.Biomass3;
-                        else if (value == '4')
-                            result[i, j] = SpriteTypeEnum.Biomass4;
+                    // render map
+                    char value = map[j][i];
+                    if (value == 'W')
+                        result[i, j] = SpriteTypeEnum.StoneWall;
+                    else if (value == 'B')
+                        result[i, j] = SpriteTypeEnum.BrickWall;
+                    else if (value == 'C')
+                        result[i, j] = SpriteTypeEnum.Chest;
+                    else if (value == '`')
+                        result[i, j] = SpriteTypeEnum.Floor;
+                    else if (value == ']')
+                        result[i, j] = SpriteTypeEnum.StairsLeft;
+                    else if (value == '[')
+                        result[i, j] = SpriteTypeEnum.StairsRight;
+                    else if (value == '<')
+                        result[i, j] = SpriteTypeEnum.ExitDoorLeft;
+                    else if (value == '>')
+                        result[i, j] = SpriteTypeEnum.ExitDoorRight;
+                    else if (value == '1')
+                        result[i, j] = SpriteTypeEnum.Biomass1;
+                    else if (value == '2')
+                        result[i, j] = SpriteTypeEnum.Biomass2;
+                    else if (value == '3')
+                        result[i, j] = SpriteTypeEnum.Biomass3;
+                    else if (value == '4')
+                        result[i, j] = SpriteTypeEnum.Biomass4;
 
                 }
             }

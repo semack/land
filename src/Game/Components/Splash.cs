@@ -21,7 +21,6 @@ namespace Land.Components
         private readonly StringBuilder _infoText = new StringBuilder();
         private readonly Vector2 _infoVector = new Vector2(1*16, 17*32);
         private readonly Vector2 _logoVector = new Vector2(4*16, 1*32);
-        private BackColorEnum _backColor = BackColorEnum.Black;
         private DisplayModeEnum _displayMode = DisplayModeEnum.Splash;
         private GamePadState _oldGamePadState;
         private KeyboardState _oldKeyState;
@@ -38,10 +37,6 @@ namespace Land.Components
                 string.Format("The game was ported using MonoGame by Andriy S'omak (semack@gmail.com), April 2014. Game sources find at http://www.githum.com/semack/land"));
         }
 
-        private Color BackColor
-        {
-            get { return _backColor == BackColorEnum.White ? Color.White : Color.Black; }
-        }
 
         public event EventHandler<PlayingStartedEventArgs> OnPlayingStarted;
 
@@ -66,7 +61,7 @@ namespace Land.Components
             _splashInterval = _splashInterval - gameTime.ElapsedGameTime;
             if (_splashInterval.Ticks < 0)
             {
-                _backColor = (_backColor == BackColorEnum.White ? BackColorEnum.Black : BackColorEnum.White);
+                Game.BackColor = (Game.BackColor == BackColorEnum.White ? BackColorEnum.Black : BackColorEnum.White);
                 _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*20);
             }
         }
@@ -83,7 +78,6 @@ namespace Land.Components
 
                 if (OnPlayingStarted != null)
                 {
-                    Game.BackColor = _backColor;
                     OnPlayingStarted(this, new PlayingStartedEventArgs
                     {
                         Range = range
@@ -118,19 +112,14 @@ namespace Land.Components
 
         public void DrawSplash(SpriteBatch spriteBatch)
         {
-            Game.DrawScores(spriteBatch, BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.Splash, _backColor].Texture, _logoVector, Color.White);
-            spriteBatch.DrawString(Game.InfoFont, _infoText, _infoVector,
-                BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.DrawString(Game.InfoFont, string.Format("Using bank of maps \"{0}\", press F10 to change.", Maps.Banks[Game.MapBank-1]),
-                new Vector2(1*16, 16*32 + 10),
-                BackColor == Color.White ? Color.Black : Color.White);
+            Game.DrawScores(spriteBatch);
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.Splash, Game.BackColor].Texture, _logoVector, Game.ForegroudColor);
+            spriteBatch.DrawString(Game.InfoFont, _infoText, _infoVector, Game.ForegroudColor);
+            spriteBatch.DrawString(Game.InfoFont, string.Format("Using bank of maps \"{0}\", press F10 to change.", Maps.Banks[Game.MapBank]),
+                new Vector2(1 * 16, 16 * 32 + 10), Game.ForegroudColor);
 
             spriteBatch.DrawString(Game.InfoFont, string.Format("Version {0}", _version),
-                new Vector2(44*16, 16*32 + 10),
-                BackColor == Color.White ? Color.Black : Color.White);
-
-            
+                new Vector2(44*16, 16*32 + 10), Game.ForegroudColor);            
         }
 
         public void DrawGameStart(SpriteBatch spriteBatch)
@@ -140,20 +129,20 @@ namespace Land.Components
                 for (int j = 0; j < Maps.CapacityY + 2; j++)
                 {
                     if (i == 0 || i == Maps.CapacityX - 1)
-                        spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.StoneWall, _backColor].Texture,
+                        spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.StoneWall, Game.BackColor].Texture,
                             new Vector2(i*16, j*32), Color.White);
                     if (j == 0 || j == Maps.CapacityY + 2 - 1)
-                        spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.StoneWall, _backColor].Texture,
+                        spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.StoneWall, Game.BackColor].Texture,
                             new Vector2(i*16, j*32), Color.White);
                 }
             }
-            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.YourRangeLabel, _backColor].Texture, new Vector2(20*16, 8*32),
+            spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.YourRangeLabel, Game.BackColor].Texture, new Vector2(20*16, 8*32),
                 Color.White);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(BackColor);
+            GraphicsDevice.Clear(Game.BackgroundColor);
             Game.SpriteBatch.Begin();
             if (_displayMode == DisplayModeEnum.Splash)
                 DrawSplash(Game.SpriteBatch);

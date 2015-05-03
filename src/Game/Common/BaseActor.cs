@@ -69,9 +69,9 @@ namespace Land.Common
             SpriteTypeEnum pos1 = Room[X, Y + 1];
             SpriteTypeEnum pos2 = Room[X + 1, Y + 1];
 
-            bool result = false;
+            bool result;
 
-            if (isFailing) // TODO допилить проверку! одна из смолы, падаем если смола под ногами.
+            if (isFailing) 
             {
                 result = HasNoStrongHold(pos1, true) && HasNoStrongHold(pos2, true)
                          && !(Maps.IsBiomass(cur1) && Maps.IsBiomass(cur2));
@@ -189,10 +189,9 @@ namespace Land.Common
         protected virtual void ActorUpdate(GameTime gameTime)
         {
             _isFalling = ProcessFalling(_isFalling);
-            bool isMoving = false;
             if (!_isFalling)
             {
-                isMoving = Move(Direction);
+                bool isMoving = Move(Direction);
                 if (!isMoving)
                     Direction = DirectionEnum.None;
             }

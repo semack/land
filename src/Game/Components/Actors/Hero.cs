@@ -8,8 +8,16 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Land.Components.Actors
 {
+
     public class Hero : BaseActor
     {
+        private enum ShootStageEnum
+        {
+            None,
+            Preparation,
+            Fire
+        }
+
         private readonly Bullet _bullet;
         private int _bioMassAttempts;
         private bool _heroIdleDivider;
@@ -281,13 +289,6 @@ namespace Land.Components.Actors
                     X++;
             }
             base.ActorUpdate(gameTime);
-        }
-
-        private enum ShootStageEnum
-        {
-            None,
-            Preparation,
-            Fire
         }
     }
 }

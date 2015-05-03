@@ -50,11 +50,6 @@ namespace Land.Components
             set { _map[x, y] = value; }
         }
 
-        public Color BackColor
-        {
-            get { return Game.BackColor == BackColorEnum.White ? Color.White : Color.Black; }
-        }
-
         private void OnCheckCollision(object sender, ReportPostionEventArgs e)
         {
             if (!_devil1.HasCaught && !_devil2.HasCaught)
@@ -170,7 +165,7 @@ namespace Land.Components
 
         private void DrawInfoPanel(SpriteBatch spriteBatch)
         {
-            Game.DrawScores(spriteBatch, BackColor == Color.White ? Color.Black : Color.White);
+            Game.DrawScores(spriteBatch);
             spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.RangeLabel, Game.BackColor].Texture, new Vector2(16*16, 0),
                 Color.White);
             spriteBatch.Draw(Game.Sprites[SpriteTypeEnum.AttemptsLabel, Game.BackColor].Texture, new Vector2(27*16, 0),
@@ -183,17 +178,14 @@ namespace Land.Components
                     Color.White);
             }
 
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", Game.Range), new Vector2(22*16, 0),
-                BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _attempts), new Vector2(36*16, 0),
-                BackColor == Color.White ? Color.Black : Color.White);
-            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _stage), new Vector2(46*16, 0),
-                BackColor == Color.White ? Color.Black : Color.White);
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", Game.Range), new Vector2(22*16, 0), Game.ForegroudColor);
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _attempts), new Vector2(36 * 16, 0), Game.ForegroudColor);
+            spriteBatch.DrawString(Game.GameFont, string.Format("{0:D2}", _stage), new Vector2(46 * 16, 0), Game.ForegroudColor);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(BackColor);
+            GraphicsDevice.Clear(Game.BackgroundColor);
 
             Game.SpriteBatch.Begin();
             DrawInfoPanel(Game.SpriteBatch);
