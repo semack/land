@@ -15,18 +15,7 @@ namespace Land.Classes
         private const string MapsRoot = "Content/Maps";
         private const string MapExtension = ".map";
 
-        public static IList<string> Banks
-        {
-            get
-            {
-                var banks = new List<string>(Directory.EnumerateDirectories(MapsRoot));
-                for (int i = 0; i < banks.Count; i++)
-                {
-                    banks[i] = banks[i].Replace(MapsRoot, String.Empty).Replace("/", String.Empty).Replace("\\", String.Empty);
-                }
-                return banks;
-            }
-        }
+        public static readonly List<string> Banks = new List<string>(Directory.EnumerateDirectories(MapsRoot).Select(s=>s.Replace(MapsRoot, String.Empty).Replace("/", String.Empty).Replace("\\", String.Empty)));
     
         private static string GetMapBankPath(int bank)
         {

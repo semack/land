@@ -26,15 +26,16 @@ namespace Land.Components
         private GamePadState _oldGamePadState;
         private KeyboardState _oldKeyState;
         private TimeSpan _splashInterval;
+        private readonly Version _version;
 
         public Splash(TheGame game)
             : base(game)
         {
-            Version version = Assembly.GetEntryAssembly().GetName().Version;            
+            _version = Assembly.GetEntryAssembly().GetName().Version;            
             _infoText.Append(
                 "This is retrospective of the formerly popular game \"LAND\". It was originally developed by ASP corp. in 1986 and ran under PDP-11 compatible computers.\r\n");
             _infoText.Append(
-                string.Format("The game was ported using MonoGame by Andriy S'omak (semack@gmail.com), April 2014.                                                          Version {0}", version));
+                string.Format("The game was ported using MonoGame by Andriy S'omak (semack@gmail.com), April 2014."));
         }
 
         private Color BackColor
@@ -123,6 +124,12 @@ namespace Land.Components
             spriteBatch.DrawString(Game.InfoFont, string.Format("Using bank of maps \"{0}\", press F10 to change.", Maps.Banks[Game.MapBank-1]),
                 new Vector2(1*16, 16*32 + 10),
                 BackColor == Color.White ? Color.Black : Color.White);
+
+            spriteBatch.DrawString(Game.InfoFont, string.Format("Version {0}", _version),
+                new Vector2(44*16, 16*32 + 10),
+                BackColor == Color.White ? Color.Black : Color.White);
+
+            
         }
 
         public void DrawGameStart(SpriteBatch spriteBatch)
