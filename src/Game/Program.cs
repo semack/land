@@ -21,7 +21,9 @@ namespace Land
         private static void Main()
         {
             using (var game = new TheGame())
+            {
                 game.Run();
+            }
         }
     }
 #endif

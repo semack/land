@@ -1,5 +1,4 @@
-﻿using Land.Enums;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 
 namespace Land.Common
 {
