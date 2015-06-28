@@ -154,7 +154,10 @@ namespace Land.Components
             }
             else if (kState.IsKeyPressed(_oldKeyState, Keys.OemSemicolon) ||
                      bState.IsButtonPressed(_oldButtonState, Buttons.Start))
+            {
+                Score = Score - 100;
                 SetNextStage();
+            }
             else if (kState.IsKeyPressed(_oldKeyState, Keys.R))
                 OnHeroLifeFired(this, new EventArgs());
             _oldKeyState = kState;
