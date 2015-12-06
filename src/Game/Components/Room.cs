@@ -156,6 +156,8 @@ namespace Land.Components
                      bState.IsButtonPressed(_oldButtonState, Buttons.Start))
             {
                 Score = Score - 100;
+                if (Score < 0)
+                    Score = 0;
                 SetNextStage();
             }
             else if (kState.IsKeyPressed(_oldKeyState, Keys.R))
