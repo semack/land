@@ -17,10 +17,8 @@ The objective of the game is to collect all chests on the given level and get to
 #### Maps:
 There are two map-sets of two known versions of original game. To switch between sets press F10 key. All maps are located in "Content\Maps" folder with the game and can be edited by text editor with fixed width font. Also there is map template with empty map. To make map file visible for the game it should be placed in "Content\Maps\Bank.XXX" folder and it should have number of stage in file name and have .map extension. Other files will be ignored. Example: "020.map".  
 
---
 **[Download (Google Drive)](https://drive.google.com/file/d/0B-Q6m5TBZaSrSzAzeDk5WjNFLWM/edit?usp=sharing) installer for Windows**
 
---
 #### Gameplay video:
 [![ScreenShot](https://github.com/semack/land/blob/master/screenshots/screen03.png?raw=true)](https://www.youtube.com/watch?v=jY17w-EBIBg)
 
