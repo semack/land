@@ -103,16 +103,9 @@ namespace Land.Classes
                     }
                     reader.Close();
                 }
-#if XBOX360
-            catch (Exception e)
-            {
-                throw e;
-                
-#else
                 catch (Exception)
                 {
                     throw new FileLoadException("Map loading error.\r\n Wrong map format or map doesn't not exist.");
-#endif
                 }
             }
             return result;
