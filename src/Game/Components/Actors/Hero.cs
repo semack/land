@@ -22,7 +22,6 @@ namespace Land.Components.Actors
         private int _bioMassAttempts;
         private bool _heroIdleDivider;
         private DirectionEnum _heroIdleHeadDirection = DirectionEnum.Left;
-        private GamePadState _oldGamePadState;
         private KeyboardState _oldKeyboardStateState;
         private DirectionEnum _shootDirection;
         private ShootStageEnum _shootStage;
@@ -205,7 +204,6 @@ namespace Land.Components.Actors
         {
             if (Visible)
             {
-                GamePadState gState = GamePad.GetState(PlayerIndex.One);
                 KeyboardState kState = Keyboard.GetState();
 
                 if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Left, Keys.NumPad4))
@@ -231,7 +229,6 @@ namespace Land.Components.Actors
                     }
                 }
                 _oldKeyboardStateState = kState;
-                _oldGamePadState = gState;
             }
             else
                 Direction = DirectionEnum.None;

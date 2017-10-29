@@ -22,7 +22,6 @@ namespace Land.Components
         private readonly Vector2 _infoVector = new Vector2(1*16, 17*32);
         private readonly Vector2 _logoVector = new Vector2(4*16, 1*32);
         private DisplayModeEnum _displayMode = DisplayModeEnum.Splash;
-        private GamePadState _oldGamePadState;
         private KeyboardState _oldKeyState;
         private TimeSpan _splashInterval;
         private readonly Version _version;
@@ -47,7 +46,7 @@ namespace Land.Components
         }
 
 
-        private void UpdateSplash(KeyboardState kState, GamePadState gState, GameTime gameTime)
+        private void UpdateSplash(KeyboardState kState, GameTime gameTime)
         {
             if (kState.IsKeyPressed(_oldKeyState, Keys.Enter, Keys.Space, Keys.Escape, Keys.D0, Keys.D1, Keys.D2,
                 Keys.D3,
@@ -65,7 +64,7 @@ namespace Land.Components
             }
         }
 
-        private void UpdateGameStart(KeyboardState kState, GamePadState gState, GameTime gameTime)
+        private void UpdateGameStart(KeyboardState kState, GameTime gameTime)
         {
             if (kState.IsKeyPressed(_oldKeyState, Keys.Enter, Keys.Space, Keys.D0, Keys.D1, Keys.D2, Keys.D3, Keys.D4,
                 Keys.D5, Keys.D6, Keys.D7, Keys.D8, Keys.D9))
@@ -94,19 +93,17 @@ namespace Land.Components
         public override void Update(GameTime gameTime)
         {
             KeyboardState kState = Keyboard.GetState();
-            GamePadState gState = GamePad.GetState(PlayerIndex.One);
 
             if (_displayMode == DisplayModeEnum.Splash)
             {
-                UpdateSplash(kState, gState, gameTime);
+                UpdateSplash(kState, gameTime);
             }
             else
             {
-                UpdateGameStart(kState, gState, gameTime);
+                UpdateGameStart(kState, gameTime);
             }
             base.Update(gameTime);
             _oldKeyState = kState;
-            _oldGamePadState = gState;
         }
 
         public void DrawSplash(SpriteBatch spriteBatch)

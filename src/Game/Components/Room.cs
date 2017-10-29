@@ -20,7 +20,6 @@ namespace Land.Components
         private readonly Wall _wall;
         private int _attempts;
         private SpriteTypeEnum[,] _map;
-        private GamePadState _oldButtonState;
         private KeyboardState _oldKeyState;
         public int Score;
         private int _stage;
@@ -145,7 +144,6 @@ namespace Land.Components
             base.Update(gameTime);
 
             KeyboardState kState = Keyboard.GetState();
-            GamePadState bState = GamePad.GetState(PlayerIndex.One);
 
             if (kState.IsKeyPressed(_oldKeyState, Keys.Q))
             {
@@ -162,7 +160,6 @@ namespace Land.Components
             else if (kState.IsKeyPressed(_oldKeyState, Keys.R))
                 OnHeroLifeFired(this, new EventArgs());
             _oldKeyState = kState;
-            _oldButtonState = bState;
         }
 
 
