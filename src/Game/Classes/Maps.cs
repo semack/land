@@ -129,17 +129,17 @@ namespace Land.Classes
                 {
                     // render map
                     char value = map[j][i];
-                    if (value == 'W')
+                    if (value == '#')
                         result[i, j] = SpriteTypeEnum.StoneWall;
-                    else if (value == 'B')
+                    else if (value == '%')
                         result[i, j] = SpriteTypeEnum.BrickWall;
-                    else if (value == 'C')
+                    else if (value == '$')
                         result[i, j] = SpriteTypeEnum.Chest;
-                    else if (value == '`')
+                    else if (value == '^')
                         result[i, j] = SpriteTypeEnum.Floor;
-                    else if (value == ']')
-                        result[i, j] = SpriteTypeEnum.StairsLeft;
                     else if (value == '[')
+                        result[i, j] = SpriteTypeEnum.StairsLeft;
+                    else if (value == ']')
                         result[i, j] = SpriteTypeEnum.StairsRight;
                     else if (value == '<')
                         result[i, j] = SpriteTypeEnum.ExitDoorLeft;

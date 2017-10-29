@@ -34,7 +34,7 @@ namespace Land.Components
             _infoText.Append(
                 "This is retrospective of the formerly popular game \"LAND\". It was originally developed by ASP corp. in 1986 and ran under PDP-11 compatible computers.\r\n");
             _infoText.Append(
-                string.Format("The game was ported using MonoGame by Andriy S'omak (semack@gmail.com), April 2014. Game sources find at http://www.githum.com/semack/land"));
+                string.Format("The game was ported using MonoGame by Andriy S'omak (semack@gmail.com), 2014-2017. Source code http://www.github.com/onlinico/land"));
         }
 
 
@@ -51,8 +51,7 @@ namespace Land.Components
         {
             if (kState.IsKeyPressed(_oldKeyState, Keys.Enter, Keys.Space, Keys.Escape, Keys.D0, Keys.D1, Keys.D2,
                 Keys.D3,
-                Keys.D4, Keys.D5, Keys.D6, Keys.D7) ||
-                gState.IsButtonPressed(_oldGamePadState, Buttons.Start))
+                Keys.D4, Keys.D5, Keys.D6, Keys.D7))
             {
                 _displayMode = DisplayModeEnum.GameStart;
                 _splashInterval = new TimeSpan(Game.GameSpeedScaleFactor*40);
@@ -69,7 +68,7 @@ namespace Land.Components
         private void UpdateGameStart(KeyboardState kState, GamePadState gState, GameTime gameTime)
         {
             if (kState.IsKeyPressed(_oldKeyState, Keys.Enter, Keys.Space, Keys.D0, Keys.D1, Keys.D2, Keys.D3, Keys.D4,
-                Keys.D5, Keys.D6, Keys.D7, Keys.D8, Keys.D9) || gState.IsButtonPressed(_oldGamePadState, Buttons.Start))
+                Keys.D5, Keys.D6, Keys.D7, Keys.D8, Keys.D9))
             {
                 _displayMode = DisplayModeEnum.Splash;
                 string value = Encoding.UTF8.GetString(new[] {(byte) kState.GetPressedKeys()[0]}, 0, 1);

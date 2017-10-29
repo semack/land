@@ -147,13 +147,12 @@ namespace Land.Components
             KeyboardState kState = Keyboard.GetState();
             GamePadState bState = GamePad.GetState(PlayerIndex.One);
 
-            if (kState.IsKeyPressed(_oldKeyState, Keys.Q) || bState.IsButtonPressed(_oldButtonState, Buttons.Back))
+            if (kState.IsKeyPressed(_oldKeyState, Keys.Q))
             {
                 if (OnPlayingFinished != null)
                     OnPlayingFinished(this, new EventArgs());
             }
-            else if (kState.IsKeyPressed(_oldKeyState, Keys.OemSemicolon) ||
-                     bState.IsButtonPressed(_oldButtonState, Buttons.Start))
+            else if (kState.IsKeyPressed(_oldKeyState, Keys.OemSemicolon)) 
             {
                 Score = Score - 100;
                 if (Score < 0)

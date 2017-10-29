@@ -208,29 +208,23 @@ namespace Land.Components.Actors
                 GamePadState gState = GamePad.GetState(PlayerIndex.One);
                 KeyboardState kState = Keyboard.GetState();
 
-                if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Left, Keys.NumPad4) ||
-                    gState.IsButtonPressed(_oldGamePadState, Buttons.DPadLeft))
+                if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Left, Keys.NumPad4))
                     Direction = DirectionEnum.Left;
-                else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Down, Keys.NumPad5) ||
-                         gState.IsButtonDown(Buttons.DPadDown))
+                else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Down, Keys.NumPad5))
                     Direction = DirectionEnum.Down;
-                else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Right, Keys.NumPad6) ||
-                         gState.IsButtonPressed(_oldGamePadState, Buttons.DPadRight))
+                else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Right, Keys.NumPad6))
                     Direction = DirectionEnum.Right;
-                else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Up, Keys.NumPad8) ||
-                         gState.IsButtonDown(Buttons.DPadUp))
+                else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Up, Keys.NumPad8))
                     Direction = DirectionEnum.Up;
 
                 if (!_bullet.IsActive)
                 {
-                    if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Z, Keys.NumPad7) ||
-                        gState.IsButtonPressed(_oldGamePadState, Buttons.LeftTrigger))
+                    if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.Z, Keys.NumPad7))
                     {
                         _shootStage = ShootStageEnum.Preparation;
                         _shootDirection = DirectionEnum.Left;
                     }
-                    else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.X, Keys.NumPad9) ||
-                             gState.IsButtonPressed(_oldGamePadState, Buttons.RightTrigger))
+                    else if (kState.IsKeyPressed(_oldKeyboardStateState, Keys.X, Keys.NumPad9))
                     {
                         _shootStage = ShootStageEnum.Preparation;
                         _shootDirection = DirectionEnum.Right;
